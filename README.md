@@ -1,4 +1,4 @@
-# PlantSim - Qt Based Simulations of Physicak Plants
+# PlantSim - Physical Plant Simulations
 
 ## Rational
 
@@ -19,7 +19,7 @@ Note: the bottling station was part of in in-house benchmark with
 extensive documentation in the separate report (PDF-file included)
 
 
-## Overview
+## Some Details
 
 A FAUDES application simulates a physical plant and
 displays it's state graphically. Some applications
