@@ -1,4 +1,4 @@
-OA# ##########################################
+# ##########################################
 # std faudes application 
 # 
 # This project file supports the configuration of Qt projects that link against
@@ -9,31 +9,32 @@ OA# ##########################################
 # Referenced variables
 # - APPNAME                name of application
 # - DEVFILE                name of device file (located in ./src), defaults to none 
-# - PLANTSIM_VERSION_MAJOR/MINOR  application version number, defaults to x.yz
-# - COMMON                 shared resources (e.g. default icons, styles), defaults to ./
+# - FFVERSION_MAJOR/MINOR  application version number, defaults to x.yz
+# - COMMON                 shared resources (e.g. libfaudes, icons), defaults to ./
 #
 # Implemented CONFIG features
 # - faudes       compile with libFAUDES
+# - fullscreen   support osx-lion fullsceen mode
 #
 #
-# tmoor 2024
+# tmoor 20160823
 # ##########################################
 
 
 # set version: rnvironment overrules qmake overrule default 0.8x
-isEmpty( PLANTSIM_VERSION_MAJOR ): PLANTSIM_VERSION_MAJOR = $$[PLANTSIM_VERSION_MAJOR]
-isEmpty( PLANTSIM_VERSION_MINOR ): PLANTSIM_VERSION_MINOR = $$[PLANTSIM_VERSION_MINOR]
-isEmpty( PLANTSIM_VERSION_MAJOR ): PLANTSIM_VERSION_MAJOR = 0
-isEmpty( PLANTSIM_VERSION_MINOR ): PLANTSIM_VERSION_MINOR = 8x
-PLANTSIM_VERSION = $${PLANTSIM_VERSION_MAJOR}.$${PLANTSIM_VERSION_MINOR}
-PLANTSIM_VERSION_US = $${PLANTSIM_VERSION_MAJOR}_$${PLANTSIM_VERSION_MINOR}
+isEmpty( FFVERSION_MAJOR ): FFVERSION_MAJOR = $$[FFVERSION_MAJOR]
+isEmpty( FFVERSION_MINOR ): FFVERSION_MINOR = $$[FFVERSION_MINOR]
+isEmpty( FFVERSION_MAJOR ): FFVERSION_MAJOR = 0
+isEmpty( FFVERSION_MINOR ): FFVERSION_MINOR = 8x
+FFVERSION = $${FFVERSION_MAJOR}.$${FFVERSION_MINOR}
+FFVERSION_US = $${FFVERSION_MAJOR}_$${FFVERSION_MINOR}
 
 # set default common location
 isEmpty( COMMON ): COMMON= ./
 
 # say hello
 message("=== faudes application project" $${APPNAME})
-message("=== current version" $${PLANTSIM_VERSION})
+message("=== current version" $${FFVERSION})
 message("=== using Qt at" $$[QT_INSTALL_BINS])
 
 # win library/support locations
@@ -48,7 +49,7 @@ CONFIG(debug, debug|release) {
 }
 
 # set qt features
-QT += core gui widgets xml network svg printsupport network
+QT += core gui xml network svg
 
 # set target
 TEMPLATE = app
@@ -66,16 +67,23 @@ MOC_DIR = obj
 ICON = $${COMMON}/icons/icon_osx.icns
 RC_FILE = $${COMMON}/icons/icon_win.rc
 
+# mac fullscreen
+mac:fullscreen { 
+    DEFINES += FF_OSXFULLSCREEN
+    HEADERS += $${COMMON}/src/osxfullscreen.h
+    OBJECTIVE_SOURCES += $${COMMON}/src/osxfullscreen.mm
+    LIBS += -framework Cocoa
+}
 
 # mac deploymant
-macx: QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.15
+macx: QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.7
 
 # helper
 APPNAME_LC = $$lower( $${APPNAME} )
 
 # pass on config to compiler
-DEFINES += PLANTSIM_VERSION='\\"$${PLANTSIM_VERSION}\\"'
-DEFINES += PLANTSIM_APPNAME='\\"$${APPNAME}\\"'
+DEFINES += FF_VERSION='\\"$${FFVERSION}\\"'
+DEFINES += FF_APPNAME='\\"$${APPNAME}\\"'
 
 # include common sources header
 INCLUDEPATH += $${COMMON}/src
@@ -86,35 +94,86 @@ INCLUDEPATH += $${COMMON}/src
 
 faudes { 
     # libfaudes location
-    LIBFAUDES = ../libFAUDES_for_PlantSim
+    LIBFAUDES = $${COMMON}/libfaudes
 
     # use libfaudes headers
     INCLUDEPATH += $${LIBFAUDES}/include
     DEPENDPATH += $${LIBFAUDES}/include
     
+    # have targets to compile/copy libFAUDES
+    QMAKE_EXTRA_TARGETS += FaudesMake FaudesFiles
+    
     # set compiletime flag
     DEFINES += FF_LIBFAUDES
+    
+    # linux: compile/copy libFAUDES
+    unix:!macx { 
+        # compile
+        FaudesMake.target = $${LIBFAUDES}/libfaudes.so
+        FaudesMake.commands += rm -f $${LIBFAUDES}/obj/* &&
+        FaudesMake.commands += make -C $${LIBFAUDES} libfaudes default
+        linux-lsb-g++:FaudesMake.commands += 'FAUDES_PLATFORM=lsb_linux'
+        
+        # copy
+        FaudesFiles.target = $${DESTDIR}/lib/libfaudes.so
+        FaudesFiles.commands += cp $${LIBFAUDES}/libfaudes.so $${DESTDIR}/lib/ &&
+        FaudesFiles.commands += cp $${LIBFAUDES}/include/libfaudes.rti $${DESTDIR}/lib/
+        
+        # lsb compiler options (deployment only)
+        linux-lsb-g++:LIBS += --lsb-shared-libs=faudes
 
-    # dynamically link to libfaudes: mac os
-    macx:  LIBS += -L$${LIBFAUDES} -lfaudes
-
-    # mac os: care about bundle
-    macx {
-      # 1: copy libFAUDES
-      FaudesFiles.files = $${LIBFAUDES}/libfaudes.dylib
-      FaudesFiles.files += $${LIBFAUDES}/include/libfaudes.rti
-      FaudesFiles.path = Contents/MacOS
-      QMAKE_BUNDLE_DATA += FaudesFiles
-      # 2: fix loader
-      FaudesLoader.target = .fixldfaudes
-      FaudesLoader.depends += $${DESTDIR}/$${APPNAME}.app/Contents/MacOS/$${APPNAME}
-      FaudesLoader.commands += install_name_tool -change libfaudes.dylib @executable_path/libfaudes.dylib \
-            $${DESTDIR}/$${APPNAME}.app/Contents/MacOS/$${APPNAME} &&
-      FaudesLoader.commands += touch .fixldfaudes
-      QMAKE_EXTRA_TARGETS += FaudesLoader
+        # dynamically link to libfaudes
+        LIBS += -L$${LIBFAUDES} -lfaudes
+    
     }
+    
+    # mac: compile/copy libFAUDES
+    macx { 
+        # compile
+        FaudesMake.target = $${LIBFAUDES}/libfaudes.dylib
+        FaudesMake.commands += rm -f $${LIBFAUDES}/obj/* &&
+        FaudesMake.commands += make -C $${LIBFAUDES} libfaudes default
 
+        #copy
+        FaudesFiles.files = $${LIBFAUDES}/libfaudes.dylib
+        FaudesFiles.files += $${LIBFAUDES}/include/libfaudes.rti
+        FaudesFiles.path = Contents/MacOS
+        QMAKE_BUNDLE_DATA += FaudesFiles
+
+        # dynamically link to libfaudes
+        LIBS += -L$${LIBFAUDES} -lfaudes
+    
+    }
+    
+    # win: compile/copy libFAUDES
+    win32 { 
+
+        # needed for copy commands
+        LIBFAUDES_WINDIR = $$replace(LIBFAUDES, "/", "\\")
+
+        # compile
+        FaudesMake.target = $${LIBFAUDES}/faudes.dll
+        FaudesMake.commands += $${QMAKE_DEL_FILE} /Q $${LIBFAUDES_WINDIR}\\obj\\*.* &&
+        FaudesMake.commands += $${WINMINGW}\\bin\\mingw32-make.exe -C $${LIBFAUDES} 'FAUDES_PLATFORM=cl_win' libfaudes default
+        
+        # copy (need to fix the dir sep issue)
+        FaudesFiles.target = FaudesFiles
+        FaudesFiles.commands += $${QMAKE_COPY} $${LIBFAUDES_WINDIR}\\faudes.dll $${DESTDIR} &&
+        FaudesFiles.commands += $${QMAKE_COPY} $${LIBFAUDES_WINDIR}\\include\\libfaudes.rti $${DESTDIR}
+        
+        # extra libs for on win
+        LIBS += -lwsock32
+
+        # dynamically link to libfaudes
+        LIBS += $${LIBFAUDES_WINDIR}\\faudes.lib
+    
+    }
+    
+    # trigger libFAUDES targets pre FlxcFact
+    FaudesFiles.depend = $${FaudesMake.target}
+    PRE_TARGETDEPS += $${FaudesMake.target} $${FaudesFiles.target}
 }
+
 
 # #####################################################
 # install device file (optional)
@@ -122,23 +181,20 @@ faudes {
 
 !isEmpty( DEVFILE ) {
 
+  QMAKE_EXTRA_TARGETS += DeviceFile
   unix:!macx { 
     DeviceFile.target = $${DESTDIR}/lib/$${DEVFILE}
     DeviceFile.commands += cp src/$${DEVFILE} $${DESTDIR}/lib/
-    QMAKE_EXTRA_TARGETS += DeviceFile
-    POST_TARGETDEPS += $${DeviceFile.target}
   }
   macx { 
-    DeviceFile.files = src/$${DEVFILE}
-    DeviceFile.path = Contents/MacOS
-    QMAKE_BUNDLE_DATA += DeviceFile
+    DeviceFile.target = $${DESTDIR}/$${TARGET}.app/Contents/MacOS/$${DEVFILE}
+    DeviceFile.commands += cp src/$${DEVFILE} $${DESTDIR}/$${TARGET}.app/Contents/MacOS
   }
   win32 { 
     DeviceFile.target = $${DESTDIR}/$${DEVFILE}
     DeviceFile.commands += $${QMAKE_COPY} src\\$${DEVFILE} $${DESTDIR}
-    QMAKE_EXTRA_TARGETS += DeviceFile
-    POST_TARGETDEPS += $${DeviceFile.target}
   }
+  POST_TARGETDEPS += $${DeviceFile.target}
 
 }
 
@@ -253,7 +309,7 @@ win32 {
     }
     
     # run innosetup
-    exists( $${APPNAME_LC}.iss ) {
+   exists( $${APPNAME_LC}.iss ) {
       QMAKE_EXTRA_TARGETS += windeployA
       windeployA.depends += install FaudesExeFiles
       windeployA.commands += $${WININNOSU}\\iscc $${APPNAME_LC}.iss &&
@@ -262,4 +318,3 @@ win32 {
       deploy.depends += windeployA
    }
 }
-

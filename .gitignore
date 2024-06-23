@@ -31,4 +31,4 @@ faudes_*
 
 # local archives
 local/*
-common/libFAUDES
+libFAUDES_for_PlantSim

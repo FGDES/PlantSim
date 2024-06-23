@@ -186,9 +186,11 @@ void ButtonItem::Illuminate(bool on) {
 
 // get mouse events
 void ButtonItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
+  (void) event;
   mPressed=true;
 }
 void ButtonItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
+  (void) event;
   mPressed=false;
 }
 
@@ -247,10 +249,10 @@ ElePlant::ElePlant() :
   QWidget* cwid= new QWidget();
   setCentralWidget(cwid);
   QHBoxLayout* mHbox = new QHBoxLayout(cwid);
-  mHbox->setMargin(0);
+  mHbox->setContentsMargins(0,0,0,0);
   mHbox->setSpacing(0);
   QVBoxLayout* mVbox = new QVBoxLayout(0);
-  mVbox->setMargin(0);
+  mVbox->setContentsMargins(0,0,0,0);
   mVbox->setSpacing(0);
   mHbox->addLayout(mVbox);
 
@@ -260,7 +262,7 @@ ElePlant::ElePlant() :
   // actuator gui items: groupbox etc
   QGroupBox* actgbox = new QGroupBox("Actuators");
   QGridLayout* actgrid = new QGridLayout(actgbox);
-  actgrid->setMargin(5);
+  actgrid->setContentsMargins(5,5,5,5);
   actgrid->setSpacing(5);
   actgrid->setHorizontalSpacing(5);
   mVbox->addWidget(actgbox);
@@ -317,7 +319,7 @@ ElePlant::ElePlant() :
   // sensor gui items: groupbox etc
   QGroupBox* snsgbox = new QGroupBox("Sensors");
   QGridLayout* snsgrid = new QGridLayout(snsgbox);
-  snsgrid->setMargin(5);
+  snsgrid->setContentsMargins(5,5,5,5);
   snsgrid->setSpacing(5);
   snsgrid->setHorizontalSpacing(5);
   mVbox->addWidget(snsgbox);
@@ -387,7 +389,7 @@ ElePlant::ElePlant() :
   // event logger
   QGroupBox* loggbox = new QGroupBox("Event Log");
   QHBoxLayout* loghbox = new QHBoxLayout(loggbox);
-  loghbox->setMargin(5);
+  loghbox->setContentsMargins(5,5,5,5);
   loghbox->setSpacing(5);
   mVbox->addWidget(loggbox);
   mLogger = new QPlainTextEdit();
@@ -406,7 +408,7 @@ ElePlant::ElePlant() :
   // controls gui items: groupbox etc
   QGroupBox* ctrgbox = new QGroupBox("Controls");
   QGridLayout* ctrgrid = new QGridLayout(ctrgbox);
-  ctrgrid->setMargin(5);
+  ctrgrid->setContentsMargins(5,5,5,5);
   ctrgrid->setSpacing(5);
   ctrgrid->setHorizontalSpacing(5);
   mVbox->addWidget(ctrgbox);
@@ -507,7 +509,7 @@ ElePlant::ElePlant() :
   mFaudesNetName = QHostInfo::localHostName().toLower();
   if(mFaudesNetName != "") 
     mFaudesNetName[0]= mFaudesNetName[0].toUpper();
-  mFaudesNetName = mFaudesNetName + "ElevatorLoop";
+  mFaudesNetName = "ElevatorLoop@"+mFaudesNetName;
 
   mFaudesDev->NetworkName(FfStyle::StrFromQStr(mFaudesNetName));
   mFaudesDev->Compile();
@@ -952,11 +954,13 @@ int main(int argc, char *argv[]) {
   FF_DQ("ElePlant:main()");
 
   // osx 11: fix fonts (nee to be before QApplication)
-#ifdef Q_OS_MACX
+  /*
+#ifdef Q_OS_MACOS
   QFont::insertSubstitution(".Lucida Grande UI", "Lucida Grande");
   QFont::insertSubstitution(".Helvetica Neue DeskInterface", "Helvetica Neue");
   QFont::insertSubstitution(".SF NS Text", "Helvetica Neue");
 #endif
+  */
 
   // let Qt see commandline
   QApplication app(argc, argv);

@@ -4,8 +4,9 @@
 #ifndef FAUDES_ELEPLANT_H
 #define FAUDES_ELEPLANT_H
 
-#include <QApplication>
 #include <QtGui>
+#include <QtWidgets>
+#include <QtWidgets/QApplication>
 #include <QtNetwork>
 #include "libfaudes.h"
 #include "ffstyle.h"

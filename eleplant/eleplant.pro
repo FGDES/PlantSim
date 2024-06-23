@@ -18,10 +18,10 @@ CONFIG += faudes   # link with libfaudes for simplenet interface
 COMMON = ../common
 
 # load common configuration
-! include( $${COMMON}/faudes.pri ) {
-    error("### error: faudes application configuration file not found" )
+!include( $${COMMON}/faudes.pri ) {
+    error("=== error: faudes application configuration file not found")
 }
-
+   
 # application source
 HEADERS      += $${COMMON}/src/ffstyle.h                 
 SOURCES      += $${COMMON}/src/ffstyle.cpp                 
