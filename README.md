@@ -50,8 +50,8 @@ device configuration in it's event log.
 ## Build System
 
 The build system is organised in analogy to libVIODES/DESTool.
-We are currently testing with Mac OS (Qt 6.6.2) and Linux (Qt 5.15.x)
-Windows should be fine too, however, it is tested less frequently.
+We are currently testing with Mac OS (Qt 6.6.2) and Linux (Qt 5.15.x).
+Windows should be fine too, however, it is tested recently. 
 
 
 
