@@ -1,0 +1,34 @@
+<SimplenetDevice name="Supervisor">
+<TimeScale value="1000"/>
+<ServerAddress value="localhost:40001"/>
+<Network name="FtcLoop">
+<Node name="Plant"/>
+<Node name="Supervisor"/>
+</Network>
+<EventConfiguration>
+
+<!-- abstract events for benchmark/demo -->
+<Event name="V"    iotype="output"/>
+<Event name="R"    iotype="output"/>
+<Event name="RR"   iotype="output"/>
+<Event name="r"    iotype="input"/>
+<Event name="S1"   iotype="input"/>
+<Event name="S2"   iotype="input"/>
+<Event name="S3"   iotype="input"/>
+<Event name="A"    iotype="output"/>
+<Event name="a"    iotype="input"/>
+<Event name="B"    iotype="output"/>
+<Event name="b"    iotype="input"/>
+<Event name="f"    iotype="input"/>
+
+<!-- operator events -->
+<Event name="P1"   iotype="input"/>
+<Event name="P2"   iotype="input"/>
+<Event name="P3"   iotype="input"/>
+<Event name="p1"   iotype="output"/>
+<Event name="p2"   iotype="output"/>
+<Event name="p3"   iotype="output"/>
+<Event name="I"    iotype="output"/>
+
+</EventConfiguration>
+</SimplenetDevice>

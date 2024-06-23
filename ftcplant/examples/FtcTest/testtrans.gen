@@ -1,0 +1,37 @@
+<Generator>
+"test transport"
+<Alphabet>
+V S1 S2 R r
+</Alphabet>
+<States>
+<Consecutive> 1 1000 </Consecutive>
+</States>
+
+<TransRel>
+
+% nominal transport
+100 S1 101
+101 V  102
+101 S1 201
+102 S2 103
+102 S1 202
+103 R  104
+103 S1 203
+104 r  100
+104 S1 204
+
+
+
+
+
+% transport with S1 on record
+201 V  202
+202 S2 203
+203 R  204
+204 r  101
+
+</TransRel>
+
+<InitStates> 100 </InitStates>
+<MarkedStates> </MarkedStates>
+</Generator>

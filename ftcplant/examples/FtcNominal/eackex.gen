@@ -1,0 +1,23 @@
+<Generator>
+
+"specification ack on exit"
+
+<Alphabet>
+p1 p2 p3 S3
+</Alphabet>
+
+<States>
+1 2 
+</States>
+
+<TransRel>
+1 S3 2
+2 p1 1
+2 p2 1
+2 p3 1
+
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> 1 </MarkedStates>
+</Generator>

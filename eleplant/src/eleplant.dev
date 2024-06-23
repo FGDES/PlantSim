@@ -1,0 +1,155 @@
+<SimplenetDevice>
+
+
+% id of this node
+
+"ElevatorPlant"       % node id
+1000                  % ms/ftu 
+"localhost:40000"     % server tcp port of this node
+"ElevatorLoop"        % network id (will be overwritten by application)
+
+% set of all nodes
+
+<Network>           
+"ElevatorPlant"
+"ElevatorSupervisor"
+</Network>
+
+
+<EventConfiguration>
+
+%%% Cabin sensor: arrive at upper position 
+"c_arup"      
+<Output></Output>
+
+%%% Cabin sensor: leave upper position 
+"c_lvup"         
+<Output></Output>
+
+%%% Cabin sensor: arrive at lower position 
+"c_arlw"         
+<Output></Output>
+
+%%% Cabin sensor: leave lower position 
+"c_lvlw"
+<Output></Output>
+
+%%% Door sensor: door reached closed position
+"ld_arcl"
+<Output></Output>
+
+%%% Door sensor: door leaving closed position
+"ld_lvcl"
+<Output></Output>
+
+%%% Door sensor: door reached open position
+"ld_arop"
+<Output></Output>
+
+%%% Door sensor: door leaving open position
+"ld_lvop"
+<Output></Output>
+
+%%% Door sensor: light break occupied
+"ld_lbbl"
+<Output></Output>
+
+%%% Door sensor: light bracket released
+"ld_lbrl"
+<Output></Output>
+
+%%% Door sensor: door reached closed position
+"ud_arcl"
+<Output></Output>
+
+%%% Door sensor: door leaving closed position
+"ud_lvcl"
+<Output></Output>
+
+%%% Door sensor: door reached open position
+"ud_arop"
+<Output></Output>
+
+%%% Door sensor: door leaving open position
+"ud_lvop"
+<Output></Output>
+
+%%% Door sensor: light break occupied
+"ud_lbbl"
+<Output></Output>
+
+%%% Door sensor: light bracket released
+"ud_lbrl"
+<Output></Output>
+
+%%% Opertor sensor: cabin button pressed
+"o_cbb"
+<Output></Output>
+
+%%% Opertor sensor: upper button pressed
+"o_upb"
+<Output></Output>
+
+%%% Opertor sensor: lower button pressed
+"o_lwb"
+<Output></Output>
+
+
+%%% Cabin actuator: stop motor 
+"c_stp"  
+<Input></Input>
+
+%%% Cabin actuator: start motor upwards 
+"c_up" 
+<Input></Input>
+
+%%% Cabin actuator: start motor downwards 
+"c_down" 
+<Input></Input>
+
+%%% Door actuator: stop motor
+"ld_stp"
+<Input></Input>
+
+%%% Door actuator: start motor to open door
+"ld_open"
+<Input></Input>
+
+%%% Door actuator: start motor to close door
+"ld_close"
+<Input></Input>
+
+%%% Door actuator: stop motor
+"ud_stp"
+<Input></Input>
+
+%%% Door actuator: start motor to open door
+"ud_open"
+<Input></Input>
+
+%%% Door actuator: start motor to close door
+"ud_close"
+<Input></Input>
+
+
+%%% Operator actuator: illuminate button upstairs
+"o_uplon"
+<Input></Input>
+
+%%% Operator actuator: turn off light for button upstairs
+"o_uploff"
+<Input></Input>
+
+%%% Operator actuator: illuminate button downstairs
+"o_lwlon" 
+<Input></Input>
+
+%%% Operator actuator: turn off light for button downstairs
+"o_lwloff"
+<Input></Input>
+
+
+</EventConfiguration>
+
+</SimplenetDevice>
+

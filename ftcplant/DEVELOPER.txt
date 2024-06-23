@@ -1,0 +1,76 @@
+=============================================================================
+=============================================================================
+
+General note.
+
+FtcPlant was coded as a quick hack to support a benchmark example. Extendebility 
+was not a design goal, however, the sources may be useful for minor adjustments. 
+GPL was chosen for convenience, we do not expect this to become a community 
+project. 
+
+thomas.moor@fau.de
+
+=============================================================================
+=============================================================================
+
+Building 
+
+FtcPlant is set up as a Qt project, so you will need a Qt SDK to build
+the binary. The latter can be obtained for free under terms of the GPL.
+It includes the IDE QtCreator which you may use as an development
+environment. You can then either trigger the build within QtCreator 
+or from the command line via qmake and make.
+
+Linux shell example
+(assuming qmake and friends are in the PATH variable, which
+is the case for many Linux distributions)
+
+> cd wherever_it_is/ftcplant 
+> qmake ftcplant.pro
+> make
+> ./build/bin/ftcplant
+
+Mac shell example
+(assuming qmake and friends are in the PATH variable, which
+is the default installation option)
+
+> cd wherever_it_is/ftcplant 
+> qmake -spec macx-gcc ftcplant.pro
+> make deploy
+> ./build/FtcPlant/Contents/MaxOS/FtcPlant
+
+Windows command prompt example
+(incl. setting up the path variable for Qt)
+
+> cd wherever_it_is\ftcplant 
+> set PATH=C:\Qt\2010.03\qt\bin;%PATH%
+> set PATH=C:\Qt\2010.03\mingw\bin;%PATH%
+> qmake ftcplant.pro
+> minge32-make
+> build\Ftcplant
+
+You may need to inspect the configuration file "faudes.pri" to 
+adapt the build process to your environment.
+
+
+=============================================================================
+=============================================================================
+
+Deployment ...
+
+... is a hassle. For all supported platforms, the binary distribution of FtcPlant
+must include all required libraries. For MacOS, the project file introduces
+a target "deploy" that builds a disk image. For Linux, "deploy" builds a tar.gz
+archive. On Windows, the external tool InnoSetup is used to compose a setup
+executable.
+
+* to use the deployment target from QtCreator, introduce a build configuration
+  that has "deploy" as an extra target
+
+* to use LSB compilers on Linux, set PATH variable in the build environment
+  to whereever you have installed LSB compilers; you also need an LSB compiled
+  version of Qt
+
+* when moving platforms, remove the entire build directory, the entire obj directory
+  and any libFAUDES shared libs (you may use "distclean.sh" for this purpose)
+

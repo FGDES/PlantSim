@@ -1,0 +1,26 @@
+<Generator>
+
+"specification feed2"
+
+% bolltle at S2 must be
+% passed on befor the next
+% bottle arives
+
+<Alphabet>
+V S2 R r
+</Alphabet>
+
+<States>
+<Consecutive> 1 4</Consecutive>
+</States>
+
+<TransRel>
+1 R 2
+2 r 1
+1 V  3
+3 S2   1
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> 1 </MarkedStates>
+</Generator>

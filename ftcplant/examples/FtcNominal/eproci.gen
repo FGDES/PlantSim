@@ -1,0 +1,24 @@
+<Generator>
+
+"specification process at place i"
+
+<Alphabet>
+R r oT X 
+</Alphabet>
+
+<States>
+<Consecutive> 1 4</Consecutive>
+</States>
+
+<TransRel>
+1 R  1
+1 r  1
+1 oT 2
+2 r  3
+3 X  1
+
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> 1 3 </MarkedStates>
+</Generator>

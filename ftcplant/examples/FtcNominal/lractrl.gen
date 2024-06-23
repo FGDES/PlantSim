@@ -1,0 +1,20 @@
+<Generator>
+
+"plant component roundabout controls"
+
+<Alphabet>
+R +C+ r
+</Alphabet>
+
+<States>
+<Consecutive> 1 2</Consecutive>
+</States>
+
+<TransRel>
+1 R  2
+2 r  1
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> 1 </MarkedStates>
+</Generator>

@@ -1,0 +1,179 @@
+<Generator>
+
+% Ad-hoc supervisor to test the bottling plant
+%
+% This supervisor waits for a product request
+% (P1,P2,P3) and for an empty bottle (S1).
+% When both conditions are satisfied, it
+% transports the bottle to the filling
+% station (V-S2-RR-r) for filling with the
+% requested liquids (e.g. A-a-B-b). After
+% completion of the filling proceess, the bottle
+% is passed on to the exit (RR-r-S2).
+%
+% When another bottle arrives at S1 during
+% operation, this is recorded. Thus, for the
+% next cycle, the supervisor will not wait for
+% S1.
+%
+% When more the one product is requested befor
+% the process can start, the request is rejected 
+% (I). However, our simple design does not properly
+% reject/record product requests during a
+% production cycle.
+
+"run test sequence"
+
+<Alphabet>
+P1 p1 P2 p2 P3 p3 I V S1 S2 S3 RR r A a B b f
+</Alphabet>
+
+<States>
+<Consecutive> 1 1000 </Consecutive>
+</States>
+
+<TransRel>
+% conditions: wait for P_ and S1
+1   P1   60
+1   P2   70
+1   P3   80
+1   S1   50
+
+% conditions: wait for P_ 
+50  P1    3
+50  P2  203
+50  P3  403
+
+% conditions: wait for S1 reject P_
+60  S1    3
+60  P1   61
+60  P2   61
+60  P3   61
+61   I   60
+70  S1  203
+70  P1   71
+70  P2   71
+70  P3   71
+71   I   70
+80  S1  403
+80  P1   81
+80  P2   81
+80  P3   81
+81   I   80
+
+% run sequence P1
+3  V    4
+3  S1 103
+4  S2   5
+4  S1 104
+5  RR   6
+5  S1 105
+6  r    7
+6  S1 106
+7  A    8
+7  S1 107
+8  a    9
+8  S1 108
+9  B   10
+9  S1 109
+10 b   11
+10 S1 110
+11 RR  12
+11 S1 111
+12 S3  13
+12 S1 112
+13 p1   1
+13 S1 113
+
+% run sequence P1 with S1 on record
+103  V  104
+104  S2 105
+105  RR 106
+106  r  107
+107  A  108
+108  a  109
+109  B  110
+110  b  111
+111  RR 112
+112  S3 113
+113  p1 50
+
+% run sequence P2
+203  V  204
+203  S1 303
+204  S2 205
+204  S1 304
+205  RR 206
+205  S1 305
+206  r  207
+206  S1 306
+207  A  208
+207  S1 307
+208  a  209
+208  S1 308
+209  A  210
+209  S1 309
+210  a  211
+210  S1 310
+211  RR 212
+211  S1 311
+212  S3 213
+212  S1 312
+213  p2   1
+213  S1 113
+
+% run sequence P2 with S1 on record
+303  V  304
+304  S2 305
+305  RR 306
+306  r  307
+307  A  308
+308  a  309
+309  A  310
+310  a  311
+311  RR 312
+312  S3 313
+313  p2 50
+
+% run sequence P3
+403  V  404
+403  S1 503
+404  S2 405
+404  S1 504
+405  RR 406
+405  S1 505
+406  r  407
+406  S1 506
+407  B  408
+407  S1 507
+408  b  409
+408  S1 508
+409  B  410
+409  S1 509
+410  b  411
+410  S1 510
+411  RR 412
+411  S1 511
+412  S3 413
+412  S1 512
+413  p3   1
+413  S1 113
+
+% run sequence P3 with S1 on record
+503  V  504
+504  S2 505
+505  RR 506
+506  r  507
+507  B  508
+508  b  509
+509  B  510
+510  b  511
+511  RR 512
+512  S3 513
+513  p3 50
+
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> </MarkedStates>
+</Generator>

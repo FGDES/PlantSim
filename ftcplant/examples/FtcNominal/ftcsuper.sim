@@ -1,0 +1,21 @@
+<Executor>
+<Generators>
+% run supervisors
+"htransport.gen"
+"kproduct.gen"
+"kacknow.gen"
+"krequest.gen"
+</Generators>
+
+<SimEvents>
+% prefer feed over roundabout
+V  <Priority> 10 </Priority>
+R  <Priority> 5  </Priority>
+% do not miss high-level feedback
+p1  <Priority> 20 </Priority>
+p2  <Priority> 20  </Priority>
+p3  <Priority> 20  </Priority>
+pI  <Priority> 20  </Priority>
+</SimEvents>
+
+</Executor>

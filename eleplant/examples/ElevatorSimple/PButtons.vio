@@ -1,0 +1,111 @@
+<VioSystem>
+<Generator>
+"operator buttons" 
+
+% 
+%  Statistics for operator buttons
+% 
+%  States:        1
+%  Init/Marked:   1/1
+%  Events:        3
+%  Transitions:   3
+%  StateSymbols:  1
+%  Attrib. E/S/T: 0/0/0
+% 
+
+<Alphabet>
+"o_upb"       "o_lwb"       "o_cbb"       
+</Alphabet>
+
+<States>
+"Idle"        
+</States>
+
+<TransRel>
+"Idle"        "o_upb"       "Idle"        
+"Idle"        "o_lwb"       "Idle"        
+"Idle"        "o_cbb"       "Idle"        
+</TransRel>
+
+<InitStates>
+"Idle"        
+</InitStates>
+
+<MarkedStates>
+"Idle"        
+</MarkedStates>
+
+
+</Generator>
+<VioModels>
+<TransitionList>
+=AAAAAwEAAAABAAAACgBvAF8AYwBiAGIAAAABAQAAAAEAAAAKAG8AXwB1AHAAYgAAAAEBAAAAAQAAAAoAbwBfAGwAdwBiAAAAAQ=== </TransitionList>
+<StateList>
+=AAAAAQIAAAAB= </StateList>
+<EventList>
+=AAAAAwMAAAAKAG8AXwB1AHAAYgMAAAAKAG8AXwBsAHcAYgMAAAAKAG8AXwBjAGIAYg=== </EventList>
+<GraphData>
+<States>
+<State>
+1             
+<Item>
+<Position>
+159.700000    155.599999    
+</Position>
+<BasePoints>
+0             0             31.549999     31.549999     -122.200000   0             
+-31.541571    0             
+</BasePoints>
+</Item>
+</State>
+</States>
+<TransRel>
+<Trans>
+1             "o_upb"       1             
+<Item>
+<Position>
+159.700000    155.599999    
+</Position>
+<BasePoints>
+0             -63.900000    0             0             7.030726      -30.734298    
+8.399999      -43.099999    5.599999      -55.599999    0             -55.599999    
+-2.800000     -55.599999    -5.499995     -51.399994    -3.363487     -31.433340    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+1             "o_lwb"       1             
+<Item>
+<Position>
+159.700000    155.599999    
+</Position>
+<BasePoints>
+0             -88.900000    0             0             24.327018     -20.100722    
+44.500005     -47.300005    37.500000     -80.599999    0             -80.599999    
+-31.900001    -80.599999    -41.600001    -55.599999    -18.927521    -25.297359    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+1             "o_cbb"       1             
+<Item>
+<Position>
+159.700000    155.599999    
+</Position>
+<BasePoints>
+0             -113.900000   0             0             24.327018     -20.100722    
+55.600011     -56.999999    47.200000     -105.599999   0             -105.599999   
+-42.999995    -105.599999   -54.100001    -66.700000    -19.859324    -24.484600    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+</TransRel>
+</GraphData>
+</VioModels>
+<VioLayout>
+0             =sBrtCQIAAAAEAAAABgAAACEAAAABAAAA8BrtCQAAAAAAAA=== 0             150           226           0.592170      
+</VioLayout>
+</VioSystem>

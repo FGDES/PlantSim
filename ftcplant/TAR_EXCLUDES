@@ -1,0 +1,10 @@
+CVS
+ftcplant_
+obj/*
+build/*
+*/#*
+*/.#*
+*/*~
+*/._*
+*/.DS*
+.depend

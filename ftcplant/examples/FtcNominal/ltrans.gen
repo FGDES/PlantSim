@@ -1,0 +1,23 @@
+<Generator>
+
+"plant transport (abstract)"
+
+<Alphabet>
+R +C+ X +C+ S3 
+</Alphabet>
+
+<States>
+1 2
+</States>
+
+<TransRel>
+1 S3 1
+1 R  1
+1 X  2
+2 S3 2
+2 R  1
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> 1 </MarkedStates>
+</Generator>

@@ -1,0 +1,2320 @@
+<VioSystem>
+<Generator>
+"Supervisor [minstate]" 
+
+% 
+%  Statistics for Supervisor [minstate]
+% 
+%  States:        32
+%  Init/Marked:   1/2
+%  Events:        14
+%  Transitions:   126
+%  StateSymbols:  0
+%  Attrib. E/S/T: 7/0/0
+% 
+
+<Alphabet>
+"c_up"        +C+           "c_down"      +C+           "c_stp"       +C+           
+"c_arlw"      "c_arup"      "c_lvlw"      "c_lvup"      "o_upb"       "o_lwb"       
+"a_start"     +C+           "o_cbb"       "a_down"      +C+           "a_up"        
++C+           "a_timer"     +C+           
+</Alphabet>
+
+<States>
+<Consecutive>
+1             32            
+</Consecutive>
+</States>
+
+<TransRel>
+2             "c_up"        26            
+2             "o_upb"       2             
+2             "o_lwb"       28            
+2             "o_cbb"       2             
+1             "o_upb"       30            
+1             "o_lwb"       1             
+1             "o_cbb"       30            
+3             "c_down"      25            
+3             "o_upb"       27            
+3             "o_lwb"       3             
+3             "o_cbb"       3             
+4             "c_stp"       19            
+4             "o_upb"       4             
+4             "o_lwb"       4             
+4             "o_cbb"       4             
+5             "c_arlw"      21            
+5             "o_upb"       23            
+5             "o_lwb"       5             
+5             "o_cbb"       5             
+6             "c_arup"      22            
+6             "o_upb"       6             
+6             "o_lwb"       24            
+6             "o_cbb"       6             
+7             "c_lvlw"      24            
+7             "o_upb"       7             
+7             "o_lwb"       7             
+7             "o_cbb"       7             
+8             "c_lvup"      23            
+8             "o_upb"       8             
+8             "o_lwb"       8             
+8             "o_cbb"       8             
+9             "o_upb"       9             
+9             "o_lwb"       9             
+9             "a_start"     28            
+9             "o_cbb"       9             
+10            "o_upb"       10            
+10            "o_lwb"       29            
+10            "o_cbb"       29            
+11            "o_upb"       19            
+11            "o_lwb"       11            
+11            "o_cbb"       11            
+11            "a_down"      14            
+12            "o_upb"       12            
+12            "o_lwb"       20            
+12            "o_cbb"       12            
+12            "a_up"        16            
+13            "o_upb"       13            
+13            "o_lwb"       32            
+13            "o_cbb"       30            
+13            "a_timer"     30            
+14            "o_upb"       13            
+14            "o_lwb"       14            
+14            "o_cbb"       30            
+14            "a_timer"     1             
+15            "o_upb"       15            
+15            "o_lwb"       15            
+15            "a_start"     27            
+15            "o_cbb"       15            
+16            "o_upb"       16            
+16            "o_lwb"       17            
+16            "o_cbb"       29            
+16            "a_timer"     10            
+17            "o_upb"       31            
+17            "o_lwb"       17            
+17            "o_cbb"       29            
+17            "a_timer"     29            
+18            "c_stp"       20            
+18            "o_upb"       18            
+18            "o_lwb"       18            
+18            "o_cbb"       18            
+19            "o_upb"       19            
+19            "o_lwb"       19            
+19            "o_cbb"       19            
+19            "a_down"      13            
+20            "o_upb"       20            
+20            "o_lwb"       20            
+20            "o_cbb"       20            
+20            "a_up"        17            
+21            "c_stp"       11            
+21            "o_upb"       4             
+21            "o_lwb"       21            
+21            "o_cbb"       21            
+22            "c_stp"       12            
+22            "o_upb"       22            
+22            "o_lwb"       18            
+22            "o_cbb"       22            
+23            "c_arlw"      4             
+23            "o_upb"       23            
+23            "o_lwb"       23            
+23            "o_cbb"       23            
+24            "c_arup"      18            
+24            "o_upb"       24            
+24            "o_lwb"       24            
+24            "o_cbb"       24            
+25            "c_lvup"      5             
+25            "o_upb"       8             
+25            "o_lwb"       25            
+25            "o_cbb"       25            
+26            "c_lvlw"      6             
+26            "o_upb"       26            
+26            "o_lwb"       7             
+26            "o_cbb"       26            
+27            "c_down"      8             
+27            "o_upb"       27            
+27            "o_lwb"       27            
+27            "o_cbb"       27            
+28            "c_up"        7             
+28            "o_upb"       28            
+28            "o_lwb"       28            
+28            "o_cbb"       28            
+29            "o_upb"       15            
+29            "o_lwb"       29            
+29            "a_start"     3             
+29            "o_cbb"       29            
+30            "o_upb"       30            
+30            "o_lwb"       9             
+30            "a_start"     2             
+30            "o_cbb"       30            
+31            "o_upb"       31            
+31            "o_lwb"       31            
+31            "o_cbb"       15            
+31            "a_timer"     15            
+32            "o_upb"       32            
+32            "o_lwb"       32            
+32            "o_cbb"       9             
+32            "a_timer"     9             
+</TransRel>
+
+<InitStates>
+1             
+</InitStates>
+
+<MarkedStates>
+1             10            
+</MarkedStates>
+
+
+</Generator>
+<VioModels>
+<TransitionList>
+=AAAAfgEAAAADAAAACgBvAF8AbAB3AGIAAAADAQAAAAMAAAAKAG8AXwBjAGIAYgAAAAMBAAAABAAAAAoAbwBfAHUAcABiAAAABAEAAAAEAAAACgBvAF8AbAB3AGIAAAAEAQAAAAQAAAAKAG8AXwBjAGIAYgAAAAQBAAAABQAAAAoAbwBfAGwAdwBiAAAABQEAAAAFAAAACgBvAF8AYwBiAGIAAAAFAQAAAAYAAAAKAG8AXwB1AHAAYgAAAAYBAAAABgAAAAoAbwBfAGMAYgBiAAAABgEAAAAHAAAACgBvAF8AdQBwAGIAAAAHAQAAAAcAAAAKAG8AXwBjAGIAYgAAAAcBAAAACAAAAAoAbwBfAHUAcABiAAAACAEAAAAIAAAACgBvAF8AbAB3AGIAAAAIAQAAAAgAAAAKAG8AXwBjAGIAYgAAAAgBAAAACQAAAAoAbwBfAHUAcABiAAAACQEAAAAJAAAACgBvAF8AYwBiAGIAAAAJAQAAAAoAAAAKAG8AXwB1AHAAYgAAAAoBAAAACwAAAAoAbwBfAGwAdwBiAAAACwEAAAALAAAACgBvAF8AYwBiAGIAAAALAQAAAAwAAAAKAG8AXwB1AHAAYgAAAAwBAAAADAAAAAoAbwBfAGMAYgBiAAAADAEAAAANAAAACgBvAF8AdQBwAGIAAAANAQAAAA8AAAAKAG8AXwB1AHAAYgAAAA8BAAAADwAAAAoAbwBfAGMAYgBiAAAADwEAAAAQAAAACgBvAF8AdQBwAGIAAAAQAQAAABEAAAAKAG8AXwBsAHcAYgAAABEBAAAAEgAAAAoAbwBfAHUAcABiAAAAEgEAAAASAAAACgBvAF8AbAB3AGIAAAASAQAAABIAAAAKAG8AXwBjAGIAYgAAABIBAAAAEwAAAAoAbwBfAHUAcABiAAAAEwEAAAATAAAACgBvAF8AYwBiAGIAAAATAQAAABQAAAAKAG8AXwB1AHAAYgAAABQBAAAAFAAAAAoAbwBfAGMAYgBiAAAAFAEAAAAHAAAACgBvAF8AbAB3AGIAAAAHAQAAAAkAAAAKAG8AXwBsAHcAYgAAAAkBAAAACwAAAAwAYQBfAGQAbwB3AG4AAAAOAQAAAAwAAAAIAGEAXwB1AHAAAAAQAQAAAA4AAAAKAG8AXwB1AHAAYgAAAA0BAAAADgAAAAoAbwBfAGwAdwBiAAAADgEAAAAPAAAACgBvAF8AbAB3AGIAAAAPAQAAABAAAAAKAG8AXwBsAHcAYgAAABEBAAAAEAAAAA4AYQBfAHQAaQBtAGUAcgAAAAoBAAAAEwAAAAoAbwBfAGwAdwBiAAAAEwEAAAAVAAAACgBvAF8AbAB3AGIAAAAVAQAAABUAAAAKAG8AXwBjAGIAYgAAABUBAAAAFgAAAAoAbwBfAHUAcABiAAAAFgEAAAAWAAAACgBvAF8AYwBiAGIAAAAWAQAAABcAAAAKAG8AXwB1AHAAYgAAABcBAAAAFwAAAAoAbwBfAGwAdwBiAAAAFwEAAAAXAAAACgBvAF8AYwBiAGIAAAAXAQAAABgAAAAKAG8AXwB1AHAAYgAAABgBAAAAGAAAAAoAbwBfAGMAYgBiAAAAGAEAAAAZAAAACgBvAF8AbAB3AGIAAAAZAQAAABkAAAAKAG8AXwBjAGIAYgAAABkBAAAAAwAAAAwAYwBfAGQAbwB3AG4AAAAZAQAAAAMAAAAKAG8AXwB1AHAAYgAAABsBAAAABAAAAAoAYwBfAHMAdABwAAAAEwEAAAAFAAAADABjAF8AYQByAGwAdwAAABUBAAAABQAAAAoAbwBfAHUAcABiAAAAFwEAAAAGAAAADABjAF8AYQByAHUAcAAAABYBAAAABgAAAAoAbwBfAGwAdwBiAAAAGAEAAAAHAAAADABjAF8AbAB2AGwAdwAAABgBAAAACAAAAAwAYwBfAGwAdgB1AHAAAAAXAQAAAAkAAAAOAGEAXwBzAHQAYQByAHQAAAAcAQAAAAoAAAAKAG8AXwBsAHcAYgAAAB0BAAAACgAAAAoAbwBfAGMAYgBiAAAAHQEAAAALAAAACgBvAF8AdQBwAGIAAAATAQAAAAwAAAAKAG8AXwBsAHcAYgAAABQBAAAADQAAAAoAbwBfAGwAdwBiAAAAIAEAAAANAAAACgBvAF8AYwBiAGIAAAAeAQAAAA0AAAAOAGEAXwB0AGkAbQBlAHIAAAAeAQAAAA4AAAAKAG8AXwBjAGIAYgAAAB4BAAAADwAAAA4AYQBfAHMAdABhAHIAdAAAABsBAAAAEAAAAAoAbwBfAGMAYgBiAAAAHQEAAAARAAAACgBvAF8AdQBwAGIAAAAfAQAAABEAAAAKAG8AXwBjAGIAYgAAAB0BAAAAEQAAAA4AYQBfAHQAaQBtAGUAcgAAAB0BAAAAEgAAAAoAYwBfAHMAdABwAAAAFAEAAAATAAAADABhAF8AZABvAHcAbgAAAA0BAAAAFAAAAAoAbwBfAGwAdwBiAAAAFAEAAAAUAAAACABhAF8AdQBwAAAAEQEAAAAVAAAACgBjAF8AcwB0AHAAAAALAQAAABUAAAAKAG8AXwB1AHAAYgAAAAQBAAAAFgAAAAoAYwBfAHMAdABwAAAADAEAAAAWAAAACgBvAF8AbAB3AGIAAAASAQAAABcAAAAMAGMAXwBhAHIAbAB3AAAABAEAAAAYAAAADABjAF8AYQByAHUAcAAAABIBAAAAGAAAAAoAbwBfAGwAdwBiAAAAGAEAAAAZAAAADABjAF8AbAB2AHUAcAAAAAUBAAAAGQAAAAoAbwBfAHUAcABiAAAACAEAAAAaAAAADABjAF8AbAB2AGwAdwAAAAYBAAAAGgAAAAoAbwBfAHUAcABiAAAAGgEAAAAaAAAACgBvAF8AbAB3AGIAAAAHAQAAABoAAAAKAG8AXwBjAGIAYgAAABoBAAAAGwAAAAwAYwBfAGQAbwB3AG4AAAAIAQAAABsAAAAKAG8AXwB1AHAAYgAAABsBAAAAGwAAAAoAbwBfAGwAdwBiAAAAGwEAAAAbAAAACgBvAF8AYwBiAGIAAAAbAQAAABwAAAAIAGMAXwB1AHAAAAAHAQAAABwAAAAKAG8AXwB1AHAAYgAAABwBAAAAHAAAAAoAbwBfAGwAdwBiAAAAHAEAAAAcAAAACgBvAF8AYwBiAGIAAAAcAQAAAB0AAAAKAG8AXwB1AHAAYgAAAA8BAAAAHQAAAAoAbwBfAGwAdwBiAAAAHQEAAAAdAAAADgBhAF8AcwB0AGEAcgB0AAAAAwEAAAAdAAAACgBvAF8AYwBiAGIAAAAdAQAAAB4AAAAKAG8AXwB1AHAAYgAAAB4BAAAAHgAAAAoAbwBfAGwAdwBiAAAACQEAAAAeAAAACgBvAF8AYwBiAGIAAAAeAQAAAB8AAAAKAG8AXwB1AHAAYgAAAB8BAAAAHwAAAAoAbwBfAGwAdwBiAAAAHwEAAAAfAAAACgBvAF8AYwBiAGIAAAAPAQAAAB8AAAAOAGEAXwB0AGkAbQBlAHIAAAAPAQAAACAAAAAKAG8AXwB1AHAAYgAAACABAAAAIAAAAAoAbwBfAGwAdwBiAAAAIAEAAAAgAAAACgBvAF8AYwBiAGIAAAAJAQAAACAAAAAOAGEAXwB0AGkAbQBlAHIAAAAJAQAAAAEAAAAIAGMAXwB1AHAAAAAaAQAAAAEAAAAKAG8AXwB1AHAAYgAAAAEBAAAAAQAAAAoAbwBfAGwAdwBiAAAAHAEAAAABAAAACgBvAF8AYwBiAGIAAAABAQAAAAIAAAAKAG8AXwB1AHAAYgAAAB4BAAAAAgAAAAoAbwBfAGwAdwBiAAAAAgEAAAACAAAACgBvAF8AYwBiAGIAAAAeAQAAAA4AAAAOAGEAXwB0AGkAbQBlAHIAAAACAQAAAB4AAAAOAGEAXwBzAHQAYQByAHQAAAAB= </TransitionList>
+<StateList>
+=AAAAIAIAAAABAgAAAAICAAAAAwIAAAAEAgAAAAUCAAAABgIAAAAHAgAAAAgCAAAACQIAAAAKAgAAAAsCAAAADAIAAAANAgAAAA4CAAAADwIAAAAQAgAAABECAAAAEgIAAAATAgAAABQCAAAAFQIAAAAWAgAAABcCAAAAGAIAAAAZAgAAABoCAAAAGwIAAAAcAgAAAB0CAAAAHgIAAAAfAgAAACA== </StateList>
+<EventList>
+=AAAADgMAAAAIAGMAXwB1AHADAAAADABjAF8AZABvAHcAbgMAAAAKAGMAXwBzAHQAcAMAAAAMAGMAXwBhAHIAbAB3AwAAAAwAYwBfAGEAcgB1AHADAAAADABjAF8AbAB2AGwAdwMAAAAMAGMAXwBsAHYAdQBwAwAAAAoAbwBfAHUAcABiAwAAAAoAbwBfAGwAdwBiAwAAAAoAbwBfAGMAYgBiAwAAAAwAYQBfAGQAbwB3AG4DAAAACABhAF8AdQBwAwAAAA4AYQBfAHMAdABhAHIAdAMAAAAOAGEAXwB0AGkAbQBlAHI== </EventList>
+<GraphData>
+<States>
+<State>
+2             
+<Item>
+<Position>
+154.200006    1031.900024   
+</Position>
+<BasePoints>
+0             0             26.650000     26.650000     -116.700006   0             
+-26.656028    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+10            
+<Item>
+<Position>
+1340.299988   229.200006    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+1             
+<Item>
+<Position>
+451.399994    806.900024    
+</Position>
+<BasePoints>
+0             0             26.650000     26.650000     -50           0             
+-26.630378    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+3             
+<Item>
+<Position>
+1651.399994   237.500000    
+</Position>
+<BasePoints>
+0             0             26.650000     26.650000     -50           0             
+-26.630378    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+4             
+<Item>
+<Position>
+2254.199982   1456.900024   
+</Position>
+<BasePoints>
+0             0             26.650000     26.650000     -50           0             
+-26.630378    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+5             
+<Item>
+<Position>
+1954.199982   109.700000    
+</Position>
+<BasePoints>
+0             0             26.650000     26.650000     -50           0             
+-26.630225    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+6             
+<Item>
+<Position>
+737.500000    679.199982    
+</Position>
+<BasePoints>
+0             0             26.650000     26.650000     -50           0             
+-26.630072    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+7             
+<Item>
+<Position>
+3195.800018   870.800018    
+</Position>
+<BasePoints>
+0             0             26.650000     26.650000     -50           0             
+-26.630378    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+8             
+<Item>
+<Position>
+4415.299988   319.400001    
+</Position>
+<BasePoints>
+0             0             26.650000     26.650000     -50           0             
+-26.630378    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+9             
+<Item>
+<Position>
+2898.600006   998.600006    
+</Position>
+<BasePoints>
+0             0             26.650000     26.650000     -50           0             
+-26.630378    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+11            
+<Item>
+<Position>
+2254.199982   1144.400024   
+</Position>
+<BasePoints>
+0             0             31.349999     31.349999     -50           0             
+-31.347089    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+12            
+<Item>
+<Position>
+1034.700012   545.800018    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+13            
+<Item>
+<Position>
+2581.900024   1041.699982   
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.081439    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+14            
+<Item>
+<Position>
+2418.099976   1144.400024   
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.112707    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+15            
+<Item>
+<Position>
+4104.199982   434.700012    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+16            
+<Item>
+<Position>
+1179.199982   334.699988    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.112707    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+17            
+<Item>
+<Position>
+3790.299988   473.600006    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.081439    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+18            
+<Item>
+<Position>
+3498.600006   748.600006    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+19            
+<Item>
+<Position>
+2418.099976   1358.300018   
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+20            
+<Item>
+<Position>
+3645.800018   684.700012    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+21            
+<Item>
+<Position>
+2101.399994   1143.099976   
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+22            
+<Item>
+<Position>
+887.500000    609.700012    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.081439    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+23            
+<Item>
+<Position>
+4562.500000   319.400001    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.081439    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+24            
+<Item>
+<Position>
+3343.099976   812.500000    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.081439    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+25            
+<Item>
+<Position>
+1806.900024   168.099999    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144005    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+26            
+<Item>
+<Position>
+590.299988    737.500000    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144005    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+27            
+<Item>
+<Position>
+4259.700012   370.799994    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+28            
+<Item>
+<Position>
+3048.600006   940.299988    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+29            
+<Item>
+<Position>
+1501.399994   295.799994    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+30            
+<Item>
+<Position>
+301.399994    965.299988    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+31            
+<Item>
+<Position>
+3943.099976   473.600006    
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+32            
+<Item>
+<Position>
+2743.099976   1041.699982   
+</Position>
+<BasePoints>
+0             0             32.100001     32.100001     -50           0             
+-32.144190    0             
+</BasePoints>
+</Item>
+</State>
+</States>
+<TransRel>
+<Trans>
+10            "o_upb"       10            
+<Item>
+<Position>
+1340.299988   229.200006    
+</Position>
+<BasePoints>
+0             -65.300000    0             0             22.004580     -23.392249    
+27.799988     -40.300000    20.800018     -57.000005    0             -57.000005    
+-15.299988    -57.000005    -22.200012    -48.600006    -13.346010    -29.216929    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+10            "o_lwb"       29            
+<Item>
+<Position>
+1340.299988   229.200006    
+</Position>
+<BasePoints>
+80.500031     -26.399994    0             0             29.497468     -12.670718    
+51.399994     -19.500017    81.900024     -23.600006    104.100037    -12.500000    
+120.800018    -4.200006     131.900024    11.100006     146.158537    38.200956     
+161.100006    66.599989     
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+10            "o_cbb"       29            
+<Item>
+<Position>
+1340.299988   229.200006    
+</Position>
+<BasePoints>
+80.500031     16.599989     0             0             29.497468     12.670718     
+54.100037     23.600006     90.299988     37.500000     131.409761    54.396803     
+161.100006    66.599989     
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+3             "o_lwb"       3             
+<Item>
+<Position>
+1651.399994   237.500000    
+</Position>
+<BasePoints>
+0             -59.700000    0             0             8.413375      -25.341436    
+11.100006     -38.900006    6.900024      -51.400006    0             -51.400006    
+-4.199982     -51.400006    -8.300018     -45.799994    -4.748632     -26.203235    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+3             "o_cbb"       3             
+<Item>
+<Position>
+1651.399994   237.500000    
+</Position>
+<BasePoints>
+0             -84.700000    0             0             21.490338     -15.807794    
+47.200012     -41.700006    40.299988     -76.400006    0             -76.400006    
+-34.700012    -76.400006    -44.499969    -50           -17.704238    -19.892416    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+3             "c_down"      25            
+<Item>
+<Position>
+1651.399994   237.500000    
+</Position>
+<BasePoints>
+75            -50           0             0             24.106693     -11.338322    
+47.200012     -22.199988    84.700012     -37.500000    126.225034    -56.209716    
+155.500031    -69.400001    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+3             "o_upb"       27            
+<Item>
+<Position>
+1651.399994   237.500000    
+</Position>
+<BasePoints>
+1319.400024   -6.900001     0             0             26.657426     0             
+58.300018     1.399994      111.100006    1.399994      155.500031    1.399994      
+155.500031    1.399994      155.500031    1.399994      2452.799988   1.399994      
+2511.100006   1.399994      2558.300018   55.599999     2590.898257   106.257659    
+2608.300018   133.299994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+4             "o_upb"       4             
+<Item>
+<Position>
+2254.199982   1456.900024   
+</Position>
+<BasePoints>
+0             -59.700012    0             0             5.451611      -26.068522    
+6.900024      -38.800049    5.500031      -51.300049    0             -51.300049    
+-2.799988     -51.300049    -5.599976     -47.200012    -3.138379     -26.452173    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+4             "o_lwb"       4             
+<Item>
+<Position>
+2254.199982   1456.900024   
+</Position>
+<BasePoints>
+0             -84.700012    0             0             20.840344     -16.632219    
+44.400024     -43.000031    37.500000     -76.300049    0             -76.300049    
+-31.999969    -76.300049    -41.699982    -51.300049    -16.834842    -20.710518    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+4             "o_cbb"       4             
+<Item>
+<Position>
+2254.199982   1456.900024   
+</Position>
+<BasePoints>
+0             -109.700012   0             0             20.840344     -16.632219    
+52.700043     -51.300049    45.800018     -101.300049   0             -101.300049   
+-41.699982    -101.300049   -51.399994    -61.100006    -17.183527    -20.426337    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+4             "c_stp"       19            
+<Item>
+<Position>
+2254.199982   1456.900024   
+</Position>
+<BasePoints>
+81.900024     -70.800018    0             0             22.676641     -14.096334    
+48.600006     -29.100037    93.000031     -55.500031    136.439411    -81.906761    
+163.899994    -98.600006    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+5             "o_lwb"       5             
+<Item>
+<Position>
+1954.199982   109.700000    
+</Position>
+<BasePoints>
+0             -59.700000    0             0             8.413327      -25.341291    
+11.100006     -38.900000    6.900024      -51.400000    0             -51.400000    
+-4.199982     -51.400000    -8.399963     -45.800000    -4.805813     -26.203239    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+5             "o_cbb"       5             
+<Item>
+<Position>
+1954.199982   109.700000    
+</Position>
+<BasePoints>
+0             -84.700000    0             0             21.490215     -15.807692    
+47.200012     -41.600001    40.200043     -76.400000    0             -76.400000    
+-34.799957    -76.400000    -44.499969    -50           -17.704238    -19.892416    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+5             "c_arlw"      21            
+<Item>
+<Position>
+1954.199982   109.700000    
+</Position>
+<BasePoints>
+70.800018     597.199976    0             0             1.413637      26.657274     
+4.100037      112.499988    16.600037     391.699994    51.399994     618.099988    
+73.600006     755.599988    113.899994    912.500012    138.680755    1002.469726   
+147.200012    1033.399975   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+5             "o_upb"       23            
+<Item>
+<Position>
+1954.199982   109.700000    
+</Position>
+<BasePoints>
+1312.500000   -6.900001     0             0             26.657274     0             
+55.500031     1.399994      105.500031    1.399994      147.200012    1.399994      
+147.200012    1.399994      147.200012    1.399994      2461.100006   1.399994      
+2541.600037   1.399994      2581.900024   102.800000    2600.606474   178.546970    
+2608.300018   209.700000    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+6             "o_upb"       6             
+<Item>
+<Position>
+737.500000    679.199982    
+</Position>
+<BasePoints>
+0             -59.800005    0             0             8.413279      -25.341146    
+11.100006     -38.899994    6.899977      -51.399994    0             -51.399994    
+-4.199982     -51.399994    -8.300018     -45.899963    -4.746331     -26.247704    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+6             "o_cbb"       6             
+<Item>
+<Position>
+737.500000    679.199982    
+</Position>
+<BasePoints>
+0             -84.800005    0             0             21.960970     -15.135244    
+48.600006     -41.699982    41.699982     -76.399994    0             -76.399994    
+-36.100006    -76.399994    -45.800018    -50           -17.989624    -19.639320    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+6             "c_arup"      22            
+<Item>
+<Position>
+737.500000    679.199982    
+</Position>
+<BasePoints>
+72.200012     -48.599958    0             0             24.106417     -11.338145    
+45.800018     -22.300005    80.599976     -37.500000    120.846662    -56.057525    
+150           -69.499969    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+6             "o_lwb"       24            
+<Item>
+<Position>
+737.500000    679.199982    
+</Position>
+<BasePoints>
+1287.500000   -6.999969     0             0             26.657121     0             
+56.899977     1.400042      106.900024    1.400042      150           1.400042      
+150           1.400042      150           1.400042      2458.300018   1.400042      
+2515.299988   1.400042      2558.300018   52.699995     2589.323412   105.564446    
+2605.599976   133.300018    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+7             "o_upb"       7             
+<Item>
+<Position>
+3195.800018   870.800018    
+</Position>
+<BasePoints>
+0             -59.700012    0             0             5.528803      -26.064464    
+6.999969      -38.899994    5.599976      -51.399994    0             -51.399994    
+-2.700043     -51.399994    -5.500031     -47.200012    -3.082367     -26.452173    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+7             "o_lwb"       7             
+<Item>
+<Position>
+3195.800018   870.800018    
+</Position>
+<BasePoints>
+0             -84.700012    0             0             20.879253     -16.583591    
+44.499969     -43.000031    37.500000     -76.400042    0             -76.400042    
+-31.900024    -76.400042    -41.600037    -51.399994    -16.794493    -20.750867    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+7             "o_cbb"       7             
+<Item>
+<Position>
+3195.800018   870.800018    
+</Position>
+<BasePoints>
+0             -109.700012   0             0             20.879253     -16.583591    
+52.799988     -51.399994    45.899963     -101.400042   0             -101.400042   
+-41.600037    -101.400042   -51.399994    -61.100006    -17.183527    -20.426337    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+7             "c_lvlw"      24            
+<Item>
+<Position>
+3195.800018   870.800018    
+</Position>
+<BasePoints>
+70.899963     -40.200043    0             0             24.828747     -9.633564     
+45.899963     -18.000031    79.199982     -31.900024    117.365258    -46.695375    
+147.299957    -58.300018    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+8             "o_upb"       8             
+<Item>
+<Position>
+4415.299988   319.400001    
+</Position>
+<BasePoints>
+0             -59.700012    0             0             5.451611      -26.068475    
+6.900024      -38.800001    5.500031      -51.300001    0             -51.300001    
+-2.799988     -51.300001    -5.599976     -47.200012    -3.138379     -26.452173    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+8             "o_lwb"       8             
+<Item>
+<Position>
+4415.299988   319.400001    
+</Position>
+<BasePoints>
+0             -84.700012    0             0             20.840344     -16.632171    
+44.400024     -43.000007    37.500000     -76.300001    0             -76.300001    
+-31.999969    -76.300001    -41.699982    -51.300001    -16.834842    -20.710498    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+8             "o_cbb"       8             
+<Item>
+<Position>
+4415.299988   319.400001    
+</Position>
+<BasePoints>
+0             -109.700012   0             0             20.840344     -16.632171    
+52.799988     -51.300001    45.800018     -101.300001   0             -101.300001   
+-41.699982    -101.300001   -51.399994    -61.100006    -17.183527    -20.426337    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+8             "c_lvup"      23            
+<Item>
+<Position>
+4415.299988   319.400001    
+</Position>
+<BasePoints>
+70.800018     -8.299994     0             0             26.657426     0             
+47.200012     0             76.399994     0             115.112376    0             
+147.200012    0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+9             "o_upb"       9             
+<Item>
+<Position>
+2898.600006   998.600006    
+</Position>
+<BasePoints>
+0             -59.700012    0             0             5.528803      -26.064464    
+6.999969      -38.899994    5.599976      -51.399994    0             -51.399994    
+-2.799988     -51.399994    -5.500031     -47.200012    -3.082367     -26.452173    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+9             "o_lwb"       9             
+<Item>
+<Position>
+2898.600006   998.600006    
+</Position>
+<BasePoints>
+0             -84.700012    0             0             20.779409     -16.683433    
+44.499969     -43.000031    37.500000     -76.399994    0             -76.399994    
+-31.900024    -76.399994    -41.699982    -51.399994    -16.785617    -20.690192    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+9             "o_cbb"       9             
+<Item>
+<Position>
+2898.600006   998.600006    
+</Position>
+<BasePoints>
+0             -109.700012   0             0             20.779409     -16.683433    
+52.799988     -51.399994    45.800018     -101.399994   0             -101.399994   
+-41.699982    -101.399994   -51.399994    -61.100006    -17.183527    -20.426337    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+9             "a_start"     28            
+<Item>
+<Position>
+2898.600006   998.600006    
+</Position>
+<BasePoints>
+72.200012     -40.299988    0             0             24.828747     -9.633564     
+47.200012     -18.000031    80.599976     -31.900024    119.947094    -46.867795    
+150           -58.300018    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+11            "o_lwb"       11            
+<Item>
+<Position>
+2254.199982   1144.400024   
+</Position>
+<BasePoints>
+0             -63.800049    0             0             11.197627     -29.355962    
+12.500000     -43.000031    8.300018      -55.500031    0             -55.500031    
+-5.599976     -55.500031    -8.399963     -50           -5.197616     -30.938328    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+11            "o_cbb"       11            
+<Item>
+<Position>
+2254.199982   1144.400024   
+</Position>
+<BasePoints>
+0             -88.800049    0             0             24.779919     -19.229242    
+48.600006     -45.800018    40.200043     -80.500031    0             -80.500031    
+-34.799957    -80.500031    -45.899963    -55.500031    -19.966202    -24.142173    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+11            "a_down"      14            
+<Item>
+<Position>
+2254.199982   1144.400024   
+</Position>
+<BasePoints>
+81.900024     -8.300018     0             0             31.369984     0             
+56.900024     0             90.200043     0             131.759840    0             
+163.899994    0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+11            "o_upb"       19            
+<Item>
+<Position>
+2254.199982   1144.400024   
+</Position>
+<BasePoints>
+81.900024     61.199951     0             0             19.229242     24.779919     
+48.600006     62.500000     102.700043    133.399963    144.457250    188.325766    
+163.899994    213.899994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+12            "o_upb"       12            
+<Item>
+<Position>
+1034.700012   545.800018    
+</Position>
+<BasePoints>
+0             -65.199995    0             0             10.980613     -30.171963    
+12.500000     -44.400024    8.399963      -56.900024    0             -56.900024    
+-5.500031     -56.900024    -8.300018     -51.400042    -5.119547     -31.704139    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+12            "o_cbb"       12            
+<Item>
+<Position>
+1034.700012   545.800018    
+</Position>
+<BasePoints>
+0             -90.199995    0             0             25.858218     -19.001902    
+50            -47.200012    41.699982     -81.900024    0             -81.900024    
+-36.100006    -81.900024    -47.200012    -56.900024    -20.531716    -24.751162    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+12            "a_up"        16            
+<Item>
+<Position>
+1034.700012   545.800018    
+</Position>
+<BasePoints>
+72.200012     -131.900024   0             0             18.188250     -26.528794    
+43.099976     -62.500000    88.899994     -130.500031   126.239402    -184.628765   
+144.499969    -211.100030   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+12            "o_lwb"       20            
+<Item>
+<Position>
+1034.700012   545.800018    
+</Position>
+<BasePoints>
+1301.399994   -1.400042     0             0             31.968263     2.797214      
+61.100006     4.199982      105.599976    6.999969      144.499969    6.999969      
+144.499969    6.999969      144.499969    6.999969      2463.899994   6.999969      
+2520.899963   6.999969      2563.899994   58.399963     2594.844891   111.176754    
+2611.100006   138.899994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+13            "o_upb"       13            
+<Item>
+<Position>
+2581.900024   1041.699982   
+</Position>
+<BasePoints>
+0             -65.299988    0             0             22.081593     -23.368911    
+27.799988     -40.299988    20.899963     -56.999969    0             -56.999969    
+-15.200043    -56.999969    -22.200012    -48.600006    -13.346010    -29.216929    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+13            "o_cbb"       30            
+<Item>
+<Position>
+2581.900024   1041.699982   
+</Position>
+<BasePoints>
+-1161.100006  -115.299988   0             0             -15.422653    -28.207127    
+-26.300049    -43.099976    -40.200043    -61.100006    -56.900024    -72.299957    
+-97.200012    -100          -113.800049   -105.599976   -163.800049   -105.599976   
+-930.500031   -105.599976   -930.500031   -105.599976   -930.500031   -105.599976   
+-1068.000031  -105.599976   -1102.700043  -109.799957   -1241.600037  -109.799957   
+-2130.500031  -109.799957   -2130.500031  -109.799957   -2130.500031  -109.799957   
+-2166.600037  -109.799957   -2206.900024  -100          -2249.923380  -86.204465    
+-2280.500031  -76.399994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+13            "a_timer"     30            
+<Item>
+<Position>
+2581.900024   1041.699982   
+</Position>
+<BasePoints>
+-1161.100006  -51.399994    0             0             -28.105721    -15.524063    
+-59.700012    -30.599976    -113.800049   -52.799988    -163.800049   -52.799988    
+-404.100037   -52.799988    -404.100037   -52.799988    -404.100037   -52.799988    
+-704.100037   -52.799988    -779.100037   -43.099976    -1080.500031  -43.099976    
+-2130.500031  -43.099976    -2130.500031  -43.099976    -2130.500031  -43.099976    
+-2166.600037  -43.099976    -2206.900024  -52.799988    -2249.923380  -66.595523    
+-2280.500031  -76.399994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+13            "o_lwb"       32            
+<Item>
+<Position>
+2581.900024   1041.699982   
+</Position>
+<BasePoints>
+80.599976     -8.399963     0             0             32.093259     0             
+55.599976     0             88.899994     0             129.043171    0             
+161.199951    0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+14            "o_upb"       13            
+<Item>
+<Position>
+2418.099976   1144.400024   
+</Position>
+<BasePoints>
+81.900024     -70.800018    0             0             27.537397     -16.502568    
+54.100037     -33.300018    95.800018     -59.700012    136.613409    -85.508486    
+163.800049    -102.700043   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+14            "o_lwb"       14            
+<Item>
+<Position>
+2418.099976   1144.400024   
+</Position>
+<BasePoints>
+0             -65.200043    0             0             21.983028     -23.369338    
+27.700043     -40.200043    20.800018     -56.900024    0             -56.900024    
+-15.299988    -56.900024    -22.299957    -48.600006    -13.406094    -29.216929    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+14            "o_cbb"       30            
+<Item>
+<Position>
+2418.099976   1144.400024   
+</Position>
+<BasePoints>
+-1077.799988  113.899994    0             0             -19.098883    25.856985     
+-23.699951    31.999969     -27.799988    38.899994     -31.999969    44.499969     
+-43.099976    62.500000     -38.899994    73.699951     -56.999969    88.899994     
+-94.499969    119.499969    -113.899994   122.299957    -163.899994   122.299957    
+-1966.699982  122.299957    -1966.699982  122.299957    -1966.699982  122.299957    
+-2077.799964  122.299957    -2106.999969  -48.600006    -2114.320025  -147.081059   
+-2116.699982  -179.100037   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+15            "o_upb"       15            
+<Item>
+<Position>
+4104.199982   434.700012    
+</Position>
+<BasePoints>
+0             -65.300012    0             0             7.095868      -31.365709    
+8.300018      -44.400001    5.500031      -56.900001    0             -56.900001    
+-4.199982     -56.900001    -5.599976     -51.400018    -3.476026     -31.905101    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+15            "o_lwb"       15            
+<Item>
+<Position>
+4104.199982   434.700012    
+</Position>
+<BasePoints>
+0             -90.300012    0             0             24.682262     -20.535661    
+44.400024     -48.600006    36.100006     -81.900001    0             -81.900001    
+-30.599976    -81.900001    -41.699982    -58.300018    -18.709909    -26.157998    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+15            "o_cbb"       15            
+<Item>
+<Position>
+4104.199982   434.700012    
+</Position>
+<BasePoints>
+0             -115.300012   0             0             24.682262     -20.535661    
+55.500031     -58.300018    47.200012     -106.900001   0             -106.900001   
+-43.099976    -106.900001   -52.799988    -68.000007    -19.722122    -25.399712    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+15            "a_start"     27            
+<Item>
+<Position>
+4104.199982   434.700012    
+</Position>
+<BasePoints>
+77.700043     -45.800018    0             0             29.497468     -12.670718    
+52.700043     -22.200012    86.100006     -34.700012    125.854162    -51.426542    
+155.500031    -63.900018    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+16            "a_timer"     10            
+<Item>
+<Position>
+1179.199982   334.699988    
+</Position>
+<BasePoints>
+80.500031     -83.299994    0             0             21.983028     -23.369314    
+33.300018     -31.899977    44.400024     -42.999983    56.900024     -51.399994    
+76.399994     -65.299988    100           -76.399994    132.132833    -91.703840    
+161.100006    -105.499983   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+16            "o_upb"       16            
+<Item>
+<Position>
+1179.199982   334.699988    
+</Position>
+<BasePoints>
+0             -65.299988    0             0             21.983028     -23.369314    
+27.700043     -40.299988    20.800018     -56.899977    0             -56.899977    
+-15.299988    -56.899977    -22.299957    -48.599982    -13.406094    -29.216914    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+16            "o_lwb"       17            
+<Item>
+<Position>
+1179.199982   334.699988    
+</Position>
+<BasePoints>
+1320.800018   23.600006     0             0             30.618762     9.737772      
+62.500000     19.500017     115.200043    32.000017     161.100006    32.000017     
+161.100006    32.000017     161.100006    32.000017     2466.600037   32.000017     
+2530.500031   32.000017     2558.300018   52.800012     2594.325864   111.546722    
+2611.100006   138.900018    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+16            "o_cbb"       29            
+<Item>
+<Position>
+1179.199982   334.699988    
+</Position>
+<BasePoints>
+161.100006    -29.099989    0             0             31.837204     -4.091913     
+90.200043     -11.099982    211.100006    -25           290.286356    -34.907198    
+322.200012    -38.899994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+17            "o_lwb"       17            
+<Item>
+<Position>
+3790.299988   473.600006    
+</Position>
+<BasePoints>
+0             -65.299988    0             0             22.026027     -23.415049    
+27.799988     -40.299988    20.800018     -56.900024    0             -56.900024    
+-15.299988    -56.900024    -22.200012    -48.600006    -13.346010    -29.216929    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+17            "o_cbb"       29            
+<Item>
+<Position>
+3790.299988   473.600006    
+</Position>
+<BasePoints>
+-1127.799988  -56.900024    0             0             -27.527764    -16.536501    
+-55.599976    -31.900024    -101.399994   -51.399994    -144.499969   -51.399994    
+-1047.200012  -51.399994    -1047.200012  -51.399994    -1047.200012  -51.399994    
+-1191.699982  -51.399994    -1226.399994  -42.999983    -1372.200012  -42.999983    
+-2138.899994  -42.999983    -2138.899994  -42.999983    -2138.899994  -42.999983    
+-2195.899963  -42.999983    -2240.299988  -97.200012    -2272.319981  -150.303121   
+-2288.899994  -177.800012   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+17            "a_timer"     29            
+<Item>
+<Position>
+3790.299988   473.600006    
+</Position>
+<BasePoints>
+-1127.799988  7.000017      0             0             -31.624061    5.534191      
+-61.100006    9.700012      -105.599976   15.299988     -144.499969   15.299988     
+-2138.899994  15.299988     -2138.899994  15.299988     -2138.899994  15.299988     
+-2227.799988  15.299988     -2252.799988  -40.299988    -2280.748403  -146.751708   
+-2288.899994  -177.800012   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+17            "o_upb"       31            
+<Item>
+<Position>
+3790.299988   473.600006    
+</Position>
+<BasePoints>
+76.399994     -8.300018     0             0             32.117753     0             
+54.100037     0             81.900024     0             120.711435    0             
+152.799988    0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+18            "o_upb"       18            
+<Item>
+<Position>
+3498.600006   748.600006    
+</Position>
+<BasePoints>
+0             -65.299988    0             0             7.177599      -31.273950    
+8.300018      -44.400024    5.599976      -56.900024    0             -56.900024    
+-4.199982     -56.900024    -5.500031     -51.399994    -3.413988     -31.905086    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+18            "o_lwb"       18            
+<Item>
+<Position>
+3498.600006   748.600006    
+</Position>
+<BasePoints>
+0             -90.299988    0             0             24.682262     -20.535661    
+44.499969     -48.600006    36.100006     -81.900024    0             -81.900024    
+-30.500031    -81.900024    -41.699982    -58.300018    -18.709909    -26.157998    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+18            "o_cbb"       18            
+<Item>
+<Position>
+3498.600006   748.600006    
+</Position>
+<BasePoints>
+0             -115.299988   0             0             24.682262     -20.535661    
+55.599976     -58.300018    47.200012     -106.900024   0             -106.900024   
+-43.000031    -106.900024   -52.799988    -67.999983    -19.722122    -25.399703    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+18            "c_stp"       20            
+<Item>
+<Position>
+3498.600006   748.600006    
+</Position>
+<BasePoints>
+73.600006     -44.400024    0             0             29.571181     -12.658905    
+51.399994     -22.200012    80.599976     -34.700012    117.794817    -51.007641    
+147.200012    -63.899994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+19            "a_down"      13            
+<Item>
+<Position>
+2418.099976   1358.300018   
+</Position>
+<BasePoints>
+81.900024     -180.500031   0             0             18.105239     -26.554301    
+48.600006     -72.200012    113.800049    -173.600006   153.194019    -286.266784   
+163.800049    -316.600037   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+19            "o_upb"       19            
+<Item>
+<Position>
+2418.099976   1358.300018   
+</Position>
+<BasePoints>
+0             -65.200043    0             0             7.095868      -31.365709    
+8.300018      -44.400024    5.500031      -56.900024    0             -56.900024    
+-4.199982     -56.900024    -5.599976     -51.399994    -3.476026     -31.905086    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+19            "o_lwb"       19            
+<Item>
+<Position>
+2418.099976   1358.300018   
+</Position>
+<BasePoints>
+0             -90.200043    0             0             24.682262     -20.535661    
+44.400024     -48.600006    36.100006     -81.900024    0             -81.900024    
+-30.599976    -81.900024    -41.699982    -58.300018    -18.709909    -26.157998    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+19            "o_cbb"       19            
+<Item>
+<Position>
+2418.099976   1358.300018   
+</Position>
+<BasePoints>
+0             -115.200043   0             0             24.682262     -20.535661    
+55.500031     -58.300018    47.200012     -106.900024   0             -106.900024   
+-43.099976    -106.900024   -52.799988    -68.000031    -19.722122    -25.399721    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+20            "a_up"        17            
+<Item>
+<Position>
+3645.800018   684.700012    
+</Position>
+<BasePoints>
+72.299957     -131.900024   0             0             18.188250     -26.528747    
+43.099976     -62.500000    88.899994     -130.500031   126.239402    -184.628749   
+144.499969    -211.100006   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+20            "o_upb"       20            
+<Item>
+<Position>
+3645.800018   684.700012    
+</Position>
+<BasePoints>
+0             -65.300035    0             0             7.177599      -31.273999    
+8.399963      -44.400024    5.599976      -56.900024    0             -56.900024    
+-4.100037     -56.900024    -5.500031     -51.399994    -3.413988     -31.905086    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+20            "o_lwb"       20            
+<Item>
+<Position>
+3645.800018   684.700012    
+</Position>
+<BasePoints>
+0             -90.300035    0             0             24.682262     -20.535661    
+44.499969     -48.600006    36.100006     -81.900024    0             -81.900024    
+-30.500031    -81.900024    -41.600037    -58.300018    -18.665066    -26.157998    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+20            "o_cbb"       20            
+<Item>
+<Position>
+3645.800018   684.700012    
+</Position>
+<BasePoints>
+0             -115.300035   0             0             24.682262     -20.535661    
+55.599976     -58.300018    47.299957     -106.900024   0             -106.900024   
+-43.000031    -106.900024   -52.700043    -68.000031    -19.691689    -25.408622    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+21            "o_upb"       4             
+<Item>
+<Position>
+2101.399994   1143.099976   
+</Position>
+<BasePoints>
+76.399994     102.700043    0             0             13.831924     28.957532     
+41.699982     86.100006     102.799988    215.200043    140.727686    289.993469    
+152.799988    313.800049    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+21            "c_stp"       11            
+<Item>
+<Position>
+2101.399994   1143.099976   
+</Position>
+<BasePoints>
+76.399994     -8.399963     0             0             32.086479     0             
+54.199982     1.300049      81.900024     1.300049      121.404493    1.300049      
+152.799988    1.300049      
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+21            "o_lwb"       21            
+<Item>
+<Position>
+2101.399994   1143.099976   
+</Position>
+<BasePoints>
+0             -65.299988    0             0             10.958933     -30.211069    
+12.500000     -44.499969    8.300018      -56.999969    0             -56.999969    
+-5.599976     -56.999969    -8.300018     -51.399994    -5.119547     -31.704109    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+21            "o_cbb"       21            
+<Item>
+<Position>
+2101.399994   1143.099976   
+</Position>
+<BasePoints>
+0             -90.299988    0             0             25.341436     -19.766287    
+48.600006     -47.299957    40.299988     -81.999969    0             -81.999969    
+-34.700012    -81.999969    -45.800018    -56.999969    -20.101808    -25.017510    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+22            "c_stp"       12            
+<Item>
+<Position>
+887.500000    609.700012    
+</Position>
+<BasePoints>
+73.600006     -44.400024    0             0             29.513454     -12.634192    
+51.399994     -22.200012    80.599976     -34.700012    117.794817    -51.007641    
+147.200012    -63.899994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+22            "o_lwb"       18            
+<Item>
+<Position>
+887.500000    609.700012    
+</Position>
+<BasePoints>
+1290.299988   -1.399994     0             0             31.993026     2.808150      
+62.500000     4.199982      108.300018    6.999969      147.200012    6.999969      
+147.200012    6.999969      147.200012    6.999969      2455.599976   6.999969      
+2513.899994   6.999969      2561.100006   61.100006     2593.749127   111.902030    
+2611.100006   138.899994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+22            "o_upb"       22            
+<Item>
+<Position>
+887.500000    609.700012    
+</Position>
+<BasePoints>
+0             -65.300035    0             0             10.991314     -30.201371    
+12.500000     -44.400024    8.300018      -56.900024    0             -56.900024    
+-5.599976     -56.900024    -8.300018     -51.399994    -5.119547     -31.704109    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+22            "o_cbb"       22            
+<Item>
+<Position>
+887.500000    609.700012    
+</Position>
+<BasePoints>
+0             -90.300035    0             0             25.883421     -19.020422    
+50            -47.200012    41.699982     -81.900024    0             -81.900024    
+-36.100006    -81.900024    -47.200012    -56.900024    -20.531716    -24.751162    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+23            "c_arlw"      4             
+<Item>
+<Position>
+4562.500000   319.400001    
+</Position>
+<BasePoints>
+-1141.699982  1127.800012   0             0             0             32.093283     
+-5.599976     216.700006    -31.900024    1136.199975   -147.200012   1136.199975   
+-2144.400024  1136.199975   -2144.400024  1136.199975   -2144.400024  1136.199975   
+-2186.100006  1136.199975   -2234.700012  1136.199975   -2281.608401  1137.028551   
+-2308.300018  1137.500024   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+23            "o_upb"       23            
+<Item>
+<Position>
+4562.500000   319.400001    
+</Position>
+<BasePoints>
+0             -65.199995    0             0             7.082017      -31.304453    
+8.300018      -44.400001    5.599976      -56.900001    0             -56.900001    
+-4.199982     -56.900001    -5.599976     -51.300001    -3.486974     -31.943311    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+23            "o_lwb"       23            
+<Item>
+<Position>
+4562.500000   319.400001    
+</Position>
+<BasePoints>
+0             -90.199995    0             0             24.706320     -20.555652    
+44.400024     -48.600006    36.100006     -81.900001    0             -81.900001    
+-30.599976    -81.900001    -41.699982    -58.299994    -18.709909    -26.157987    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+23            "o_cbb"       23            
+<Item>
+<Position>
+4562.500000   319.400001    
+</Position>
+<BasePoints>
+0             -115.199995   0             0             24.706320     -20.555652    
+55.599976     -58.299994    47.200012     -106.900001   0             -106.900001   
+-43.099976    -106.900001   -52.799988    -68.000007    -19.722122    -25.399712    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+24            "c_arup"      18            
+<Item>
+<Position>
+3343.099976   812.500000    
+</Position>
+<BasePoints>
+77.700043     -45.800018    0             0             29.526218     -12.683068    
+52.700043     -22.200012    86.100006     -34.700012    125.854162    -51.426528    
+155.500031    -63.899994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+24            "o_upb"       24            
+<Item>
+<Position>
+3343.099976   812.500000    
+</Position>
+<BasePoints>
+0             -65.299988    0             0             7.061308      -31.315274    
+8.300018      -44.399977    5.500031      -56.899977    0             -56.899977    
+-4.199982     -56.899977    -5.599976     -51.399994    -3.476026     -31.905086    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+24            "o_lwb"       24            
+<Item>
+<Position>
+3343.099976   812.500000    
+</Position>
+<BasePoints>
+0             -90.299988    0             0             24.706320     -20.555676    
+44.400024     -48.600006    36.100006     -81.899977    0             -81.899977    
+-30.599976    -81.899977    -41.699982    -58.300018    -18.709909    -26.157998    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+24            "o_cbb"       24            
+<Item>
+<Position>
+3343.099976   812.500000    
+</Position>
+<BasePoints>
+0             -115.299988   0             0             24.706320     -20.555676    
+55.500031     -58.300018    47.200012     -106.899977   0             -106.899977   
+-43.099976    -106.899977   -52.799988    -68.100023    -19.664455    -25.362693    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+25            "c_lvup"      5             
+<Item>
+<Position>
+1806.900024   168.099999    
+</Position>
+<BasePoints>
+76.399994     -43.099999    0             0             30.028590     -11.517821    
+52.799988     -20.899999    83.399963     -33.399999    122.429362    -48.669718    
+147.299957    -58.399999    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+25            "o_upb"       8             
+<Item>
+<Position>
+1806.900024   168.099999    
+</Position>
+<BasePoints>
+1318.099976   -1.399994     0             0             31.968080     2.697303      
+62.500000     4.100001      108.399963    6.900001      147.299957    6.900001      
+147.299957    6.900001      147.299957    6.900001      2452.799988   6.900001      
+2515.299988   6.900001      2565.299988   72.200012     2595.634318   127.871625    
+2608.399963   151.300001    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+25            "o_lwb"       25            
+<Item>
+<Position>
+1806.900024   168.099999    
+</Position>
+<BasePoints>
+0             -65.300000    0             0             11.035667     -30.151155    
+12.500000     -44.500005    8.399963      -57.000005    0             -57.000005    
+-5.500031     -57.000005    -8.300018     -51.399994    -5.119547     -31.704109    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+25            "o_cbb"       25            
+<Item>
+<Position>
+1806.900024   168.099999    
+</Position>
+<BasePoints>
+0             -90.300000    0             0             25.341291     -19.766211    
+48.699951     -47.300005    40.299988     -81.999999    0             -81.999999    
+-34.700012    -81.999999    -45.800018    -57.000005    -20.101808    -25.017526    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+26            "c_lvlw"      6             
+<Item>
+<Position>
+590.299988    737.500000    
+</Position>
+<BasePoints>
+76.399994     -43.100023    0             0             30.039763     -11.458476    
+52.800035     -20.800018    83.300018     -33.300018    122.329417    -48.569737    
+147.200012    -58.300018    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+26            "o_lwb"       7             
+<Item>
+<Position>
+590.299988    737.500000    
+</Position>
+<BasePoints>
+1293.000031   -1.399994     0             0             31.961690     2.805401      
+62.500000     4.199982      108.300018    6.899977      147.200012    6.899977      
+147.200012    6.899977      147.200012    6.899977      2458.300018   6.899977      
+2515.299988   6.899977      2561.100006   61.100006     2591.549612   110.614887    
+2605.500031   133.300018    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+26            "o_upb"       26            
+<Item>
+<Position>
+590.299988    737.500000    
+</Position>
+<BasePoints>
+0             -65.299988    0             0             10.958870     -30.210943    
+12.500000     -44.399977    8.300018      -56.899977    0             -56.899977    
+-5.599976     -56.899977    -8.400011     -51.399994    -5.181224     -31.704109    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+26            "o_cbb"       26            
+<Item>
+<Position>
+590.299988    737.500000    
+</Position>
+<BasePoints>
+0             -90.299988    0             0             25.858070     -19.001746    
+50            -47.200012    41.599989     -81.899977    0             -81.899977    
+-36.100006    -81.899977    -47.199965    -56.899977    -20.531695    -24.751141    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+27            "c_down"      8             
+<Item>
+<Position>
+4259.700012   370.799994    
+</Position>
+<BasePoints>
+80.599976     -40.199995    0             0             30.659301     -9.718794     
+55.599976     -17.999983    90.299988     -30.499983    130.180931    -43.264337    
+155.599976    -51.399994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+27            "o_upb"       27            
+<Item>
+<Position>
+4259.700012   370.799994    
+</Position>
+<BasePoints>
+0             -65.199995    0             0             7.177599      -31.273950    
+8.399963      -44.400001    5.599976      -56.900001    0             -56.900001    
+-4.100037     -56.900001    -5.500031     -51.399994    -3.413988     -31.905086    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+27            "o_lwb"       27            
+<Item>
+<Position>
+4259.700012   370.799994    
+</Position>
+<BasePoints>
+0             -90.199995    0             0             24.682262     -20.535637    
+44.499969     -48.600006    36.100006     -81.900001    0             -81.900001    
+-30.500031    -81.900001    -41.600037    -58.299994    -18.665066    -26.157987    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+27            "o_cbb"       27            
+<Item>
+<Position>
+4259.700012   370.799994    
+</Position>
+<BasePoints>
+0             -115.199995   0             0             24.682262     -20.535637    
+55.599976     -58.299994    47.200012     -106.900001   0             -106.900001   
+-43.000031    -106.900001   -52.799988    -67.999983    -19.722122    -25.399703    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+28            "c_up"        7             
+<Item>
+<Position>
+3048.600006   940.299988    
+</Position>
+<BasePoints>
+76.399994     -50           0             0             28.999958     -13.804779    
+52.799988     -25           86.100006     -40.299988    123.130381    -57.996979    
+147.200012    -69.499969    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+28            "o_upb"       28            
+<Item>
+<Position>
+3048.600006   940.299988    
+</Position>
+<BasePoints>
+0             -65.299988    0             0             7.171225      -31.348612    
+8.300018      -44.499969    5.599976      -56.999969    0             -56.999969    
+-4.199982     -56.999969    -5.500031     -51.399994    -3.413988     -31.905086    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+28            "o_lwb"       28            
+<Item>
+<Position>
+3048.600006   940.299988    
+</Position>
+<BasePoints>
+0             -90.299988    0             0             24.633439     -20.593516    
+44.499969     -48.600006    36.100006     -81.999969    0             -81.999969    
+-30.500031    -81.999969    -41.699982    -58.399963    -18.673331    -26.151614    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+28            "o_cbb"       28            
+<Item>
+<Position>
+3048.600006   940.299988    
+</Position>
+<BasePoints>
+0             -115.299988   0             0             24.633439     -20.593516    
+55.599976     -58.399963    47.200012     -106.999969   0             -106.999969   
+-43.000031    -106.999969   -52.799988    -68.099976    -19.664455    -25.362675    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+29            "a_start"     3             
+<Item>
+<Position>
+1501.399994   295.799994    
+</Position>
+<BasePoints>
+77.799988     -45.799994    0             0             30.171963     -10.980613    
+54.199982     -20.799994    86.100006     -33.299994    125.129405    -48.569713    
+150           -58.299994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+29            "o_upb"       15            
+<Item>
+<Position>
+1501.399994   295.799994    
+</Position>
+<BasePoints>
+1322.200012   -1.399994     0             0             31.961873     2.805441      
+62.500000     4.200006      109.700012    7.000017      150           7.000017      
+150           7.000017      150           7.000017      2441.699982   7.000017      
+2501.399994   7.000017      2550          61.100006     2584.787140   112.358350    
+2602.799988   138.900018    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+29            "o_lwb"       29            
+<Item>
+<Position>
+1501.399994   295.799994    
+</Position>
+<BasePoints>
+0             -65.199995    0             0             10.980613     -30.171917    
+12.500000     -44.400001    8.300018      -56.900001    0             -56.900001    
+-5.599976     -56.900001    -8.300018     -51.399994    -5.119547     -31.704109    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+29            "o_cbb"       29            
+<Item>
+<Position>
+1501.399994   295.799994    
+</Position>
+<BasePoints>
+0             -90.199995    0             0             25.341436     -19.664955    
+48.600006     -47.199988    40.299988     -81.900001    0             -81.900001    
+-34.700012    -81.900001    -45.800018    -56.900001    -20.151873    -25.035833    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+30            "o_lwb"       9             
+<Item>
+<Position>
+301.399994    965.299988    
+</Position>
+<BasePoints>
+1277.799988   -101.399994   0             0             22.676641     -22.676641    
+70.799994     -56.999969    84.700012     -93.099976    150           -93.099976    
+150           -93.099976    150           -93.099976    2441.699982   -93.099976    
+2500          -93.099976    2548.600006   -38.899994    2582.330258   11.209559     
+2597.200012   33.300018     
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+30            "o_upb"       30            
+<Item>
+<Position>
+301.399994    965.299988    
+</Position>
+<BasePoints>
+0             -65.299988    0             0             10.958933     -30.211069    
+12.500000     -44.499969    8.299994      -56.999969    0             -56.999969    
+-5.599999     -56.999969    -8.299994     -51.399994    -5.119532     -31.704109    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+30            "o_cbb"       30            
+<Item>
+<Position>
+301.399994    965.299988    
+</Position>
+<BasePoints>
+0             -90.299988    0             0             25.806679     -19.061707    
+50            -47.200012    41.700006     -81.999969    0             -81.999969    
+-36.099982    -81.999969    -47.199988    -56.999969    -20.471671    -24.722138    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+31            "o_cbb"       15            
+<Item>
+<Position>
+3943.099976   473.600006    
+</Position>
+<BasePoints>
+80.500031     -30.499983    0             0             31.365709     -7.095868     
+55.500031     -12.500000    88.800049     -22.200012    129.791316    -31.668253    
+161.100006    -38.899994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+31            "a_timer"     15            
+<Item>
+<Position>
+3943.099976   473.600006    
+</Position>
+<BasePoints>
+80.500031     1.399994      0             0             30.648779     9.747319      
+52.700043     13.899994     80.500031     18.099976     104.100037    9.700012      
+116.600037    5.599976      125           2.799988      140.103484    -14.646408    
+161.100006    -38.899994    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+31            "o_upb"       31            
+<Item>
+<Position>
+3943.099976   473.600006    
+</Position>
+<BasePoints>
+0             -65.299988    0             0             10.980613     -30.171917    
+12.500000     -44.400024    8.300018      -56.900024    0             -56.900024    
+-5.599976     -56.900024    -8.399963     -51.399994    -5.181194     -31.704109    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+31            "o_lwb"       31            
+<Item>
+<Position>
+3943.099976   473.600006    
+</Position>
+<BasePoints>
+0             -90.300012    0             0             25.811690     -19.039792    
+50            -47.200012    41.600037     -81.900001    0             -81.900001    
+-36.199951    -81.900001    -47.299957    -56.900024    -20.515030    -24.678790    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+32            "o_cbb"       9             
+<Item>
+<Position>
+2743.099976   1041.699982   
+</Position>
+<BasePoints>
+80.500031     -34.799957    0             0             31.007244     -8.539656     
+55.500031     -15.299988    90.200043     -25           129.775867    -35.969703    
+155.500031    -43.099976    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+32            "a_timer"     9             
+<Item>
+<Position>
+2743.099976   1041.699982   
+</Position>
+<BasePoints>
+80.500031     -1.399994     0             0             31.035719     8.445797      
+52.700043     13.899994     80.500031     15.200043     104.100037    6.900024      
+118.000031    2.700043      126.300049    -1.399994     140.217043    -21.274609    
+155.500031    -43.099976    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+32            "o_upb"       32            
+<Item>
+<Position>
+2743.099976   1041.699982   
+</Position>
+<BasePoints>
+0             -65.299988    0             0             10.958933     -30.211069    
+12.500000     -44.499969    8.300018      -56.999969    0             -56.999969    
+-5.599976     -56.999969    -8.399963     -51.399994    -5.181194     -31.704109    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+32            "o_lwb"       32            
+<Item>
+<Position>
+2743.099976   1041.699982   
+</Position>
+<BasePoints>
+0             -90.299988    0             0             25.811690     -19.137879    
+50            -47.299957    41.600037     -81.999969    0             -81.999969    
+-36.199951    -81.999969    -47.299957    -56.999969    -20.482719    -24.683200    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+1             "c_up"        26            +Line+        
+<Item>
+<Position>
+451.399994    806.900024    
+</Position>
+<BasePoints>
+73.919558     -25.754453    0             0             23.875357     -11.929089    
+52.319450     -26.140902    80.833286     -40.387561    110.127128    -55.023943    
+138.899994    -69.400024    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+1             "o_upb"       1             +Spline+      
+<Item>
+<Position>
+451.399994    806.900024    
+</Position>
+<BasePoints>
+0             -71.572266    0             0             11.928677     -23.857354    
+35.786133     -71.572266    -35.786133    -71.572266    -11.928677    -23.857354    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+1             "o_lwb"       28            +Line+        
+<Item>
+<Position>
+451.399994    806.900024    
+</Position>
+<BasePoints>
+1298.087052   76.686817     0             0             26.631369     1.367867      
+864.456719    44.401084     1702.281992   87.434297     2565.155098   131.754041    
+2597.200012   133.399964    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+1             "o_cbb"       1             +Spline+      
+<Item>
+<Position>
+451.399994    806.900024    
+</Position>
+<BasePoints>
+0             -71.572266    0             0             11.928677     -23.857354    
+35.786133     -71.572266    -35.786133    -71.572266    -11.928677    -23.857354    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+2             "o_upb"       30            +Line+        
+<Item>
+<Position>
+154.200006    1031.900024   
+</Position>
+<BasePoints>
+77.722164     -24.189161    0             0             24.292835     -10.991195    
+55.151121     -24.952900    86.080368     -38.946712    117.946949    -53.364617    
+147.199988    -66.600036    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+2             "o_lwb"       2             +Spline+      
+<Item>
+<Position>
+154.200006    1031.900024   
+</Position>
+<BasePoints>
+0             -71.572266    0             0             11.928677     -23.857354    
+35.786133     -71.572266    -35.786133    -71.572266    -11.928677    -23.857354    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+2             "o_cbb"       30            +Line+        
+<Item>
+<Position>
+154.200006    1031.900024   
+</Position>
+<BasePoints>
+77.722164     -24.189161    0             0             24.292835     -10.991195    
+55.151121     -24.952900    86.080368     -38.946712    117.946949    -53.364617    
+147.199988    -66.600036    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+14            "a_timer"     2             +Line+        
+<Item>
+<Position>
+2418.099976   1144.400024   
+</Position>
+<BasePoints>
+-1131.453667  -66.237676    0             0             -32.057086    -1.593013     
+-759.445585   -37.739136    -1486.833992  -73.885254    -2237.237059  -111.175040   
+-2263.899970  -112.500000   
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+30            "a_start"     1             +Line+        
+<Item>
+<Position>
+301.399994    965.299988    
+</Position>
+<BasePoints>
+82.260971     -72.324061    0             0             22.110486     -23.348668    
+58.204102     -61.463517    94.362305     -99.646571    131.652204    -139.024696   
+150           -158.399964   
+</BasePoints>
+</Item>
+</Trans>
+</TransRel>
+</GraphData>
+</VioModels>
+<VioLayout>
+0             =kKELCgEAAAAQAAAAQAAAABAqFwgAAAAAAAAAAAAAAAAAAA=== 1             150           1073          0.195864      
+</VioLayout>
+</VioSystem>

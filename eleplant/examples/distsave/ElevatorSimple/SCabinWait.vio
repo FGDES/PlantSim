@@ -1,0 +1,191 @@
+<VioGenerator>
+<Generator>
+"SCabinWait"  
+
+% 
+%  Statistics for SCabinWait
+% 
+%  States:        3
+%  Init/Marked:   1/1
+%  Events:        5
+%  Transitions:   7
+%  StateSymbols:  3
+%  Attrib. E/S/T: 0/0/0
+% 
+
+<Alphabet>
+"a_start"     "o_cbb"       "a_down"      "a_up"        "a_timer"     
+</Alphabet>
+
+<States>
+"Idle"        "Busy"        "Wait"        
+</States>
+
+<TransRel>
+"Idle"        "a_start"     "Busy"        
+"Idle"        "o_cbb"       "Idle"        
+"Busy"        "o_cbb"       "Busy"        
+"Busy"        "a_down"      "Wait"        
+"Busy"        "a_up"        "Wait"        
+"Wait"        "o_cbb"       "Idle"        
+"Wait"        "a_timer"     "Idle"        
+</TransRel>
+
+<InitStates>
+"Idle"        
+</InitStates>
+
+<MarkedStates>
+"Idle"        
+</MarkedStates>
+
+
+</Generator>
+<VioModels>
+<TransitionList>
+=AAAABwEAAAABAAAADgBhAF8AcwB0AGEAcgB0AAAAAgEAAAACAAAACABhAF8AdQBwAAAAAwEAAAACAAAADABhAF8AZABvAHcAbgAAAAMBAAAAAwAAAA4AYQBfAHQAaQBtAGUAcgAAAAEBAAAAAwAAAAoAbwBfAGMAYgBiAAAAAQEAAAABAAAACgBvAF8AYwBiAGIAAAABAQAAAAIAAAAKAG8AXwBjAGIAYgAAAAI== </TransitionList>
+<StateList>
+=AAAAAwIAAAABAgAAAAICAAAAAw=== </StateList>
+<EventList>
+=AAAABQMAAAAOAGEAXwBzAHQAYQByAHQDAAAACABhAF8AdQBwAwAAAAwAYQBfAGQAbwB3AG4DAAAADgBhAF8AdABpAG0AZQByAwAAAAoAbwBfAGMAYgBi= </EventList>
+<GraphData>
+<States>
+<State>
+1             
+<Item>
+<Position>
+-68           42            
+</Position>
+<BasePoints>
+0             0             30            30            -50           0             
+-30.058135    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+2             
+<Item>
+<Position>
+50            -60           
+</Position>
+<BasePoints>
+0             0             30            30            -50           0             
+-30.058221    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+3             
+<Item>
+<Position>
+137           52            
+</Position>
+<BasePoints>
+0             0             30            30            -50           0             
+-30.058221    0             
+</BasePoints>
+</Item>
+</State>
+</States>
+<TransRel>
+<Trans>
+1             "a_start"     2             +Line+        
+<Item>
+<Position>
+-68           42            
+</Position>
+<BasePoints>
+65.539537     -43.434654    0             0             22.709699     -19.630416    
+46.638809     -40.314902    70.634062     -61.056563    95.310582     -82.387114    
+118           -102          
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+2             "a_up"        3             +Spline+      
+<Item>
+<Position>
+50            -60           
+</Position>
+<BasePoints>
+40            60            0             0             4.935798      29.614788     
+10            60            30            80            60.859036     97.324371     
+87            112           
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+2             "a_down"      3             
+<Item>
+<Position>
+50            -60           
+</Position>
+<BasePoints>
+90            10            0             0             28.108408     10.540654     
+45.217578     16.956592     62.349219     23.380957     80            30            
+100.709693    37.766135     111.832723    65.841690     101.221263    85.565949     
+87            112           
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+3             "a_timer"     1             +Spline+      
+<Item>
+<Position>
+137           52            
+</Position>
+<BasePoints>
+-110          10            0             0             -30.012677    -1.464033     
+-77.825928    -3.796387     -125.722656   -6.132812     -174.980220   -8.535620     
+-205          -10           
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+3             "o_cbb"       1             
+<Item>
+<Position>
+137           52            
+</Position>
+<BasePoints>
+-90           90            0             0             -22.928905    19.308552     
+-34.194155    28.795078     -45.426885    38.254219     -57           48            
+-72.288270    60.874333     -102.288270   60.874333     -117          48            
+-131.322035   35.466692     -161.837627   13.041561     -178.519858   4.136011      
+-205          -10           
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+1             "o_cbb"       1             +Spline+      
+<Item>
+<Position>
+-68           42            
+</Position>
+<BasePoints>
+0             -80.595703    0             0             13.406317     -26.812636    
+40.297852     -80.595703    -40.297852    -80.595703    -13.406395    -26.812789    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+2             "o_cbb"       2             +Spline+      
+<Item>
+<Position>
+50            -60           
+</Position>
+<BasePoints>
+0             -80.595703    0             0             13.406317     -26.812636    
+40.297852     -80.595703    -40.297852    -80.595703    -13.406395    -26.812789    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+</TransRel>
+</GraphData>
+</VioModels>
+<VioLayout>
+0             =zDYXCGhSX1YAAAAAAAAAAGjPSAoAAAAAILTVCQAAAAAAAA=== 0             150           299           1             
+</VioLayout>
+</VioGenerator>

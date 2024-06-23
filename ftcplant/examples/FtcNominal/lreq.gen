@@ -1,0 +1,21 @@
+<Generator>
+
+"random request model"
+
+<Alphabet>
+P1 P2 P3
+</Alphabet>
+
+<States>
+1
+</States>
+
+<TransRel>
+1 P1  1
+1 P2  1
+1 P3  1
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> 1 </MarkedStates>
+</Generator>g

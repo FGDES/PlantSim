@@ -1,0 +1,58 @@
+<Generator>
+"ElevatorTest"
+<Alphabet>
+"o_upb" "o_lwb" 
+"o_lwlon" "o_lwloff"
+"o_uplon" "o_uploff"
+"c_stp" "c_up" "c_down"
+"c_arup" "c_arlw"
+"ld_stp" "ld_open" "ld_close"
+"ld_arop" "ld_arcl"
+"ud_stp" "ud_open" "ud_close"
+"ud_arop" "ud_arcl"
+</Alphabet>
+<States>
+"lower" 
+"upA" "upB" "upC" "upD" "upE"
+"upA1" "upA2" "upA3" "upA4"
+"upF" "upG" "upH" 
+"upper"
+"downA1" "downA2" "downA3" "downA4"
+"downA" "downB" "downC" "downD" "downE"
+"downF" "downG" "downH"
+</States>
+<TransRel>
+"lower" "o_upb" "upA1"
+"upA1"  "ld_close" "upA3"
+"upA3"  "ld_arcl" "upA4"
+"upA4"  "ld_stp" "upA"
+"upA" "o_uplon" "upB"
+"upB" "c_up" "upC"
+"upC" "c_arup" "upD"
+"upD"  "c_stp" "upE"
+"upE"  "o_uploff" "upF"
+"upF"  "ud_open" "upG"
+"upG"  "ud_arop" "upH"
+"upH"  "ud_stp" "upper"
+
+"upper" "o_lwb" "downA1"
+"downA1"  "ud_close" "downA3"
+"downA3"  "ud_arcl" "downA4"
+"downA4"  "ud_stp" "downA"
+"downA" "o_lwlon" "downB"
+"downB" "c_down" "downC"
+"downC" "c_arlw" "downD"
+"downD"  "c_stp" "downE"
+"downE"  "o_lwloff" "downF"
+"downF"  "ld_open" "downG"
+"downG"  "ld_arop" "downH"
+"downH"  "ld_stp" "lower"
+
+</TransRel>
+<InitStates>
+"downF"
+</InitStates>
+<MarkedStates>
+</MarkedStates>
+
+</Generator>

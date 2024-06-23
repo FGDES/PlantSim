@@ -1,0 +1,10 @@
+CVS
+flexfact_
+obj/*
+build/*
+*/#*
+*/.#*
+*/*~
+*/._*
+*/.DS*
+.depend

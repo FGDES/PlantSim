@@ -1,0 +1,193 @@
+=============================================================================
+=============================================================================
+
+General note.
+
+FlexFact sources are not in a particular good shape. They are
+made available for inspection. If there is an interest in
+contributing to the further development (e.g. introducing new factory
+components, or setting up a redesign as a joint project), please 
+contact me, so we can coordinate efforts.
+
+thomas.moor@fau.de
+
+
+(Precompiled executables are availabe in the packages faudes_applications_*)
+
+
+=============================================================================
+=============================================================================
+
+Building FlexFact
+
+FlexFact is set up as a Qt 4 project, so you will need a Qt SDK to build
+the binary. The latter can be obtained for free under terms of the GPL.
+It includes the IDE QtCreator which you may use as an development
+environment. To begin with, make sure that FlexFact does *not* link
+against libFAUDES (comment out the line "CONFIG += faudes" at the
+beginning of the project file flexfact.pro). You can then either
+trigger the build within QtCreator or from the command line via
+qmake and make.
+
+Linux/MacOS shell example
+(assuming qmake and friends are in the PATH variable, which
+is the case for many Linux distributions)
+
+> cd wherever_it_is/flexfact 
+> qmake flexfact.pro
+> make
+> ./build/bin/flextfact
+
+Windows command promtt example
+(incl. setting up the path variable for Qt)
+
+> cd wherever_it_is\flexfact 
+> set PATH=C:\Qt\2010.03\qt\bin;%PATH%
+> set PATH=C:\Qt\2010.03\mingw\bin;%PATH%
+> qmake flexfact.pro
+> minge32-make
+> build\FlexFact
+
+
+=============================================================================
+=============================================================================
+
+Linking against libFAUDES
+
+To enable the libFAUDES SimplenetDevice, you must configure FlexFact
+to link with libFAUDES; i.e. have the line "CONFIG += faudes" active
+in flexfact.pro).
+
+With Mac OSX or Linux, the script copyfaudes.sh copies and configures
+libFAUDES accordingly. The script expects libFAUDES sources next to the
+FlexFact project folder and is to be executed within the FlexFact project
+folder. By this method, the libFAUDES folder has been installed to the
+FlexFact sources.
+
+Currenty, libFAUDES cannot be re-configured with Windows, however, it
+can be compiled. This requires that you use the mingw compilers and 
+advertise them in the project file FlexFact.pro
+
+* with Linux, set the LD_LIBRARY_PATH of the run environment to include
+  ./lib, otherwise the executable fails to load libfaudes.so
+
+* with Windows, edit the project file flexfact.pro to direct qmake to
+  the loction of mingw
+
+
+=============================================================================
+=============================================================================
+
+Deployment ...
+
+... is a hassle. For all supported platforms, the binary distribution of FlexFact
+must include all required libraries. For MacOS, the project file introduces
+a target "deploy" that builds a disk image. For Linux, "deploy" builds a tar.gz
+archive. On Windows, the external tool InnoSetup is used to compose a setup
+executable.
+
+* to use the deployment target from QtCreator, introduce a build configuration
+  that has "deploy" as an extra target
+
+* to use LSB compilers on Linux, set PATH variable in the build environment
+  to whereever you have installed LSB compilers; you also need an LSB compiled
+  version of Qt
+
+* when moving platforms, remove the entire build directory, the entire obj directory
+  and any libFAUDES shared libs (you may use "distclean.sh" for this purpose)
+
+=============================================================================
+=============================================================================
+
+Files
+
+** DEVELOPER.txt
+
+readme-first to address developers (this file)
+
+** README.txt, LICENSE.txt
+
+Deployment versions to address user
+
+** flexfact.pro
+
+Qt-projectfile to organize the build process
+
+** src/* 
+
+C++ sources and headers
+
+** examples/*,
+
+example data to run plant simulator (and supervisors)
+
+** copyfaudes.sh, distclean.sh
+
+helper scripts (bash) to update libfaudes and to remove
+non-source files, resp.
+
+** flexfact.iss
+
+InnoSetup configuration file for Windows deployment
+
+** icons/*
+
+Icons for Windows and MacOS
+
+** libfaudes/*
+
+Local copy of libFAUDES
+
+** lddrun
+
+script to set LD_LIBRARY_PATH befor execution of
+binary; this is copied to .build/bin/flexfact 
+(Linux only)
+
+** obj/* build/*
+
+Build directories
+
+
+
+=============================================================================
+=============================================================================
+
+Relevant classes by filename
+
+** ffsignal.*
+An FfSignal models a digital signal with values true and false. Edges of a
+signal correspond to discrete events, either imposed externally (actuator signals)
+or detected during simulation (sensor signals). All signals make up the process image,
+(FfProcessImage), which is synchronized with an external peer (the supervisor) via
+Modbus/TCP or libFAUDES simplenet.
+
+** ffcomponet.*
+An FfComponent is a QGraphicsItem to represent a factory componen. Individual
+componenst (e.g. a conveyor belt) is derived from FfComponent. An FfComponent
+provides an FfParameterEditor for the component configuration, e.g. to set the name.
+When in running mode, an FfComponent is animated to behave like the respectice
+factory component. Therefore, it hosts a list of FfSignals to represent actuator
+and sensor signals. When in running mode, components interact with workpieces
+(FfWorkpiece).
+
+** ffelements.*
+Various elementary QGraphicsItems to represent sensors, overlays, workpieces ect.
+
+** ffscene.*/ffview.*
+An FfScene is a QGraphicsScene that hosts FFComponents. It can be edited interactively
+or read from file. The base class FfComponent provides a factory function and a list
+of available derived classes. The FfView is a tailored QGraphicsView to display the
+FfScene. This is the main widget in application window FlexFact.
+
+** flecfact.*
+FlexFact is derived from QMainWindow to host the FfView, the remaining GUI widgets and
+all menues. The file also provides the main() function to open either an empty FfScene
+or to load the recently used configuration.
+
+
+
+
+
+
+

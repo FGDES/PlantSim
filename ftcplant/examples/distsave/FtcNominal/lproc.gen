@@ -1,0 +1,22 @@
+<Generator>
+
+"plant component process"
+
+<Alphabet>
+A +C+ B +C+ a b
+</Alphabet>
+
+<States>
+3
+</States>
+
+<TransRel>
+1 A  2
+2 a  1
+1 B  3
+3 b  1
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> 1 </MarkedStates>
+</Generator>

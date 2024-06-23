@@ -1,0 +1,45 @@
+<SimplenetDevice name="Plant">
+<TimeScale value="1000"/>
+<ServerAddress value="localhost:40000"/>
+<Network name="FtcLoop">
+<Node name="Plant"/>
+<Node name="Supervisor"/>
+</Network>
+<EventConfiguration>
+
+<!-- 
+signal base events, faudes stype conventions 
+<Event name="stp_lack"   iotype="output"/>
+<Event name="stp_rack"   iotype="output"/>
+<Event name="s1_wpar"    iotype="output"/>
+<Event name="s2_wpar"    iotype="output"/>
+<Event name="s3_wpar"    iotype="output"/>
+<Event name="rt_pos"     iotype="output"/>
+<Event name="prc_acmp"  iotype="output"/>
+<Event name="prc_bcmp"  iotype="output"/>
+-->
+
+<!-- abstract events for benchmark -->
+<Event name="V"    iotype="input"/>
+<Event name="R"    iotype="input"/>
+<Event name="RR"   iotype="input"/>
+<Event name="r"    iotype="output"/>
+<Event name="S1"   iotype="output"/>
+<Event name="S2"   iotype="output"/>
+<Event name="S3"   iotype="output"/>
+<Event name="A"    iotype="input"/>
+<Event name="a"    iotype="output"/>
+<Event name="B"    iotype="input"/>
+<Event name="b"    iotype="output"/>
+<Event name="f"    iotype="output"/>
+<!-- operator events -->
+<Event name="P1"   iotype="output"/>
+<Event name="P2"   iotype="output"/>
+<Event name="P3"   iotype="output"/>
+<Event name="I"    iotype="input"/>
+<Event name="p1"   iotype="input"/>
+<Event name="p2"   iotype="input"/>
+<Event name="p3"   iotype="input"/>
+
+</EventConfiguration>
+</SimplenetDevice>

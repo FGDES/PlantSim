@@ -1,0 +1,309 @@
+<VioSystem>
+<Generator>
+"E_cabmot"    
+
+% 
+%  Statistics for E_cabmot
+% 
+%  States:        8
+%  Init/Marked:   1/1
+%  Events:        8
+%  Transitions:   11
+%  StateSymbols:  8
+%  Attrib. E/S/T: 0/0/0
+% 
+
+<Alphabet>
+"c_up"        "c_down"      "c_stp"       "c_arlw"      "c_arup"      "a_start"     
+"a_down"      "a_up"        
+</Alphabet>
+
+<States>
+"Idle"        "Down"        "Up"          "StopUp_1"    "DoneUp"      "StopDown"    
+"DoneDown"    "Start"       
+</States>
+
+<TransRel>
+"Idle"        "c_arlw"      "Idle"        
+"Idle"        "c_arup"      "Idle"        
+"Idle"        "a_start"     "Start"       
+"Down"        "c_arlw"      "StopDown"    
+"Up"          "c_arup"      "StopUp_1"    
+"StopUp_1"    "c_stp"       "DoneUp"      
+"DoneUp"      "a_up"        "Idle"        
+"StopDown"    "c_stp"       "DoneDown"    
+"DoneDown"    "a_down"      "Idle"        
+"Start"       "c_up"        "Up"          
+"Start"       "c_down"      "Down"        
+</TransRel>
+
+<InitStates>
+"Idle"        
+</InitStates>
+
+<MarkedStates>
+"Idle"        
+</MarkedStates>
+
+
+</Generator>
+<VioModels>
+<TransitionList>
+=AAAACwEAAAABAAAADABjAF8AYQByAGwAdwAAAAEBAAAAAQAAAAwAYwBfAGEAcgB1AHAAAAABAQAAAAIAAAAMAGMAXwBhAHIAbAB3AAAABgEAAAADAAAADABjAF8AYQByAHUAcAAAAAQBAAAABAAAAAoAYwBfAHMAdABwAAAABQEAAAAGAAAACgBjAF8AcwB0AHAAAAAHAQAAAAUAAAAIAGEAXwB1AHAAAAABAQAAAAcAAAAMAGEAXwBkAG8AdwBuAAAAAQEAAAABAAAADgBhAF8AcwB0AGEAcgB0AAAACAEAAAAIAAAADABjAF8AZABvAHcAbgAAAAIBAAAACAAAAAgAYwBfAHUAcAAAAAM== </TransitionList>
+<StateList>
+=AAAACAIAAAADAgAAAAQCAAAABgIAAAABAgAAAAICAAAABQIAAAAHAgAAAAg== </StateList>
+<EventList>
+=AAAACAMAAAAIAGMAXwB1AHADAAAADABjAF8AZABvAHcAbgMAAAAKAGMAXwBzAHQAcAMAAAAMAGMAXwBhAHIAbAB3AwAAAAwAYwBfAGEAcgB1AHADAAAADABhAF8AZABvAHcAbgMAAAAIAGEAXwB1AHADAAAADgBhAF8AcwB0AGEAcgB0= </EventList>
+<GraphData>
+<States>
+<State>
+1             
+<Item>
+<Position>
+159.700000    155.599999    
+</Position>
+<BasePoints>
+0             0             31.549999     31.549999     -122.200000   0             
+-31.556726    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+2             
+<Item>
+<Position>
+400           50            
+</Position>
+<BasePoints>
+0             0             40.799999     40.799999     -50           0             
+-40.761956    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+3             
+<Item>
+<Position>
+400           160           
+</Position>
+<BasePoints>
+0             0             28.250000     28.250000     -50           0             
+-28.240118    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+4             
+<Item>
+<Position>
+570           150           
+</Position>
+<BasePoints>
+0             0             35.900000     35.900000     -50           0             
+-35.917523    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+5             
+<Item>
+<Position>
+663.899994    187.500000    
+</Position>
+<BasePoints>
+0             0             39.199999     39.199999     -50           0             
+-39.198733    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+6             
+<Item>
+<Position>
+590           60            
+</Position>
+<BasePoints>
+0             0             50            40            -50           0             
+-50.022728    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+7             
+<Item>
+<Position>
+670           -30           
+</Position>
+<BasePoints>
+0             0             40            40            -50           0             
+-40.018407    0             
+</BasePoints>
+</Item>
+</State>
+<State>
+8             
+<Item>
+<Position>
+275.580715    110.625896    
+</Position>
+<BasePoints>
+0             0             30            30            -50           0             
+-30.058307    0             
+</BasePoints>
+</Item>
+</State>
+</States>
+<TransRel>
+<Trans>
+1             "c_arlw"      1             
+<Item>
+<Position>
+159.700000    155.599999    
+</Position>
+<BasePoints>
+0             -63.900000    0             0             7.040961      -30.779032    
+8.399999      -43.099999    5.599999      -55.599999    0             -55.599999    
+-2.800000     -55.599999    -5.499995     -51.399994    -3.363487     -31.433340    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+1             "c_arup"      1             
+<Item>
+<Position>
+159.700000    155.599999    
+</Position>
+<BasePoints>
+0             -88.900000    0             0             24.362427     -20.129983    
+45.899999     -47.300005    38.899994     -80.599999    0             -80.599999    
+-33.299994    -80.599999    -42.999995    -55.599999    -19.312057    -24.970941    
+0             0             
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+2             "c_arlw"      6             +Line+        
+<Item>
+<Position>
+400           50            
+</Position>
+<BasePoints>
+94.474412     14.986178     0             0             40.806852     2.147728      
+73.547070     3.870898      106.366602    5.598242      140.146383    7.376125      
+190           10            
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+3             "c_arup"      4             
+<Item>
+<Position>
+400           160           
+</Position>
+<BasePoints>
+87.700007     -12           0             0             28.272208     -1.360169     
+54.099989     -2.800000     87.999983     -5.799995     134.135159    -8.163019     
+170           -10           
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+4             "c_stp"       5             
+<Item>
+<Position>
+570           150           
+</Position>
+<BasePoints>
+45.500006     6.999999      0             0             34.902287     8.448977      
+55.499983     13.899994     18.899994     18.099999     55.924420     27.676984     
+93.899994     37.500000     
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+5             "a_up"        1             
+<Item>
+<Position>
+663.899994    187.500000    
+</Position>
+<BasePoints>
+-243.099976   9.700000      0             0             -38.785586    5.583530      
+-107.000017   13.899994     -252.799988   26.399994     -375          8.299994      
+-404.200006   4.200006      -436.099982   -5.599999     -474.767529   -20.533279    
+-504.199994   -31.900001    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+6             "c_stp"       7             +Line+        
+<Item>
+<Position>
+590           60            
+</Position>
+<BasePoints>
+47.474093     -38.356362    0             0             29.001680     -32.626890    
+37.014844     -41.641699    45.084375     -50.719922    53.386333     -60.059624    
+80            -90           
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+7             "a_down"      1             +Spline+      
+<Item>
+<Position>
+670           -30           
+</Position>
+<BasePoints>
+-270          -40           0             0             -25.624003    -30.748802    
+-100          -120          -372.115998   4.493879      -491.161223   160.516417    
+-510.300000   185.599999    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+1             "a_start"     8             +Line+        
+<Item>
+<Position>
+159.700000    155.599999    
+</Position>
+<BasePoints>
+61.558487     -13.164544    0             0             29.423359     -11.419408    
+48.673295     -18.890441    67.980335     -26.383636    87.888227     -34.110026    
+115.880715    -44.974103    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+8             "c_down"      2             +Line+        
+<Item>
+<Position>
+275.580715    110.625896    
+</Position>
+<BasePoints>
+66.590001     -21.323373    0             0             26.955030     -13.134402    
+47.082493     -22.941928    67.130523     -32.710749    87.703046     -42.735141    
+124.419285    -60.625896    
+</BasePoints>
+</Item>
+</Trans>
+<Trans>
+8             "c_up"        3             +Line+        
+<Item>
+<Position>
+275.580715    110.625896    
+</Position>
+<BasePoints>
+58.521099     33.981924     0             0             27.939210     11.087296     
+51.060508     20.262670     74.236030     29.459561     98.149286     38.949212     
+124.419285    49.374104     
+</BasePoints>
+</Item>
+</Trans>
+</TransRel>
+</GraphData>
+</VioModels>
+<VioLayout>
+0             =zDYXCGhSX1YAAAAAAAAAALiOQAoAAAAAILTVCQAAAAAAAA=== 0             150           683           0.831670      
+</VioLayout>
+</VioSystem>

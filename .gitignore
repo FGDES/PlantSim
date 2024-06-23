@@ -1,0 +1,34 @@
+# ignore emacs backups
+*~
+*.bak
+*._*
+
+# ignore c build
+*.o
+*.s
+**/obj
+bin/*
+lib/*
+
+# ignore DESTool build
+**/build
+
+# ignore packegaes
+faudes_*
+
+# Qt locals
+*.pro.user
+*.pro.user.*
+*.Debug
+./Makefile
+.qmake.stash
+
+
+# osx irritations
+**/.DS_Store
+*.app
+
+
+# local archives
+local/*
+common/libFAUDES

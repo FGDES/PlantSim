@@ -1,0 +1,23 @@
+<Generator>
+
+"dont start roundabout while filling"
+
+<Alphabet>
+R A B a b
+</Alphabet>
+
+<States>
+1
+</States>
+
+<TransRel>
+1 R  1
+1 A  2
+1 B  2
+2 a  1
+2 b  1
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> 1 2 </MarkedStates>
+</Generator>

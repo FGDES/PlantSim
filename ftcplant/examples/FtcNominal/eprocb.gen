@@ -1,0 +1,41 @@
+<Generator>
+
+"specification process"
+
+<Alphabet>
+R  X D1 D2 D3 A B   
+</Alphabet>
+
+<States>
+<Consecutive> 1 50 </Consecutive>
+</States>
+
+<TransRel>
+%% wait for process
+1 R 1
+1 X 2
+2 D1 10
+2 D2 20
+2 D3 30
+
+%% p1 aka AB
+10 A 11
+11 B 1
+
+%% p2 aka AA
+20 A 21
+21 A 1
+
+%% p3 aka BB
+30 B 31
+31 B 1
+
+%% done
+%%40 d 1
+
+
+</TransRel>
+
+<InitStates> 1 </InitStates>
+<MarkedStates> 1 </MarkedStates>
+</Generator>

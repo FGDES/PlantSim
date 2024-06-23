@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE SimplenetDevice SYSTEM "http://www.faudes.org/dtd/1.0/simplenetdevice.dtd">
+<SimplenetDevice name="ElevatorSupervisor">
+<TimeScale value="1000"/>
+<ServerAddress value="localhost:40001"/>
+<!-- 
+prepend hostname to network name e.g. FasthostElevatorLoop 
+(the effetive network name is printed to the event-log)
+-->
+<Network name="ElevatorLoop">   
+<Node name="ElevatorPlant"/>
+<Node name="ElevatorSupervisor"/>
+</Network>
+<EventConfiguration>
+<Event name="c_arup" iotype="input"/>
+<Event name="c_lvup" iotype="input"/>
+<Event name="c_arlw" iotype="input"/>
+<Event name="c_lvlw" iotype="input"/>
+<Event name="ld_arcl" iotype="input"/>
+<Event name="ld_lvcl" iotype="input"/>
+<Event name="ld_arop" iotype="input"/>
+<Event name="ld_lvop" iotype="input"/>
+<Event name="ld_lbbl" iotype="input"/>
+<Event name="ld_lbrl" iotype="input"/>
+<Event name="ud_arcl" iotype="input"/>
+<Event name="ud_lvcl" iotype="input"/>
+<Event name="ud_arop" iotype="input"/>
+<Event name="ud_lvop" iotype="input"/>
+<Event name="ud_lbbl" iotype="input"/>
+<Event name="ud_lbrl" iotype="input"/>
+<Event name="o_cbb" iotype="input"/>
+<Event name="o_upb" iotype="input"/>
+<Event name="o_lwb" iotype="input"/>
+<Event name="c_stp" iotype="output"/>
+<Event name="c_up" iotype="output"/>
+<Event name="c_down" iotype="output"/>
+<Event name="ld_stp" iotype="output"/>
+<Event name="ld_open" iotype="output"/>
+<Event name="ld_close" iotype="output"/>
+<Event name="ud_stp" iotype="output"/>
+<Event name="ud_open" iotype="output"/>
+<Event name="ud_close" iotype="output"/>
+<Event name="o_uplon" iotype="output"/>
+<Event name="o_uploff" iotype="output"/>
+<Event name="o_lwlon" iotype="output"/>
+<Event name="o_lwloff" iotype="output"/>
+</EventConfiguration>
+</SimplenetDevice>
