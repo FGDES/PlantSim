@@ -95,10 +95,11 @@ faudes {
     # set compiletime flag
     DEFINES += FF_LIBFAUDES
 
-    # dynamically link to libfaudes: mac os
+    # dynamically link to libfaudes 
     unix:!macx:  LIBS += -L$${LIBFAUDES} -lfaudes
     macx:        LIBS += -L$${LIBFAUDES} -lfaudes
-    win32:       LIBS += $${LIBFAUDES_WINDIR}\\faudes.lib
+    #win32:       LIBS += $${LIBFAUDES_WINDIR}\\faudes.lib
+    win32:       LIBS += -L$${LIBFAUDES} -lfaudes
 
 
     # mac os: care about bundle
