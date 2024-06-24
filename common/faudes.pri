@@ -96,7 +96,10 @@ faudes {
     DEFINES += FF_LIBFAUDES
 
     # dynamically link to libfaudes: mac os
-    macx:  LIBS += -L$${LIBFAUDES} -lfaudes
+    unix:!macx:  LIBS += -L$${LIBFAUDES} -lfaudes
+    macx:        LIBS += -L$${LIBFAUDES} -lfaudes
+    win32:       LIBS += $${LIBFAUDES_WINDIR}\\faudes.lib
+
 
     # mac os: care about bundle
     macx {
