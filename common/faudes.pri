@@ -99,7 +99,7 @@ faudes {
     unix:!macx:  LIBS += -L$${LIBFAUDES} -lfaudes
     macx:        LIBS += -L$${LIBFAUDES} -lfaudes
     #win32:       LIBS += $${LIBFAUDES_WINDIR}\\faudes.lib
-    win32:       LIBS += -L$${LIBFAUDES} -lfaudes
+    win32:       LIBS += -L$${LIBFAUDES} -lwinmm -lws2_32 -lfaudes
 
 
     # mac os: care about bundle
