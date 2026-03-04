@@ -1,0 +1,122 @@
+% Plant component interaction, conveyor belts b and c
+
+<Generator>
+"cbbc"
+				   
+<Alphabet>
+"cb2_boff" +C+ "cb2_bm-" +C+  "cb2_bm+" +C+
+"cb3_boff" +C+ "cb3_bm-" +C+  "cb3_bm+" +C+
+"cb2_wpar"   "cb2_wplv"   
+"cb3_wpar"   "cb3_wplv"   
+</Alphabet>
+
+<States>
+"II" "IL" "IR"
+"RI" "RL" "RR"
+"LI" "LL" "LR"
+"RRf" "LLf" "Err"
+</States>
+
+<TransRel>
+% idle/idle 
+"II" "cb2_bm+" "RI"
+"II" "cb2_bm-"  "LI"
+"II" "cb3_bm+" "IR"
+"II" "cb3_bm-"  "IL"
+
+% right/idle 
+"RI" "cb2_boff"  "II"
+"RI" "cb2_bm-"  "LI"
+"RI" "cb3_bm+" "RR"
+"RI" "cb3_bm-"  "RL"
+
+% left/idle 
+"LI" "cb2_boff"  "II"
+"LI" "cb2_bm+" "RI"
+"LI" "cb3_bm+" "LR"
+"LI" "cb3_bm-"  "LL"
+
+% idle/right 
+"IR" "cb2_bm+" "RR"
+"IR" "cb2_bm-"  "LR"
+"IR" "cb3_boff"  "II"
+"IR" "cb3_bm-"  "IL"
+
+% right/right 
+"RR" "cb2_boff"  "IR"
+"RR" "cb2_bm-"  "LR"
+"RR" "cb3_boff"  "RI"
+"RR" "cb3_bm-"  "RL"
+
+% left/right 
+"LR" "cb2_boff"  "IR"
+"LR" "cb2_bm+" "RR"
+"LR" "cb3_boff"  "LI"
+"LR" "cb3_bm-"  "LL"
+
+
+% idle/left 
+"IL" "cb2_bm+" "RL"
+"IL" "cb2_bm-"  "LL"
+"IL" "cb3_boff"  "II"
+"IL" "cb3_bm+" "IR"
+
+% right/left 
+"RL" "cb2_boff"  "IL"
+"RL" "cb2_bm-"  "LL"
+"RL" "cb3_boff"  "RI"
+"RL" "cb3_bm+" "RR"
+
+% left/left 
+"LL" "cb2_boff"  "IL"
+"LL" "cb2_bm+" "RL"
+"LL" "cb3_boff"  "LI"
+"LL" "cb3_bm+" "LR"
+
+% right transport
+"RR"  "cb2_wplv" "RRf"
+"RRf" "cb3_wpar" "RR"
+"RRf" "cb2_wplv" "Err"
+"RI"  "cb2_wplv" "Err"
+
+% left transport
+"LL"  "cb3_wplv" "LLf"
+"LLf" "cb2_wpar" "LL"
+"LLf" "cb3_wplv" "Err"
+
+% right arival
+"IL"  "cb3_wpar" "IL"
+"RL"  "cb3_wpar" "RL"
+"LL"  "cb3_wpar" "LL"
+"LLf" "cb3_wpar" "LLf"
+
+% right disposal
+"IR"  "cb3_wplv" "IR"
+"RR"  "cb3_wplv" "RR"
+"LR"  "cb3_wplv" "LR"
+"RRf" "cb3_wplv" "RRf"
+
+% left arival
+"RI"  "cb2_wpar" "RI"
+"RR"  "cb2_wpar" "RR"
+"RL"  "cb2_wpar" "RL"
+"RRf" "cb2_wpar" "RRf"
+
+% left disposal
+"LI"  "cb2_wplv" "LI"
+"LR"  "cb2_wplv" "LR"
+"LL"  "cb2_wplv" "LL"
+"LLf" "cb2_wplv" "LLf"
+
+</TransRel>
+
+
+<InitStates>
+"II"
+</InitStates>
+
+<MarkedStates>
+"II"  
+</MarkedStates>
+
+</Generator>

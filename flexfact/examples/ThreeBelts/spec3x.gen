@@ -1,0 +1,39 @@
+% Specifiaction, conveyor belt 3 and snk
+
+<Generator>
+"spec3x"
+
+<Alphabet>
+"tu3_start" +C+ "tu3_stop"  +C+  "tu3_cont"  +C+ 
+"tu3_ack" +C+
+"snk_ack" +C+  "snk_free" +C+ 
+</Alphabet>
+
+<States>
+"I" "L2" "L3" "L4" "L5" "B1"  
+</States>
+
+<TransRel>
+% nominal cycle, sink version
+"I"   "tu3_start" "L2"
+"I"   "tu3_cont"  "L2"
+"L2"  "tu3_ack"   "L3"
+"L3"  "snk_ack"   "L4"
+"L4"  "tu3_stop"  "B1"
+"B1"  "snk_free"  "I"
+
+
+</TransRel>
+
+
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I" 
+</MarkedStates>
+
+</Generator>

@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

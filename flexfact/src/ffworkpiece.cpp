@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -394,7 +394,7 @@ void FfWorkpiece::contextMenuEvent(QGraphicsSceneContextMenuEvent* event) {
   // prepare processing history
   QWidget* whis= new QWidget();
   QVBoxLayout* vbox = new QVBoxLayout(whis);
-  vbox->setMargin(3);
+  vbox->setContentsMargins(3,3,3,3);
   vbox->setSpacing(3);
   vbox->addWidget(new QLabel(QString(mName)));
   for(int i=0; i<mHistory.size(); i++)

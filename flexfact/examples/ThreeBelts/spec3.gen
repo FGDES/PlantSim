@@ -1,0 +1,43 @@
+% Specifiaction, conveyor belt 3
+
+<Generator>
+"spec3"
+
+<Alphabet>
+"cb3_boff"  +C+ "cb3_bm-" +C+  "cb3_bm+" +C+ 
+"cb3_wpar"   "cb3_wplv" 
+"tu3_start" +C+ "tu3_stop"  +C+  "tu3_cont"  +C+ 
+"tu3_ack" +C+
+</Alphabet>
+
+<States>
+"I" "T1" "T2" "T3" "T4" "T5" "S1" "P1"
+</States>
+
+<TransRel>
+% idle 
+"I"   "tu3_start" "T1"
+"T1"  "cb3_bm+"   "T2"
+"T2"  "cb3_wpar"  "T3"
+"T3"  "tu3_ack"   "T4"
+"T4"  "cb3_boff"  "P1"
+"T4"  "cb3_wplv"  "T5"
+"T5"  "tu3_stop"  "S1"
+"T5"  "tu3_cont"  "T2"
+
+"S1"  "cb3_boff"  "I"
+"P1"  "cb3_bm+" "T4"
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I" 
+</MarkedStates>
+
+</Generator>
+

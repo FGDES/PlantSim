@@ -10,14 +10,13 @@
 # - APPNAME                name of application
 # - DEVFILE                name of device file (located in ./src), defaults to none 
 # - FFVERSION_MAJOR/MINOR  application version number, defaults to x.yz
-# - COMMON                 shared resources (e.g. libfaudes, icons), defaults to ./
+# - COMMON                 shared resources (e.g. libFAUDES, icons), defaults to .
 #
 # Implemented CONFIG features
 # - faudes       compile with libFAUDES
-# - fullscreen   support osx-lion fullsceen mode
 #
 #
-# tmoor 20160823
+# tmoor 20260223
 # ##########################################
 
 
@@ -48,8 +47,12 @@ CONFIG(debug, debug|release) {
     DEFINES += FF_DEBUG_VIO
 }
 
+# programatoc overwrite
+DEFINES += FF_DEBUG_NETWORK
+
+
 # set qt features
-QT += core gui xml network svg
+QT += core gui xml network svg widgets
 
 # set target
 TEMPLATE = app
@@ -67,16 +70,9 @@ MOC_DIR = obj
 ICON = $${COMMON}/icons/icon_osx.icns
 RC_FILE = $${COMMON}/icons/icon_win.rc
 
-# mac fullscreen
-mac:fullscreen { 
-    DEFINES += FF_OSXFULLSCREEN
-    HEADERS += $${COMMON}/src/osxfullscreen.h
-    OBJECTIVE_SOURCES += $${COMMON}/src/osxfullscreen.mm
-    LIBS += -framework Cocoa
-}
 
-# mac deploymant
-macx: QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.7
+# mac deployment
+macx: QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.15
 
 # helper
 APPNAME_LC = $$lower( $${APPNAME} )
@@ -94,7 +90,9 @@ INCLUDEPATH += $${COMMON}/src
 
 faudes { 
     # libfaudes location
-    LIBFAUDES = $${COMMON}/libfaudes
+    LIBFAUDES = $${COMMON}/libFAUDES_for_FlexFact
+    
+    message("=== using libFAUDES at" $${LIBFAUDES})
 
     # use libfaudes headers
     INCLUDEPATH += $${LIBFAUDES}/include
@@ -119,9 +117,6 @@ faudes {
         FaudesFiles.commands += cp $${LIBFAUDES}/libfaudes.so $${DESTDIR}/lib/ &&
         FaudesFiles.commands += cp $${LIBFAUDES}/include/libfaudes.rti $${DESTDIR}/lib/
         
-        # lsb compiler options (deployment only)
-        linux-lsb-g++:LIBS += --lsb-shared-libs=faudes
-
         # dynamically link to libfaudes
         LIBS += -L$${LIBFAUDES} -lfaudes
     
@@ -135,10 +130,9 @@ faudes {
         FaudesMake.commands += make -C $${LIBFAUDES} libfaudes default
 
         #copy
-        FaudesFiles.files = $${LIBFAUDES}/libfaudes.dylib
-        FaudesFiles.files += $${LIBFAUDES}/include/libfaudes.rti
-        FaudesFiles.path = Contents/MacOS
-        QMAKE_BUNDLE_DATA += FaudesFiles
+        FrameFiles.files += $${LIBFAUDES}/libfaudes.dylib
+        FrameFiles.path = Contents/Frameworks
+        QMAKE_BUNDLE_DATA += FrameFiles
 
         # dynamically link to libfaudes
         LIBS += -L$${LIBFAUDES} -lfaudes

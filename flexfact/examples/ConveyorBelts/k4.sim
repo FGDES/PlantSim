@@ -1,0 +1,45 @@
+<Executor>
+<Generators>
+%tmp_g.gen
+k4.gen
+</Generators>
+
+<SimEvents>
+
+% 1. operator panel: start
+op_s1act <Priority> 100 </Priority>
+op_s2act <Priority> 100 </Priority>
+op_l1on  <Priority> 100 </Priority>
+op_l2on  <Priority> 100 </Priority>
+
+% 2. turn actuators off
+sf_fdoff <Priority>  80 </Priority>
+cb1_boff <Priority>  80 </Priority>
+cb2_boff <Priority>  80 </Priority>
+cb3_boff <Priority>  80 </Priority>
+cb4_boff <Priority>  80 </Priority>
+
+% 1. operator panel: done
+op_l1off  <Priority> 75 </Priority>
+op_l2off  <Priority> 75 </Priority>
+
+% 3. high level commands
+op_ack   <Priority>  70 </Priority>
+op_get   <Priority>  70 </Priority>
+op_put   <Priority>  70 </Priority>
+
+% 4. other actuators
+sf_fdon   <Priority> 53 </Priority>
+cb1_bm+   <Priority> 52 </Priority>
+cb2_bm+   <Priority> 51 </Priority>
+cb3_bm+   <Priority> 51 </Priority>
+cb4_bm+   <Priority> 51 </Priority>
+
+% 5. convenience: sf_fdhome comes first
+sf_fdhome   <Priority> 10 </Priority>
+
+
+% unlisted default to 0
+</SimEvents>
+
+</Executor>

@@ -1,0 +1,54 @@
+
+<Generator>
+"Det(Pro(SupConNB((cb5[0]),(cb5[0]_spec)))) [minstate]" 
+<Alphabet>
+"cb12-5"      "cb13-5"      cb3_bm+       "cb5-12"      "cb5-13"      cb3_bm-       
+cb3_boff      cb3_wpar_x     rb2_wpar_c   rb3_wpar_c   "wp12-5"      "wp13-5"      
+"wp5-12"      "wp5-13"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+18            
+ </Consecutive>    </States>  
+<TransRel>
+2             cb3_bm+       6             
+1             "cb12-5"      2             
+1             "cb13-5"      4             
+3             "cb5-12"      14            
+3             "cb5-13"      13            
+4             cb3_bm-       16            
+5             cb3_boff      9             
+6             cb3_wpar_x     5             
+7             rb2_wpar_c   18            
+8             rb3_wpar_c   17            
+9             "wp12-5"      3             
+10            "wp13-5"      3             
+11            "wp5-12"      1             
+12            "wp5-13"      1             
+13            cb3_bm+       8             
+14            cb3_bm-       7             
+15            cb3_boff      10            
+16            cb3_wpar_x     15            
+17            cb3_boff      12            
+18            cb3_boff      11            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb12-5"      "cb13-5"      cb3_bm+       "cb5-12"      "cb5-13"      cb3_bm-       
+cb3_boff      
+</Controllable>
+<Observable>
+"cb12-5"      "cb13-5"      cb3_bm+       "cb5-12"      "cb5-13"      cb3_bm-       
+cb3_boff      cb3_wpar_x     rb2_wpar_c   rb3_wpar_c   "wp12-5"      "wp13-5"      
+"wp5-12"      "wp5-13"      
+</Observable>
+
+

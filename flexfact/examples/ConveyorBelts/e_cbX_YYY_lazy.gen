@@ -1,0 +1,39 @@
+% Spezification lazy cbX with right neighbour YYY
+
+
+<Generator>
+"e_cbX_lazy"
+
+<Alphabet>
+cbX_wpar cbX_boff cbX_bm+ YYY_wpar op_ack
+</Alphabet>
+
+<States>
+E W D A
+</States>
+
+<TransRel>
+E  cbX_wpar    E
+E  YYY_wpar    E
+E  op_ack      E
+E  cbX_bm+     W
+
+W  cbX_wpar    D
+W  YYY_wpar    D
+D  cbX_wpar    D
+D  YYY_wpar    D
+
+D  cbX_boff    A
+A  op_ack      E
+</TransRel>
+
+
+<InitStates>
+E
+</InitStates>
+
+<MarkedStates>
+E 
+</MarkedStates>
+
+</Generator>

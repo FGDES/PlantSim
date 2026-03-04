@@ -1,0 +1,13 @@
+<Executor>
+<Generators>
+tmp_g.gen
+e_op_get.gen
+e_op_put.gen
+e_op_lazy.gen
+tmp_e_sf_cb1.gen
+tmp_e_cb1_cb2.gen
+tmp_e_cb2_xs.gen
+</Generators>
+
+
+</Executor>

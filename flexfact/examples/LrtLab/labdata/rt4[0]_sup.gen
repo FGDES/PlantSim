@@ -1,0 +1,43 @@
+<cGenerator>
+<Generator>
+"Det(Pro(SupConNB((rt4[0]),(rt4[0]||rt4[0]_spec)))) [minstate]" 
+<Alphabet>
+"rt4arx"      "rt4ary"      "rt4f"        "rt4lvx"      "rt4lvy"      "rt4mvx"      
+"rt4mvy"      "rt4stp"      "rt4x"        "rt4xy"       "rt4y"        "rt4yx"       
+</Alphabet>
+ <States>   <Consecutive>    1   
+12            
+ </Consecutive>    </States>  
+<TransRel>
+2             "rt4arx"      12            
+1             "rt4xy"       7             
+3             "rt4ary"      8             
+4             "rt4lvx"      3             
+5             "rt4lvy"      2             
+6             "rt4mvx"      5             
+7             "rt4mvy"      4             
+8             "rt4stp"      9             
+9             "rt4y"        10            
+10            "rt4yx"       6             
+11            "rt4x"        1             
+12            "rt4stp"      11            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"rt4mvx"      "rt4mvy"      "rt4stp"      "rt4xy"       "rt4yx"       
+</Controllable>
+<Observable>
+"rt4arx"      "rt4ary"      "rt4f"        "rt4lvx"      "rt4lvy"      "rt4mvx"      
+"rt4mvy"      "rt4stp"      "rt4x"        "rt4xy"       "rt4y"        "rt4yx"       
+</Observable>
+
+</cGenerator>

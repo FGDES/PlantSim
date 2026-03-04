@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE SimplenetDevice SYSTEM "http://www.faudes.org/dtd/1.0/simplenetdevice.dtd">
+<SimplenetDevice name="Supervisor">
+<TimeScale value="1000"/>
+<ServerAddress value="localhost:40001"/>
+<BroadcastAddress value="127.0.0.1:40000"/>
+<Network name="TwoBelts">
+<Node name="Plant" address="localhost:40000"/>
+<Node name="Supervisor" address="localhost:40001"/>
+</Network>
+<EventConfiguration>
+<Event name="cb1_wpar" iotype="input"/>
+<Event name="cb1_wplv" iotype="input"/>
+<Event name="cb2_wpar" iotype="input"/>
+<Event name="cb2_wplv" iotype="input"/>
+<Event name="op_s1act" iotype="input"/>
+<Event name="op_s1rel" iotype="input"/>
+<Event name="op_s2act" iotype="input"/>
+<Event name="op_s2rel" iotype="input"/>
+<Event name="op_s3act" iotype="input"/>
+<Event name="op_s3rel" iotype="input"/>
+<Event name="op_s4act" iotype="input"/>
+<Event name="op_s4rel" iotype="input"/>
+<Event name="cb1_bm+" iotype="output"/>
+<Event name="cb1_bm-" iotype="output"/>
+<Event name="cb1_boff" iotype="output"/>
+<Event name="cb2_bm+" iotype="output"/>
+<Event name="cb2_bm-" iotype="output"/>
+<Event name="cb2_boff" iotype="output"/>
+<Event name="op_l1off" iotype="output"/>
+<Event name="op_l1on" iotype="output"/>
+<Event name="op_l2off" iotype="output"/>
+<Event name="op_l2on" iotype="output"/>
+<Event name="op_l3off" iotype="output"/>
+<Event name="op_l3on" iotype="output"/>
+<Event name="op_l4off" iotype="output"/>
+<Event name="op_l4on" iotype="output"/>
+<Event name="sf1_fdhome" iotype="input"/>
+<Event name="sf1_wpar" iotype="input"/>
+<Event name="sf1_wplv" iotype="input"/>
+<Event name="xs1_wpar" iotype="input"/>
+<Event name="xs1_wplv" iotype="input"/>
+<Event name="sf1_fdoff" iotype="output"/>
+<Event name="sf1_fdon" iotype="output"/>
+</EventConfiguration>
+</SimplenetDevice>

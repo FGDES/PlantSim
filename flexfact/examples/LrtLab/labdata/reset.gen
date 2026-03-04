@@ -1,0 +1,132 @@
+%% add on to supervisor: reset and stop on depwp* events
+<Generator>
+"emergency reset"
+
+<Alphabet>
+"depwpar"  % sensor legft of cb 1
+"depwplv"  % sensor legft of cb 1
+"reset"    % actuator to stop all motors
+
+% all other actuators
+"sfmv"        "sfstp"       "pu1mv-y"     "pu1mv+y"     "pu1stp"      "pu2mv-y"     
+"pu2mv+y"     "pu2stp"      "cb1+x"       "cb1-x"       "cb1stp"      "cb2-y"       
+"cb2stp"      "cb3-y"       "cb3stp"      "cb4+x"       "cb4-x"       "cb4stp"      
+"cb5+x"       "cb5-x"       "cb5stp"      "cb6+x"       "cb6-x"       "cb6stp"      
+"cb7+y"       "cb7-y"       "cb7stp"      "cb8+y"       "cb8-y"       "cb8stp"      
+"cb9+y"       "cb9-y"       "cb9stp"      "cb10+y"      "cb10-y"      "cb10stp"     
+"cb11+x+y"    "cb11-x-y"    "cb11stp"     "cb12+x-y"    "cb12-x+y"    "cb12stp"     
+"cb13+x-y"    "cb13-x+y"    "cb13stp"     "cb14+x-y"    "cb14-x+y"    "cb14stp"     
+"cb15+y"      "cb15-y"      "cb15stp"     "cb16+y"      "cb16-y"      "cb16stp"     
+"rt1mvy"      "rt1mvx"      "rt1stp"      "rt2mvy"      "rt2mvx"      "rt2stp"      
+"rt3mvy"      "rt3mvx"      "rt3stp"      "rt4mvy"      "rt4mvx"      "rt4stp"      
+"rts1+x"      "rts1-x"      "rts1stp"     "rts2+x"      "rts2-x"      "rts2stp"     
+"mh1mv+z"     "mh1mv-z"     "mh1stp"      "mh2mv+z"     "mh2mv-z"     "mh2stp"      
+"d1run"       "d1stp"       "d2run"       "d2stp"              
+</Alphabet>
+
+<States>
+"Init"
+"HaltA"
+"HaltB"
+</States>
+
+<TransRel>
+"Init" "depwpar" "HaltA"
+"Init" "depwplv" "HaltA"
+"HaltA" "reset" "HaltB"
+
+%% selfloop all other actuators
+"Init" "sfmv"        "Init" 
+"Init" "sfstp"       "Init" 
+"Init" "pu1mv-y"     "Init" 
+"Init" "pu1mv+y"     "Init" 
+"Init" "pu1stp"      "Init" 
+"Init" "pu2mv-y"     "Init" 
+"Init" "pu2mv+y"     "Init" 
+"Init" "pu2stp"      "Init" 
+%"Init" "cb1+x"       "Init" 
+"Init" "cb1-x"       "Init" 
+"Init" "cb1stp"      "Init" 
+"Init" "cb2-y"       "Init" 
+"Init" "cb2stp"      "Init" 
+"Init" "cb3-y"       "Init" 
+"Init" "cb3stp"      "Init" 
+"Init" "cb4+x"       "Init" 
+"Init" "cb4-x"       "Init" 
+"Init" "cb4stp"      "Init" 
+"Init" "cb5+x"       "Init" 
+"Init" "cb5-x"       "Init" 
+"Init" "cb5stp"      "Init" 
+"Init" "cb6+x"       "Init" 
+"Init" "cb6-x"       "Init" 
+"Init" "cb6stp"      "Init" 
+"Init" "cb7+y"       "Init" 
+"Init" "cb7-y"       "Init" 
+"Init" "cb7stp"      "Init" 
+%"Init" "cb8+y"       "Init" 
+%"Init" "cb8-y"       "Init" 
+%"Init" "cb8stp"      "Init" 
+"Init" "cb9+y"       "Init" 
+"Init" "cb9-y"       "Init" 
+"Init" "cb9stp"      "Init" 
+"Init" "cb10+y"      "Init" 
+"Init" "cb10-y"      "Init" 
+"Init" "cb10stp"     "Init" 
+"Init" "cb11+x+y"    "Init" 
+"Init" "cb11-x-y"    "Init" 
+"Init" "cb11stp"     "Init" 
+"Init" "cb12+x-y"    "Init" 
+"Init" "cb12-x+y"    "Init" 
+"Init" "cb12stp"     "Init" 
+"Init" "cb13+x-y"    "Init" 
+"Init" "cb13-x+y"    "Init" 
+"Init" "cb13stp"     "Init" 
+"Init" "cb14+x-y"    "Init" 
+"Init" "cb14-x+y"    "Init" 
+"Init" "cb14stp"     "Init" 
+"Init" "cb15+y"      "Init" 
+"Init" "cb15-y"      "Init" 
+"Init" "cb15stp"     "Init" 
+"Init" "cb16+y"      "Init" 
+"Init" "cb16-y"      "Init" 
+"Init" "cb16stp"     "Init" 
+"Init" "rt1mvy"      "Init" 
+"Init" "rt1mvx"      "Init" 
+"Init" "rt1stp"      "Init" 
+"Init" "rt2mvy"      "Init" 
+"Init" "rt2mvx"      "Init" 
+"Init" "rt2stp"      "Init" 
+"Init" "rt3mvy"      "Init" 
+"Init" "rt3mvx"      "Init" 
+"Init" "rt3stp"      "Init" 
+"Init" "rt4mvy"      "Init" 
+"Init" "rt4mvx"      "Init" 
+"Init" "rt4stp"      "Init" 
+"Init" "rts1+x"      "Init" 
+"Init" "rts1-x"      "Init" 
+"Init" "rts1stp"     "Init" 
+"Init" "rts2+x"      "Init" 
+"Init" "rts2-x"      "Init" 
+"Init" "rts2stp"     "Init" 
+"Init" "mh1mv+z"     "Init" 
+"Init" "mh1mv-z"     "Init" 
+"Init" "mh1stp"      "Init" 
+"Init" "mh2mv+z"     "Init" 
+"Init" "mh2mv-z"     "Init" 
+"Init" "mh2stp"      "Init" 
+"Init" "d1run"       "Init" 
+"Init" "d1stp"       "Init" 
+"Init" "d2run"       "Init" 
+"Init" "d2stp"       "Init"       
+
+</TransRel>
+
+<InitStates>
+"Init"
+</InitStates>
+
+<MarkedStates>
+</MarkedStates>
+
+
+</Generator>

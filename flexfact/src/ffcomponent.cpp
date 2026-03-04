@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -585,7 +585,7 @@ QMenu* FfComponent::NewSimulationContextMenu(void) {
   // build signal value widget
   QWidget* wsig= new QWidget();
   QVBoxLayout* vbox = new QVBoxLayout(wsig);
-  vbox->setMargin(2);
+  vbox->setContentsMargins(2,2,2,2);
   vbox->setSpacing(0);
   vbox->addWidget(new QLabel(QString("Signals") /*+Name()*/));
   for(int i=0; i<ImageSize(); i++) {
@@ -595,7 +595,7 @@ QMenu* FfComponent::NewSimulationContextMenu(void) {
   // build fault control widget
   QWidget* fsig= new QWidget();
   QVBoxLayout* vfbox = new QVBoxLayout(fsig);
-  vfbox->setMargin(2);
+  vfbox->setContentsMargins(2,2,2,2);
   vfbox->setSpacing(0);
   vfbox->addWidget(new QLabel(QString("Fault Ctrl") /*+Name()*/));
   bool fempty=true;
@@ -785,15 +785,15 @@ FfComponentEditor::FfComponentEditor(FfComponent* comp, bool insfault) :
   this->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed));
   mGbox = new QGridLayout(this);  
   mGbox->setSpacing(2);
-  mGbox->setMargin(2);
+  mGbox->setContentsMargins(2,2,2,2);
   // edit name
   QLabel* nlabel = new QLabel("Name");
   nlabel->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed));
   mNameEdit = new QLineEdit(comp->Name());
   connect(mNameEdit,SIGNAL(editingFinished(void)),this,SLOT(SetName(void)));
-  QRegExpValidator* nvalid = new QRegExpValidator(
-    QRegExp("[A-Za-z][A-Za-z0-9_\\^\\(\\)\\[\\]{}+-*]+"),0);
-  mNameEdit->setValidator(nvalid);
+  QRegularExpression name("[A-Za-z][A-Za-z0-9_\\^\\(\\)\\[\\]{}+-*]+");
+  QValidator *validator = new QRegularExpressionValidator(name, this);
+  mNameEdit->setValidator(validator);
   mNameEdit->setMinimumWidth(12*10);
   mNameEdit->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed));
   // add to layout
@@ -825,8 +825,9 @@ void FfComponentEditor::InsertFaultEditor(FfComponent* comp) {
     // tau fail
     QLineEdit* etauf = new QLineEdit();
     connect(etauf,SIGNAL(editingFinished(void)),this,SLOT(UpdateFromEditor(void)));
-    QRegExpValidator* lfvalid = new QRegExpValidator(QRegExp("[0-9]*"),0);
-    etauf->setValidator(lfvalid);
+    QRegularExpression num("[0-9]*");
+    QValidator *validator = new QRegularExpressionValidator(num, this);
+    etauf->setValidator(validator);
     etauf->setText(QString("%1").arg(faultcfg->TauFail()));
     etauf->setProperty("fpar","tauf");
     etauf->setProperty("fidx",idx);
@@ -834,8 +835,7 @@ void FfComponentEditor::InsertFaultEditor(FfComponent* comp) {
     // tau repair
     QLineEdit* etaur = new QLineEdit();
     connect(etaur,SIGNAL(editingFinished(void)),this,SLOT(UpdateFromEditor(void)));
-    QRegExpValidator* lrvalid = new QRegExpValidator(QRegExp("[0-9]*"),0);
-    etaur->setValidator(lrvalid);
+    etaur->setValidator(validator);
     etaur->setText(QString("%1").arg(faultcfg->TauRepair()));
     etaur->setProperty("fpar","taur");
     etaur->setProperty("fidx",idx);
@@ -843,7 +843,7 @@ void FfComponentEditor::InsertFaultEditor(FfComponent* comp) {
     // activate line
     QHBoxLayout* aline = new QHBoxLayout();
     aline->setSpacing(2);
-    aline->setMargin(0);
+    aline->setContentsMargins(0,0,0,0);
     aline->addWidget(fcheck,Qt::AlignLeft);
     aline->addWidget(new QLabel(" [t_f/t_r] = ["),0);
     aline->addWidget(etauf,0);

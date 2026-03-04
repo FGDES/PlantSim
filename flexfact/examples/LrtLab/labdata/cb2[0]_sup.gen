@@ -1,0 +1,38 @@
+<cGenerator>
+<Generator>
+"SupConNB((cb2[0]),(cb2[0]||cb2[0]_spec))" 
+<Alphabet>
+"cb2-13"      "cb2-y"       "cb2stp"      "cb2wpar"     "cb2wplv13"   "sf-2"       "wp2-13"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+9           
+ </Consecutive>    </States>  
+<TransRel>
+1             "sf-2"        2             
+2             "cb2-y"       3             
+3             "cb2wpar"     4             
+4             "cb2stp"      5             
+5             "cb2-13"      6             
+6             "cb2-y"       7                          
+7             "cb2wplv13"   8            
+8            "cb2stp"       9                       
+9            "wp2-13"       1             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb2-13"      "cb2-y"       "cb2stp"      "sf-2"           
+</Controllable>
+<Observable>
+"cb2-13"      "cb2-y"       "cb2stp"      "cb2wpar"     "cb2wplv13"   "sf-2"       "wp2-13"      
+</Observable>
+
+</cGenerator>

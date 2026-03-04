@@ -1,0 +1,46 @@
+% Plant component stackfeeder
+
+<Generator>
+"src"
+
+<Alphabet>
+"sf_fdon" +C+ "sf_fdoff" +C+
+"sf_fdhome" "sf_wpar" 
+"src_avail" +C+ "src_take" +C+
+
+</Alphabet>
+
+<States>
+"I"  "R1" "R2" "F1" "F2" "F3" "F2b" "F3b"
+</States>
+
+<TransRel>
+
+% nominal cycle
+"I"  "sf_wpar"   "R1"
+"R1" "src_avail"  "R2"
+"R2" "src_take"   "F1"
+"F1" "sf_fdon"   "F2"
+"F2" "sf_fdhome" "F3"
+"F3"  "sf_fdoff"   "I" 
+
+% workpiece arrive during feed
+"F2"  "sf_wpar" "F2b"
+%"F3"  "sf_wpar" "F3b"  % nor required, fdoff is forcible
+
+"F2b" "sf_fdhome" "F3b"
+"F3b" "sf_fdoff"   "R1" 
+
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I"  "R1"
+</MarkedStates>
+
+</Generator>

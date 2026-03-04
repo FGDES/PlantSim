@@ -1,0 +1,51 @@
+
+<Generator>
+"SupConNB((rt3[0]),(rt3[0]||rt3[0]_spec))" 
+<Alphabet>
+rb3_sccw      rb3_scw      "rt3f"        "rt3lvx"      "rt3lvy"      rb3_rccw      
+rb3_rcw      rb3_roff      "rt3x"        "rt3xy"       "rt3y"        "rt3yx"       
+"t_rt3-cb13\rt3" 
+</Alphabet>
+ <States>   <Consecutive>    1   
+18            
+ </Consecutive>    </States>  
+<TransRel>
+1             "rt3yx"       2             
+2             rb3_rccw      3             
+3             "t_rt3-cb13\rt3" 4             
+4             "rt3lvy"      5             
+5             "t_rt3-cb13\rt3" 6             
+6             rb3_sccw      7             
+7             rb3_roff      8             
+8             "t_rt3-cb13\rt3" 9             
+9             "rt3x"        10            
+10            "rt3xy"       11            
+11            rb3_rcw      12            
+12            "t_rt3-cb13\rt3" 13            
+13            "rt3lvx"      14            
+14            "t_rt3-cb13\rt3" 15            
+15            rb3_scw      16            
+16            rb3_roff      17            
+17            "t_rt3-cb13\rt3" 18            
+18            "rt3y"        1             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+rb3_rccw      rb3_rcw      rb3_roff      "rt3xy"       "rt3yx"       "t_rt3-cb13\rt3" 
+</Controllable>
+<Observable>
+rb3_sccw      rb3_scw      "rt3f"        "rt3lvx"      "rt3lvy"      rb3_rccw      
+rb3_rcw      rb3_roff      "rt3x"        "rt3xy"       "rt3y"        "rt3yx"       
+"t_rt3-cb13\rt3" 
+</Observable>
+
+

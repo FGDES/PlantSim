@@ -1,0 +1,125 @@
+% Plant component interaction, conveyor belts 1 and 2
+
+<Generator>
+"cb12"
+
+<Alphabet>
+"cb1_boff" +C+ "cb1_bm-" +C+  "cb1_bm+" +C+
+"cb2_boff" +C+ "cb2_bm-" +C+  "cb2_bm+" +C+
+"cb1_wpar"   "cb1_wplv"   
+"cb2_wpar"   "cb2_wplv"   
+</Alphabet>
+
+<States>
+"II" "IL" "IR"
+"RI" "RL" "RR"
+"LI" "LL" "LR"
+"RRf" "LLf" "Err"
+</States>
+
+<TransRel>
+% idle/idle 
+"II" "cb1_bm+" "RI"
+"II" "cb1_bm-"  "LI"
+"II" "cb2_bm+" "IR"
+"II" "cb2_bm-"  "IL"
+
+% right/idle 
+"RI" "cb1_boff"  "II"
+"RI" "cb1_bm-"   "LI"
+"RI" "cb2_bm+"   "RR"
+"RI" "cb2_bm-"   "RL"
+
+% left/idle 
+"LI" "cb1_boff"  "II"
+"LI" "cb1_bm+"   "RI"
+"LI" "cb2_bm+"   "LR"
+"LI" "cb2_bm-"   "LL"
+
+% idle/right 
+"IR" "cb1_bm+"   "RR"
+"IR" "cb1_bm-"   "LR"
+"IR" "cb2_boff"  "II"
+"IR" "cb2_bm-"   "IL"
+
+% right/right 
+"RR" "cb1_boff"  "IR"
+"RR" "cb1_bm-"   "LR"
+"RR" "cb2_boff"  "RI"
+"RR" "cb2_bm-"   "RL"
+
+% left/right 
+"LR" "cb1_boff"  "IR"
+"LR" "cb1_bm+"   "RR"
+"LR" "cb2_boff"  "LI"
+"LR" "cb2_bm-"   "LL"
+
+
+% idle/left 
+"IL" "cb1_bm+"   "RL"
+"IL" "cb1_bm-"   "LL"
+"IL" "cb2_boff"  "II"
+"IL" "cb2_bm+"   "IR"
+
+% right/left 
+"RL" "cb1_boff"  "IL"
+"RL" "cb1_bm-"   "LL"
+"RL" "cb2_boff"  "RI"
+"RL" "cb2_bm+"   "RR"
+
+% left/left 
+"LL" "cb1_boff"  "IL"
+"LL" "cb1_bm+"   "RL"
+"LL" "cb2_boff"  "LI"
+"LL" "cb2_bm+"   "LR"
+
+% right transport
+"RR"  "cb1_wplv" "RRf"
+"RRf" "cb2_wpar" "RR"
+"RRf" "cb1_wplv" "Err"
+"RI"  "cb1_wplv" "Err"
+
+% left transport
+"LL"  "cb2_wplv" "LLf"
+"LLf" "cb1_wpar" "LL"
+"LLf" "cb2_wplv" "Err"
+"IL"  "cb2_wplv" "Err"
+
+
+% right arival
+"IL"  "cb2_wpar" "IL"
+"RL"  "cb2_wpar" "RL"
+"LL"  "cb2_wpar" "LL"
+"LLf" "cb2_wpar" "LLf"
+
+% right disposal
+"IR"  "cb2_wplv" "IR"
+"RR"  "cb2_wplv" "RR"
+"LR"  "cb2_wplv" "LR"
+"RRf" "cb2_wplv" "RRf"
+
+
+% left arival
+"RI"  "cb1_wpar" "RI"
+"RR"  "cb1_wpar" "RR"
+"RL"  "cb1_wpar" "RL"
+"RRf" "cb1_wpar" "RRf"
+
+% left disposal
+"LI"  "cb1_wplv" "LI"
+"LR"  "cb1_wplv" "LR"
+"LL"  "cb1_wplv" "LL"
+"LLf" "cb1_wplv" "LLf"
+
+</TransRel>
+
+
+<InitStates>
+"II"
+</InitStates>
+
+<MarkedStates>
+"II"  
+</MarkedStates>
+
+</Generator>

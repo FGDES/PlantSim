@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -499,9 +499,9 @@ FfProcessEditor::FfProcessEditor(FfComponent* comp) :
   nlabel->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed));
   mTypeEdit = new QLineEdit();
   connect(mTypeEdit,SIGNAL(editingFinished(void)),this,SLOT(UpdateFromEditor(void)));
-  QRegExpValidator* lvalid = new QRegExpValidator(
-    QRegExp("[A-Z]"),0);
-  mTypeEdit->setValidator(lvalid);
+  QRegularExpression atoz("[A-Z]");
+  QValidator *validator = new QRegularExpressionValidator(atoz, this);
+  mTypeEdit->setValidator(validator);
   mTypeEdit->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed));
   // fill in my values
   DoUpdateFromComponent(comp);

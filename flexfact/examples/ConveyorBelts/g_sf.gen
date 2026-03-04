@@ -1,0 +1,52 @@
+% Stack feeder (assume always ready)
+
+<Generator>
+"sf"
+
+<Alphabet>
+sf_fdon +C+  sf_fdoff  +CF+ sf_wpar
+sf_fdhome
+sf_exit +o+  
+</Alphabet>
+
+<States>
+E Er F Fr A Ar
+</States>
+
+<TransRel>
+% empty
+E  sf_fdon   Er
+E  sf_fdoff  E
+Er sf_fdon   Er
+Er sf_fdoff  E
+
+% wp present
+F  sf_fdon   Fr
+F  sf_fdoff  F
+Fr sf_fdon   Fr
+Fr sf_fdoff  F
+
+% ack
+A  sf_fdon   Ar
+A  sf_fdoff  A
+Ar sf_fdon   Ar
+Ar sf_fdoff  A
+
+% transitions
+E   sf_wpar   F
+Er  sf_wpar   Fr
+Fr  sf_exit   Ar
+Ar  sf_fdhome Er
+
+</TransRel>
+
+
+<InitStates>
+E
+</InitStates>
+
+<MarkedStates>
+E F A
+</MarkedStates>
+
+</Generator>

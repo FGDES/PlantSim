@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexFactConfiguration>
+<SimulationParameters/>
+<PlantComponents>
+<StackFeeder id="SF">
+<Position x="1" y="2" phi="std"/>
+</StackFeeder>
+<ConveyorBelt id="CB1">
+<Position x="2" y="2" phi="std"/>
+</ConveyorBelt>
+<ExitSlide id="XS">
+<Position x="6" y="2" phi="std"/>
+</ExitSlide>
+<ConveyorBelt id="CB2">
+<Position x="3" y="2" phi="std"/>
+</ConveyorBelt>
+<ConveyorBelt id="CB3">
+<Position x="4" y="2" phi="std"/>
+</ConveyorBelt>
+</PlantComponents>
+</FlexFactConfiguration>

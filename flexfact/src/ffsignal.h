@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define FAUDES_SIGNAL_H
 
 #include <QtGui>
+#include <QtWidgets>
 #include <QtNetwork>
 #include "ffstyle.h"
 
@@ -345,7 +346,7 @@ public:
 protected:
 
   // reimplement tcpserver
-  void incomingConnection(int socketDescriptor);
+  void incomingConnection(qintptr socketDescriptor);
 
   // status
   FfProcessImage::DState mState;
@@ -368,7 +369,7 @@ Q_OBJECT
 public:
 
   // consruct
-  FfModbusThread(int socket, FfModbusDevice *device);
+  FfModbusThread(qintptr socket, FfModbusDevice *device);
 
   // reimplement thread
   void run();
@@ -376,7 +377,7 @@ public:
 protected:
 
   // socket we are listening
-  int mSocket;
+  qintptr mSocket;
 
   // device we are serving
   FfModbusDevice* mDevice;

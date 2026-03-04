@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexFactConfiguration>
+<SimulationParameters/>
+<PlantComponents>
+<StackFeeder id="SF">
+<Position x="4" y="2" phi="+180"/>
+</StackFeeder>
+<ConveyorBelt id="CB2">
+<Position x="3" y="3" phi="+90"/>
+<Parameters len="1"/>
+</ConveyorBelt>
+<ExitSlide id="XS2">
+<Position x="-2" y="4" phi="+270"/>
+</ExitSlide>
+<Distributor id="DS">
+<Position x="1" y="2" phi="std"/>
+<Parameters len="3"/>
+</Distributor>
+<RailTransport id="RS">
+<Position x="-2" y="6" phi="std"/>
+<Parameters len="9"/>
+</RailTransport>
+<ConveyorBelt id="CB1">
+<Position x="1" y="3" phi="+90"/>
+<Parameters len="1"/>
+</ConveyorBelt>
+<RotaryTable id="RB1">
+<Position x="-1" y="4" phi="+90"/>
+</RotaryTable>
+<RotaryTable id="RB2">
+<Position x="1" y="4" phi="std"/>
+</RotaryTable>
+<ConveyorBelt id="CB3">
+<Position x="2" y="4" phi="std"/>
+<Parameters len="1"/>
+</ConveyorBelt>
+<RotaryTable id="RB3">
+<Position x="3" y="4" phi="std"/>
+</RotaryTable>
+<RotaryTable id="RB4">
+<Position x="5" y="4" phi="std"/>
+</RotaryTable>
+<ConveyorBelt id="CB4">
+<Position x="-1" y="5" phi="+90"/>
+<Parameters len="1"/>
+</ConveyorBelt>
+<ConveyorBelt id="CB5">
+<Position x="1" y="5" phi="+90"/>
+<Parameters len="1"/>
+</ConveyorBelt>
+<ConveyorBelt id="CB6">
+<Position x="3" y="5" phi="+90"/>
+<Parameters len="1"/>
+</ConveyorBelt>
+<ConveyorBelt id="CB7">
+<Position x="5" y="5" phi="+90"/>
+<Parameters len="1"/>
+</ConveyorBelt>
+<ExitSlide id="XS3">
+<Position x="6" y="4" phi="+270"/>
+</ExitSlide>
+<ExitSlide id="XS1">
+<Position x="-1" y="2" phi="+180"/>
+</ExitSlide>
+<Machine id="PM1">
+<Position x="0" y="4" phi="std"/>
+<Parameters proc="A"/>
+</Machine>
+<Machine id="PM2">
+<Position x="4" y="4" phi="std"/>
+<Parameters proc="A"/>
+</Machine>
+</PlantComponents>
+</FlexFactConfiguration>

@@ -1,0 +1,44 @@
+<cGenerator>
+<Generator>
+"Det(Pro(SupConNB((cb4[0]),(cb4[0]_spec)))) [minstate]" 
+<Alphabet>
+"cb11-4"      "cb12-4"      "cb4+x"       "cb4-11"      "cb4-12"      "cb4-x"       
+"cb4stp"      "cb4wpar"     "cb4wplv11"   "cb4wplv12"   "wp11-4"      "wp12-4"      
+"wp4-11"      "wp4-12"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+10            
+ </Consecutive>    </States>  
+<TransRel>
+2             "cb4-11"      9             
+1             "cb12-4"      3             
+3             "cb4-x"       5             
+4             "cb4stp"      8             
+5             "cb4wpar"     10            
+6             "cb4wplv11"   4             
+7             "wp12-4"      2             
+8             "wp4-11"      1             
+9             "cb4-x"       6             
+10            "cb4stp"      7             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb11-4"      "cb12-4"      "cb4+x"       "cb4-11"      "cb4-12"      "cb4-x"       
+"cb4stp"      
+</Controllable>
+<Observable>
+"cb11-4"      "cb12-4"      "cb4+x"       "cb4-11"      "cb4-12"      "cb4-x"       
+"cb4stp"      "cb4wpar"     "cb4wplv11"   "cb4wplv12"   "wp11-4"      "wp12-4"      
+"wp4-11"      "wp4-12"      
+</Observable>
+
+</cGenerator>

@@ -1,0 +1,57 @@
+
+<Generator>
+"Det(Pro(SupConNB((mh2d2[0]),(mh2d2[0]||mh2d2[0]_spec)))) [minstate]" 
+<Alphabet>
+pm2_mon       pm2_moff       pm2_ps-     pm2_ps+     "mh2end"      "mh2f"        
+"mh2lv+z"     "mh2lv-z"     pm2_pm-     pm2_pm+     "mh2start"    pm2_poff      
+"pm2_mack" 
+</Alphabet>
+ <States>   
+<Consecutive>    1   12   </Consecutive>    
+100 
+</States>  
+<TransRel>
+
+% stage B: "operate tool" until process complete
+2             pm2_mon       100
+100           "pm2_mack"     3
+3             pm2_moff       8 
+
+
+
+
+1             "mh2start"    9             
+3             pm2_moff       8 
+4             pm2_ps-     12            
+5             pm2_ps+     10            
+6             "mh2lv+z"     5             
+7             "mh2lv-z"     4             
+8             pm2_pm-     7             
+9             pm2_pm+     6             
+10            pm2_poff      2             
+11            "mh2end"      1             
+12            pm2_poff      11            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+<Clocks>
+"c2"
+</Clocks>
+
+</Generator>
+
+
+<Controllable>
+pm2_mon       pm2_pm-     pm2_pm+     "mh2start"    pm2_poff      
+</Controllable>
+<Observable>
+pm2_mon       pm2_moff       pm2_ps-     pm2_ps+     "mh2end"      "mh2f"        
+"mh2lv+z"     "mh2lv-z"     pm2_pm-     pm2_pm+     "mh2start"    pm2_poff      
+</Observable>
+
+

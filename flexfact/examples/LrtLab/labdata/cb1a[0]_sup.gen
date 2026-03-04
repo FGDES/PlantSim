@@ -1,0 +1,44 @@
+<cGenerator>
+<Generator>
+"SupConNB((cb1a[0]),(cb1a[0]_spec))" 
+<Alphabet>
+"cb1awpar"    "cb1awplv"    "sf-2"        "cb1-x"       "cb1stp"      "sf-3"        
+"sf-cb1"      "sf-dep"            
+</Alphabet>
+ <States>   <Consecutive>    1   
+9            
+ </Consecutive>    </States>  
+<TransRel>
+1             "cb1-x"       2             
+1             "sf-cb1"      3             
+2             "cb1stp"      1             
+2             "sf-cb1"      4             
+3             "cb1-x"       4             
+4             "cb1awpar"    5             
+4             "cb1stp"      3             
+5             "cb1stp"      6             
+6             "sf-2"        7             
+6             "sf-3"        8             
+7             "cb1awplv"    1             
+8             "cb1-x"       9             
+9            "cb1awplv"    2             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"sf-2"        "cb1-x"       "cb1stp"      "sf-3"        "sf-cb1"      "sf-dep"           
+</Controllable>
+<Observable>
+"cb1awpar"    "cb1awplv"    "sf-2"        "cb1-x"       "cb1stp"      "sf-3"        
+"sf-cb1"      "sf-dep"      
+</Observable>
+
+</cGenerator>

@@ -1,0 +1,33 @@
+% Plant component interaction, sink right of c
+
+<Generator>
+"snkc"
+
+<Alphabet>
+"cbc_stop" +C+  "cbc_right" +C+ "cbc_left"  +C+
+"cbc_wpar"   "cbc_wplv"   
+"snkc_tau" +C+
+</Alphabet>
+
+<States>
+"I" "F1" "F2" 
+</States>
+
+<TransRel>
+"I"  "cbc_stop" "I"
+"I"  "cbc_right" "I"
+"I"  "cbc_left" "I"
+"I"  "cbc_wpar" "F1"
+"F1" "cbc_wplv" "I"
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I"  
+</MarkedStates>
+
+</Generator>

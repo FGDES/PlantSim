@@ -1,0 +1,43 @@
+
+<Generator>
+"Det(Pro(SupConNB((rt4[0]),(rt4[0]||rt4[0]_spec)))) [minstate]" 
+<Alphabet>
+rb4_sccw      rb4_scw      "rt4f"        "rt4lvx"      "rt4lvy"      rb4_rccw      
+rb4_rcw      rb4_roff      "rt4x"        "rt4xy"       "rt4y"        "rt4yx"       
+</Alphabet>
+ <States>   <Consecutive>    1   
+12            
+ </Consecutive>    </States>  
+<TransRel>
+2             rb4_sccw      12            
+1             "rt4xy"       7             
+3             rb4_scw      8             
+4             "rt4lvx"      3             
+5             "rt4lvy"      2             
+6             rb4_rccw      5             
+7             rb4_rcw      4             
+8             rb4_roff      9             
+9             "rt4y"        10            
+10            "rt4yx"       6             
+11            "rt4x"        1             
+12            rb4_roff      11            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+rb4_rccw      rb4_rcw      rb4_roff      "rt4xy"       "rt4yx"       
+</Controllable>
+<Observable>
+rb4_sccw      rb4_scw      "rt4f"        "rt4lvx"      "rt4lvy"      rb4_rccw      
+rb4_rcw      rb4_roff      "rt4x"        "rt4xy"       "rt4y"        "rt4yx"       
+</Observable>
+
+

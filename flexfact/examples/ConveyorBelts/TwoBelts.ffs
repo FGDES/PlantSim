@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexFactConfiguration>
+<SimulationParameters>
+<OperatorPanel cnt="4"/>
+<Device type="SimpleNet"/>
+</SimulationParameters>
+<PlantComponents>
+<StackFeeder id="SF">
+<Position x="1" y="2" phi="std"/>
+</StackFeeder>
+<ConveyorBelt id="CB1">
+<Position x="2" y="2" phi="std"/>
+<Parameters len="1"/>
+</ConveyorBelt>
+<ExitSlide id="XS">
+<Position x="5" y="2" phi="std"/>
+</ExitSlide>
+<ConveyorBelt id="CB2">
+<Position x="3" y="2" phi="std"/>
+<Parameters len="1"/>
+</ConveyorBelt>
+</PlantComponents>
+</FlexFactConfiguration>

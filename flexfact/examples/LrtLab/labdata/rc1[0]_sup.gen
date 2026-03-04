@@ -1,0 +1,32 @@
+<cGenerator>
+<Generator>
+"Det(Pro(rc1[1])) [minstate]" 
+<Alphabet>
+"cb15-rc1"    "wp15-rc1"    "rc1rdy"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+3             
+ </Consecutive>    </States>  
+<TransRel>
+2             "wp15-rc1"    3             
+1             "cb15-rc1"    2             
+3             "rc1rdy"      1             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb15-rc1"    
+</Controllable>
+<Observable>
+"cb15-rc1"    "wp15-rc1"    "rc1rdy"      
+</Observable>
+
+</cGenerator>

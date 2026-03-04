@@ -1,0 +1,41 @@
+
+<Generator>
+"SupConNB((sf[0]),(sf[0]||sf[0]_spec))" 
+<Alphabet>
+"sf-cb1"      sf_fdon        "sfnr"        sf_fdhome         sf_fdoff       sf_wpar      
+sf_wplv      
+</Alphabet>
+ <States>   <Consecutive>    1   
+9     
+ </Consecutive>    </States>  
+<TransRel>
+1             sf_wpar      2             
+2             "sf-cb1"      3             
+3             sf_fdon        4             
+4             "sfnr"        5             
+5             sf_wplv      6             
+6             sf_fdhome         7            
+6             sf_wpar      8            
+7             sf_fdoff       1             
+8             sf_fdhome         9            
+9             sf_fdoff       2             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             2             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"sf-cb1"      sf_fdon        sf_fdoff       
+</Controllable>
+<Observable>
+"sf-cb1"      sf_fdon        "sfnr"        sf_fdhome         sf_fdoff       sf_wpar      
+sf_wplv      
+</Observable>
+
+

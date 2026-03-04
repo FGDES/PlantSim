@@ -1,0 +1,48 @@
+<Generator>
+Controller   
+
+% 
+%  Statistics for Controller
+% 
+%  States:        11
+%  Init/Marked:   1/0
+%  Events:        11
+%  Transitions:   12
+%  StateSymbols:  0
+%  Attrib. E/S/T: 0/0/0
+% 
+
+<Alphabet>
+op_s1act      op_l1on       op_s2act      op_s2rel      cb1_bm+       cb1_boff     
+cb2_bm+       cb2_boff      op_l1off      sf1_fdoff     sf1_fdon     
+</Alphabet>
+
+<States>
+<Consecutive>
+1              11            
+</Consecutive>
+</States>
+
+<TransRel>
+1              op_s1act      2             
+2              cb1_bm+       3             
+3              cb2_bm+       4             
+4              op_l1on       5             
+5              op_s1act      6             
+5              op_s2act      9             
+6              cb2_boff      7             
+7              cb1_boff      8             
+8              op_l1off      1             
+9              sf1_fdon      10            
+10             op_s2rel      11            
+11             sf1_fdoff     5             
+</TransRel>
+
+<InitStates>
+1             
+</InitStates>
+
+<MarkedStates/>
+
+
+</Generator>

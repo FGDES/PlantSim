@@ -1,6 +1,6 @@
 # ##########################################
 # libFAUDES PlantSim project file 
-# tmoor 20130402
+# tmoor 20260304
 # ##########################################
 
 # say hello
@@ -13,6 +13,6 @@ CONFIG += ordered
 TEMPLATE = subdirs
 SUBDIRS  = ./eleplant  \
 #           ./ftcplant  \
-#           ./flexfact
+           ./flexfact
 
 

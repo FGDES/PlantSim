@@ -1,0 +1,49 @@
+
+<Generator>
+"Det(Pro(SupConNB((rts2[0]),(rts2[0]||rts2[0]_spec)))) [minstate]" 
+<Alphabet>
+rs_c2m+      rs_c2m-      "rts2_3"      "rts2_3-4"    "rts2_4"      "rts2_4-3"    
+"rts2_4-5"    "rts2_5"      "rts2_5-4"    "rts2_5-6"    "rts2_6"      "rts2_6-5"    
+rs_p4car     rs_p6car     rs_p8car     rs_p9car     "rts2lv3"     "rts2lv4"     
+"rts2lv5"     "rts2lv6"     rs_c2off     
+</Alphabet>
+ <States>   <Consecutive>    1   
+12            
+ </Consecutive>    </States>  
+<TransRel>
+2             rs_c2m+      8             
+1             "rts2_5-6"    2             
+3             rs_c2m-      9             
+4             "rts2_6"      5             
+5             "rts2_6-5"    3             
+6             rs_p8car     12            
+7             rs_p9car     10            
+8             "rts2lv5"     7             
+9             "rts2lv6"     6             
+10            rs_c2off     4             
+11            "rts2_5"      1             
+12            rs_c2off     11            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+rs_c2m+      rs_c2m-      "rts2_3-4"    "rts2_4-3"    "rts2_4-5"    "rts2_5-4"    
+"rts2_5-6"    "rts2_6-5"    rs_p4car     rs_p6car     rs_p8car     rs_p9car     
+"rts2lv3"     "rts2lv4"     "rts2lv5"     "rts2lv6"     rs_c2off     
+</Controllable>
+<Observable>
+rs_c2m+      rs_c2m-      "rts2_3"      "rts2_3-4"    "rts2_4"      "rts2_4-3"    
+"rts2_4-5"    "rts2_5"      "rts2_5-4"    "rts2_5-6"    "rts2_6"      "rts2_6-5"    
+rs_p4car     rs_p6car     rs_p8car     rs_p9car     "rts2lv3"     "rts2lv4"     
+"rts2lv5"     "rts2lv6"     rs_c2off     
+</Observable>
+
+

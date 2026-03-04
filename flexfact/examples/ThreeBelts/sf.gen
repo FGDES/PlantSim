@@ -1,0 +1,50 @@
+% Plant component stackfeeder
+
+<Generator>
+"src"
+
+<Alphabet>
+"sf_fdon" +C+ "sf_fdoff" +C+
+"sf_fdhome" "sf_wpar" "sf_wplv"
+"sf_tau" +C+
+</Alphabet>
+
+<States>
+"IE"  "IF"  "FE"  "FEt" "FF" "FFt"
+</States>
+
+<TransRel>
+
+% feed on/off
+"IE"  "sf_fdon"  "FE"
+"FE"  "sf_fdoff" "IE"
+"IF"  "sf_fdon"  "FF"
+"FF"  "sf_fdoff" "IF"
+
+% receive workpiece from stack
+"IE"  "sf_wpar" "IF"
+"FE"  "sf_wpar" "FF"
+
+% feed workpiece stage 1
+"FF"  "sf_wplv" "FE"
+
+% feed workpiece stage 2
+"FF"  "sf_fdhome" "FFt"
+"FFt" "sf_fdoff"  "IF"
+"FFt" "sf_tau"    "FF"
+"FE"  "sf_fdhome" "FEt"
+"FEt" "sf_fdoff"  "IE"
+"FEt" "sf_tau"    "FE"
+
+</TransRel>
+
+
+<InitStates>
+"IE"
+</InitStates>
+
+<MarkedStates>
+"IE" "IF"  
+</MarkedStates>
+
+</Generator>

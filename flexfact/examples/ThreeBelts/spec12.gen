@@ -1,0 +1,40 @@
+% Specifiaction, conveyor belts 1 and 2
+
+<Generator>
+"spec12"
+
+<Alphabet>
+"tu1_start" +C+ "tu1_stop"  +C+  "tu1_cont"  +C+ 
+"tu1_ack" +C+
+"tu2_start" +C+  "tu2_cont"  +C+   
+"tu2_ack" +C+
+"tu3_ack" +C+
+</Alphabet>
+
+<States>
+"I" "L1" "L2" "L3" "L4" "B1" 
+</States>
+
+<TransRel>
+% nominal transport cycle
+"I"   "tu1_start"  "L1"
+"I"   "tu1_cont"   "L1"
+"L1"  "tu1_ack"    "L2"
+"L2"  "tu2_start"  "L3"
+"L2"  "tu2_cont"   "L3"
+"L3"  "tu2_ack"    "L4"
+"L4"  "tu1_stop"   "B1"
+"B1"  "tu3_ack"    "I"
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I"
+</MarkedStates>
+
+</Generator>

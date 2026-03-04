@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef FAUDES_FFVIEW_H
 #define FAUDES_FFVIEW_H
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "ffscene.h"
 
@@ -68,11 +68,18 @@ signals:
 protected:
 
   // reimplement mouse events
-  void wheelEvent(QWheelEvent *event);
-  void mousePressEvent(QMouseEvent * event);
-  void mouseReleaseEvent(QMouseEvent * event);
-  void mouseDoubleClickEvent(QMouseEvent * event);
-  void mouseMoveEvent(QMouseEvent * event);
+  void wheelEvent(QWheelEvent *event) override;
+  void mousePressEvent(QMouseEvent * event) override;
+  void mouseReleaseEvent(QMouseEvent * event) override;
+  void mouseDoubleClickEvent(QMouseEvent * event) override;
+  void mouseMoveEvent(QMouseEvent * event) override;
+
+  // track scaling
+  qreal mScale;
+
+  // get and implement gesture events
+  bool event(QEvent *event) override;
+  bool gestureEvent(QGestureEvent* gevent);
 
 
 

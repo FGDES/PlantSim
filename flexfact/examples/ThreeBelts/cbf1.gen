@@ -1,0 +1,89 @@
+% Plant component interaction, stackfeeder and conveyor belts 1 
+
+<Generator>
+"cbf1"
+
+<Alphabet>
+"sf_fdon" +C+ "sf_fdoff" +C+  "sf_fdhome"  
+"sf_wplv"   
+"cb1_boff" +C+ "cb1_bm-" +C+  "cb1_bm+" +C+
+"cb1_wpar"   "cb1_wplv"   
+</Alphabet>
+
+<States>
+"II" "IL" "IR"
+"RI" "RL" "RR"
+"RRf1" "RRf2" "IRf2"  "Err"
+</States>
+
+<TransRel>
+% idle/idle 
+"II" "sf_fdon"  "RI"
+"II" "cb1_bm+"  "IR"
+"II" "cb1_bm-"  "IL"
+
+% right/idle 
+"RI" "sf_fdoff"  "II"
+"RI" "cb1_bm+"   "RR"
+"RI" "cb1_bm-"   "RL"
+
+% idle/right 
+"IR" "sf_fdon"   "RR"
+"IR" "cb1_boff"  "II"
+"IR" "cb1_bm-"   "IL"
+
+% right/right 
+"RR" "sf_fdoff"  "IR"
+"RR" "cb1_boff"  "RI"
+"RR" "cb1_bm-"   "RL"
+
+% idle/left 
+"IL" "sf_fdon"   "RL"
+"IL" "cb1_boff"  "II"
+"IL" "cb1_bm+"   "IR"
+
+% right/left 
+"RL" "sf_fdoff"  "IL"
+"RL" "cb1_boff"  "RI"
+"RL" "cb1_bm+"   "RR"
+
+
+
+% right transport, nominal
+"RR"    "sf_wplv" "RRf1"
+"RRf1"  "sf_fdhome" "RRf2"
+"RRf2"  "sf_fdoff"  "IRf2"
+"RRf2"  "cb1_wpar"  "RR"
+"IRf2"  "cb1_wpar"  "IR"
+
+% right transport, error
+%"RRf1" "sf_wplv" "Err"
+%"RRf2" "sf_wplv" "Err"
+"RI"  "sf_wplv" "Err"
+"RL"  "sf_wplv" "Err"
+
+% right arival
+"IL"  "cb1_wpar" "IL"
+"RL"  "cb1_wpar" "RL"
+
+% right disposal
+"IR"  "cb1_wplv" "IR"
+"RR"  "cb1_wplv" "RR"
+"RRf1" "cb1_wplv" "RRf1"
+"RRf2" "cb1_wplv" "RRf2"
+"IRf2" "cb1_wplv" "IRf2"
+
+
+
+</TransRel>
+
+
+<InitStates>
+"II"
+</InitStates>
+
+<MarkedStates>
+"II"  
+</MarkedStates>
+
+</Generator>

@@ -1,0 +1,70 @@
+
+<Generator>
+"Det(Pro(SupConNB((rts1[0]),(rts1[0]||rts1[0]_spec)))) [minstate]" 
+<Alphabet>
+rs_c1m+      rs_c1m-      "rts1_1"      "rts1_1-2"    "rts1_2"      "rts1_2-1"    
+"rts1_2-3"    "rts1_3"      "rts1_3-2"    "rts1_3-4"    "rts1_4"      "rts1_4-3"    
+rs_p1car_a     rs_p2car_a     rs_p4car_a     rs_p6car_a     "rts1lv1"     "rts1lv2"     
+"rts1lv3"     "rts1lv4"     rs_c1off     
+</Alphabet>
+ <States>   <Consecutive>    1   
+32            
+ </Consecutive>    </States>  
+<TransRel>
+2             rs_c1m+      15            
+1             "rts1_2-1"    3             
+1             "rts1_2-3"    27            
+3             rs_c1m-      16            
+4             "rts1_1"      5             
+5             "rts1_1-2"    2             
+6             "rts1_3"      7             
+7             "rts1_3-2"    28            
+8             "rts1_3-4"    31            
+9             "rts1_4"      10            
+10            "rts1_4-3"    29            
+11            rs_p1car_a     19            
+12            rs_p2car_a     24            
+13            rs_p4car_a     30            
+14            rs_p6car_a     22            
+15            "rts1lv1"     12            
+16            "rts1lv2"     11            
+17            "rts1lv3"     12            
+18            "rts1lv4"     13            
+19            rs_c1off     4             
+20            "rts1_2"      1             
+21            rs_c1off     23            
+22            rs_c1off     9             
+23            "rts1_3"      8             
+24            rs_c1off     20            
+25            "rts1lv2"     32            
+26            "rts1lv3"     14            
+27            rs_c1m+      25            
+28            rs_c1m-      17            
+29            rs_c1m-      18            
+30            rs_c1off     6             
+31            rs_c1m+      26            
+32            rs_p4car_a     21            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+rs_c1m+      rs_c1m-      "rts1_1-2"    "rts1_2-1"    "rts1_2-3"    "rts1_3-2"    
+"rts1_3-4"    "rts1_4-3"    rs_p1car_a     rs_p2car_a     rs_p4car_a     rs_p6car_a     
+"rts1lv1"     "rts1lv2"     "rts1lv3"     "rts1lv4"     rs_c1off     
+</Controllable>
+<Observable>
+rs_c1m+      rs_c1m-      "rts1_1"      "rts1_1-2"    "rts1_2"      "rts1_2-1"    
+"rts1_2-3"    "rts1_3"      "rts1_3-2"    "rts1_3-4"    "rts1_4"      "rts1_4-3"    
+rs_p1car_a     rs_p2car_a     rs_p4car_a     rs_p6car_a     "rts1lv1"     "rts1lv2"     
+"rts1lv3"     "rts1lv4"     rs_c1off     
+</Observable>
+
+

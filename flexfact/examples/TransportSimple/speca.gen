@@ -1,0 +1,49 @@
+% Specifiaction, conveyor belt a
+
+<Generator>
+"speca"
+
+<Alphabet>
+"cba_stop"  +C+ "cba_left" +C+  "cba_right" +C+ 
+"cba_wpar"   "cba_wplv" 
+"tua_start" +C+ "tua_stop"  +C+  "tua_cont"  +C+ 
+"tua_ack" +C+
+</Alphabet>
+
+<States>
+"I" "T1" "T2" "T3" "T4" "T5" "W1" "W2" "W3" "S1" "P1"
+</States>
+
+<TransRel>
+% idle 
+"I"   "tua_start" "T1"
+"T1"  "cba_right" "T2"
+"T2"  "cba_wpar"  "T3"
+"T3"  "tua_ack"   "T4"
+"T4"  "cba_wplv"  "T5"
+"T4"  "cba_stop"  "P1"
+"T5"  "tua_cont"  "T2"
+"T5"  "tua_stop"  "S1"
+
+"S1"  "cba_stop"  "I"
+"P1"  "cba_right" "T4"
+
+% special case for source position
+"I"   "cba_wpar"  "W1"
+"W1"  "tua_ack"   "W2"
+"W2"  "tua_start" "W3"
+"W3"  "cba_right" "T4"
+
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I" 
+</MarkedStates>
+
+</Generator>

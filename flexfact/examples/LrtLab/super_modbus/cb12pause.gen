@@ -1,0 +1,101 @@
+%% this automaton is broken
+
+<TimedaGenerator>
+
+<Generator>
+"Generator"   
+<Alphabet>
+rb2_bm+    rb2_wpar    rb2_boff           
+</Alphabet>
+
+<States>   
+"St1"         "St2"         "St3"         
+</States>  
+
+<TransRel>
+"St1"         rb2_bm+    "St2"         
+"St2"         rb2_wpar    "St3"         
+"St3"         rb2_boff     "St1"         
+</TransRel>
+<InitStates>
+"St1"         
+</InitStates>
+<MarkedStates>
+
+</MarkedStates>
+
+</Generator>
+
+
+<EventAttributes>
+
+</EventAttributes>
+<StateAttributes>
+
+</StateAttributes>
+<Timing>
+
+<Clocks>
+
+</Clocks>
+<TimedTransRel>
+<TimedTransition>
+"St1"         rb2_bm+    "St2"         
+
+<Guard>
+
+</Guard>
+
+
+<Invariant>
+
+</Invariant>
+
+<Reset>
+
+</Reset>
+
+</TimedTransition>
+
+<TimedTransition>
+"St2"         rb2_wpar    "St3"         
+
+<Guard>
+
+</Guard>
+
+
+<Invariant>
+
+</Invariant>
+
+<Reset>
+
+</Reset>
+
+</TimedTransition>
+
+<TimedTransition>
+"St3"         rb2_boff           "St1"         
+
+<Guard>
+
+</Guard>
+
+
+<Invariant>
+
+</Invariant>
+
+<Reset>
+
+</Reset>
+
+</TimedTransition>
+
+
+</TimedTransRel>
+
+</Timing>
+
+</TimedaGenerator>

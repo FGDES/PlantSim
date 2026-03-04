@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -965,19 +965,17 @@ void FfScene::keyPressEvent(QKeyEvent *keyEvent) {
 
 // handle my events: contex menu
 void FfScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *event) {
-
+  QGraphicsItem* item = itemAt(event->scenePos(),QTransform());
   // when simulation is on, items have their local menus
   if(mRunning) {
     QGraphicsScene::contextMenuEvent(event);
     return;
   }
-  
   // scene context
-  QGraphicsItem* item = itemAt(event->scenePos());
   if(!item) {
     SceneContextMenu(event->screenPos(),event->scenePos());
+    return;
   }
-
   // find a component
   FfComponent* comp =0;
   while(item) {

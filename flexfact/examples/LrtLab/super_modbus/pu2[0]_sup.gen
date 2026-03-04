@@ -1,0 +1,41 @@
+
+<Generator>
+"SupConNB((pu2[0]),(pu2[0]||pu2[0]_spec))" 
+<Alphabet>
+ds_p2s-     ds_p2s+     "pu2lv+y"     "pu2lv-y"     ds_p2m-     ds_p2m+     
+"pu2rdy"      ds_p2off      "sf-2"        
+</Alphabet>
+ <States>   <Consecutive>    1   
+10            
+ </Consecutive>    </States>  
+<TransRel>
+1             "sf-2"        2             
+2             ds_p2m+     3             
+3             "pu2lv+y"     4             
+4             ds_p2s+     5             
+5             ds_p2off      6             
+6             ds_p2m-     7             
+7             "pu2lv-y"     8             
+8             ds_p2s-     9             
+9             ds_p2off      10            
+10            "pu2rdy"      1             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+ds_p2m-     ds_p2m+     "pu2rdy"      ds_p2off      "sf-2"        
+</Controllable>
+<Observable>
+ds_p2s-     ds_p2s+     "pu2lv+y"     "pu2lv-y"     ds_p2m-     ds_p2m+     
+"pu2rdy"      ds_p2off      "sf-2"        
+</Observable>
+
+

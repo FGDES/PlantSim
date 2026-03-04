@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ Implementation: FfOperatorPanel
 FfOperatorPanel::FfOperatorPanel(QWidget* parent) : QWidget(parent) {
   // have a layout
   mGbox = new QGridLayout(this);
-  mGbox->setMargin(0);
+  mGbox->setContentsMargins(0,0,0,0);
   mGbox->setSpacing(5);
   mGbox->setHorizontalSpacing(5);
   // my style sheet

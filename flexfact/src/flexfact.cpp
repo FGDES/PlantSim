@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -71,20 +71,20 @@ FlexFact::FlexFact() : QMainWindow(0)
   QWidget* cwid= new QWidget();
   setCentralWidget(cwid);
   QHBoxLayout* mHbox = new QHBoxLayout(cwid);
-  mHbox->setMargin(0);
+  mHbox->setContentsMargins(0,0,0,0);
   mHbox->setSpacing(0);
 
   // have a vbox (right column)
   QWidget* rwid = new QWidget();
   rwid->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
   QVBoxLayout* mVbox = new QVBoxLayout(rwid);
-  mVbox->setMargin(0);
+  mVbox->setContentsMargins(0,0,0,0);
   mVbox->setSpacing(0);
 
   // have a proces image view
   mImageBox = new QGroupBox("Process Image");
   QHBoxLayout* imghbox = new QHBoxLayout(mImageBox);
-  imghbox->setMargin(5);
+  imghbox->setContentsMargins(5,5,5,5);
   imghbox->setSpacing(5);
   imghbox->addWidget(mImageView);
   mVbox->addWidget(mImageBox);
@@ -92,7 +92,7 @@ FlexFact::FlexFact() : QMainWindow(0)
   // have a logger
   mLoggerBox = new QGroupBox("Event Log");
   QHBoxLayout* loghbox = new QHBoxLayout(mLoggerBox);
-  loghbox->setMargin(5);
+  loghbox->setContentsMargins(5,5,5,5);
   loghbox->setSpacing(5);
   loghbox->addWidget(mLogger);
   mVbox->addWidget(mLoggerBox);
@@ -101,7 +101,7 @@ FlexFact::FlexFact() : QMainWindow(0)
   mOperatorPanel= new FfOperatorPanel();
   mOperatorBox = new QGroupBox("Operator");
   QHBoxLayout* opphbox = new QHBoxLayout(mOperatorBox);
-  opphbox->setMargin(5);
+  opphbox->setContentsMargins(5,5,5,5);
   opphbox->setSpacing(5);
   opphbox->addWidget(mOperatorPanel);
   mVbox->addWidget(mOperatorBox);
@@ -110,7 +110,7 @@ FlexFact::FlexFact() : QMainWindow(0)
   mMonitorPanel= new FfMonitorPanel();
   mMonitorBox = new QGroupBox("Fault Monitor");
   QHBoxLayout* monhbox = new QHBoxLayout(mMonitorBox);
-  monhbox->setMargin(5);
+  monhbox->setContentsMargins(5,5,5,5);
   monhbox->setSpacing(5);
   monhbox->addWidget(mMonitorPanel);
   mVbox->addWidget(mMonitorBox);
@@ -119,7 +119,7 @@ FlexFact::FlexFact() : QMainWindow(0)
   FF_DQ("FlexFact(): B5");
   QGroupBox* ctrgbox = new QGroupBox("Simulation");
   QGridLayout* ctrgrid = new QGridLayout(ctrgbox);
-  ctrgrid->setMargin(5);
+  ctrgrid->setContentsMargins(5,5,5,5);
   ctrgrid->setSpacing(5);
   ctrgrid->setHorizontalSpacing(5);
   ctrgrid->addWidget(mStartSimButton,0,0,1,1);
@@ -204,10 +204,10 @@ void FlexFact::CreateGuiItems() {
   mImageView->verticalHeader()->hide();
   mImageView->horizontalHeader()->hide();
   //mImageView->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-  mImageView->verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+  mImageView->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
   mImageView->horizontalHeader()->setStretchLastSection(true);
   mImageView->horizontalHeader()->setSortIndicatorShown(false); 
-  mImageView->setEditTriggers(0);
+  mImageView->setEditTriggers(QAbstractItemView::NoEditTriggers);
   mImageView->setShowGrid(false);
   QFont ifont;
   ifont.setFamily("Courier");
@@ -580,15 +580,12 @@ void FlexFact::Open(void) {
   fdiag->restoreState(settings.value("stateFileDialog").toByteArray());
 
   // open dialog: ffs files
-  QStringList filters; filters 
-    << "FlexFact files (*.ffs)"
-    << "Any File (*.*)";
-  fdiag->setFilters(filters);
+  fdiag->setNameFilter(
+    "FlexFact files (*.ffs);;Any File (*.*)");
   fdiag->setFileMode(QFileDialog::ExistingFile);
   fdiag->setWindowTitle(QString("Open Factory Configuration"));
   fdiag->setAcceptMode(QFileDialog::AcceptOpen);
   fdiag->setLabelText(QFileDialog::Accept,"Open");
-  fdiag->setConfirmOverwrite(false);
   fdiag->setDefaultSuffix("ffs");
 
   // open dialog: run and save settings
@@ -724,7 +721,7 @@ void FlexFact::Save(QString filename) {
   QFile file(filename);
   file.open(QFile::WriteOnly | QFile::Truncate);
   QTextStream stream(&file);
-  stream.setCodec("UTF-8");
+  stream.setEncoding(QStringConverter::Utf8);
   doc.save(stream, 0, QDomNode::EncodingFromTextStream);
   file.close();
   // clear modified
@@ -744,15 +741,12 @@ void FlexFact::SaveAs(void) {
   fdiag->restoreState(settings.value("stateFileDialog").toByteArray());
 
   // save dialog: ffs files
-  QStringList filters; filters 
-    << "FlexFact files (*.ffs)"
-    << "Any File (*.*)";
-  fdiag->setFilters(filters);
+  fdiag->setNameFilter(
+    "FlexFact files (*.ffs);;Any File (*.*)");
   fdiag->setFileMode(QFileDialog::AnyFile);
   fdiag->setWindowTitle(QString("Save Factory Configuration"));
   fdiag->setAcceptMode(QFileDialog::AcceptSave);
   fdiag->setLabelText(QFileDialog::Accept,"Save");
-  fdiag->setConfirmOverwrite(true);
   fdiag->setDefaultSuffix("ffs");
 
   // open dialog: run and save settings
@@ -857,15 +851,12 @@ void FlexFact::ExportSimplenetFile(void) {
   fdiag->restoreState(settings.value("stateFileDialog").toByteArray());
 
   // save dialog: dev files
-  QStringList filters; filters 
-    << "libFAUDES device configurations (*.dev)"
-    << "Any File (*.*)";
-  fdiag->setFilters(filters);
+  fdiag->setNameFilter(
+    "libFAUDES device configurations (*.dev);;Any file (*.*)");
   fdiag->setFileMode(QFileDialog::AnyFile);
   fdiag->setWindowTitle(QString("Export Device Configuration"));
   fdiag->setAcceptMode(QFileDialog::AcceptSave);
   fdiag->setLabelText(QFileDialog::Accept,"Save");
-  fdiag->setConfirmOverwrite(true);
   fdiag->setDefaultSuffix("dev");
 
   // open dialog: run and save settings
@@ -898,15 +889,12 @@ void FlexFact::ExportSimplenetlocalFile(void) {
   fdiag->restoreState(settings.value("stateFileDialog").toByteArray());
 
   // save dialog: dev files
-  QStringList filters; filters 
-    << "libFAUDES device configurations (*.dev)"
-    << "Any File (*.*)";
-  fdiag->setFilters(filters);
+  fdiag->setNameFilter(
+    "libFAUDES device configurations (*.dev);;Any file (*.*)");
   fdiag->setFileMode(QFileDialog::AnyFile);
   fdiag->setWindowTitle(QString("Export Device Configuration"));
   fdiag->setAcceptMode(QFileDialog::AcceptSave);
   fdiag->setLabelText(QFileDialog::Accept,"Save");
-  fdiag->setConfirmOverwrite(true);
   fdiag->setDefaultSuffix("dev");
 
   // open dialog: run and save settings
@@ -937,17 +925,13 @@ void FlexFact::ExportModbusFile(void) {
   QFileDialog* fdiag = new QFileDialog();
   QSettings settings("Faudes", "FlexFact");
   fdiag->restoreState(settings.value("stateFileDialog").toByteArray());
-
   // save dialog: dev files
-  QStringList filters; filters 
-    << "libFAUDES Modbus configurations (*.dev)"
-    << "Any File (*.*)";
-  fdiag->setFilters(filters);
+  fdiag->setNameFilter(
+    "libFAUDES device configurations (*.dev);;Any file (*.*)");
   fdiag->setFileMode(QFileDialog::AnyFile);
   fdiag->setWindowTitle(QString("Export Device Configuration"));
   fdiag->setAcceptMode(QFileDialog::AcceptSave);
   fdiag->setLabelText(QFileDialog::Accept,"Save");
-  fdiag->setConfirmOverwrite(true);
   fdiag->setDefaultSuffix("dev");
 
   // open dialog: run and save settings
@@ -983,15 +967,12 @@ void FlexFact::ExportSvg(void) {
   fdiag->restoreState(settings.value("stateFileDialog").toByteArray());
 
   // save dialog: svg files
-  QStringList filters; filters 
-    << "SVG files (*.svg)"
-    << "Any File (*.*)";
-  fdiag->setFilters(filters);
+  fdiag->setNameFilter(
+    "SVG files (*.svg);;Any File (*.*)");
   fdiag->setFileMode(QFileDialog::AnyFile);
   fdiag->setWindowTitle(QString("Export Configuration as SVG"));
   fdiag->setAcceptMode(QFileDialog::AcceptSave);
   fdiag->setLabelText(QFileDialog::Accept,"Save");
-  fdiag->setConfirmOverwrite(true);
   fdiag->setDefaultSuffix("svg");
 
   // open dialog: run and save settings
@@ -1193,7 +1174,7 @@ QTextStream mainLogStream;
 // handler to redirect redirect debug messages to file (only windows)
 void mainMessageHandler(QtMsgType mtype, const char *msg) {
   (void) mtype;
-  mainLogStream << QString(msg) << endl;
+  mainLogStream << QString(msg) << Qt::endl;
 }
 
 

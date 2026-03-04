@@ -1,0 +1,65 @@
+% Plant component, conveyor belt 1
+
+<Generator>
+"cb1"
+
+<Alphabet>
+"cb1_boff" +C+ "cb1_bm-" +C+  "cb1_bm+" +C+
+"cb1_tau" +C+
+"cb1_wpar"   "cb1_wplv"   
+</Alphabet>
+
+<States>
+"IE" "IF" "RE" "REt" "RF" "RFt" "LE" "LEt" "LF" "LFt" 
+</States>
+
+<TransRel>
+% idle 
+"IE" "cb1_bm+"  "RE"
+"IE" "cb1_bm-"  "LE"
+"IF" "cb1_bm+"  "RF"
+"IF" "cb1_bm-"  "LF"
+
+% to the right
+"REt"  "cb1_boff" "IE"
+"REt"  "cb1_bm-"  "LE"
+"REt"  "cb1_tau"  "RE"
+
+"RE"  "cb1_boff" "IE"  
+"RE"  "cb1_bm-" "LE"  
+"RE"  "cb1_wpar" "RFt"
+
+"RFt"  "cb1_tau"  "RF"
+"RFt"  "cb1_boff" "IF"
+"RFt"  "cb1_bm-" "LF"
+
+"RF"   "cb1_wplv" "REt"
+
+
+% to the left
+"LEt"  "cb1_boff"  "IE"
+"LEt"  "cb1_bm+" "RE"
+"LEt"  "cb1_tau"   "LE"
+
+"LE"  "cb1_boff"  "IE"
+"LE"  "cb1_bm+" "RE"
+"LE"  "cb1_wpar"  "LFt"
+
+"LFt"  "cb1_boff" "IF"
+"LFt"  "cb1_bm+" "RF"
+"LFt"  "cb1_tau"  "LF"
+
+"LF"  "cb1_wplv" "LEt"
+
+</TransRel>
+
+
+<InitStates>
+"IE"
+</InitStates>
+
+<MarkedStates>
+"IE" "IF" 
+</MarkedStates>
+
+</Generator>

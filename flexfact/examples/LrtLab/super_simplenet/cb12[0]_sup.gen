@@ -1,0 +1,51 @@
+
+<Generator>
+"Det(Pro(SupConNB((cb12[0]),(cb12[0]_spec)))) [minstate]" 
+<Alphabet>
+"cb12-5"      "cb5-12"      "wp12-5"      "wp5-12"      rb2_bm+    "cb12-3"      
+"cb12-4"      "cb12-8"      rb2_bm-    rb2_boff     rb2_wpar_x    "cb12wplv3"   
+pm1_wpar_b   cb3_wpar_a   cb5_wpar_a   "cb3-12"      "cb4-12"      "cb8-12"      
+"wp12-3"      "wp12-4"      "wp12-8"      "wp3-12"      "wp4-12"      "wp8-12"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+14            
+ </Consecutive>    </States>  
+<TransRel>
+2             "wp5-12"      3             
+1             "cb5-12"      4             
+1             "cb3-12"      13            
+3             "cb12-4"      12            
+4             rb2_bm-    6             
+5             rb2_boff     2             
+6             rb2_wpar_x    5             
+7             pm1_wpar_b   10            
+8             "wp3-12"      3             
+9             "wp12-4"      1             
+10            rb2_boff     9             
+11            rb2_wpar_x    14            
+12            rb2_bm-    7             
+13            rb2_bm+    11            
+14            rb2_boff     8             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb12-5"      "cb5-12"      rb2_bm+    "cb12-3"      "cb12-4"      "cb12-8"      
+rb2_bm-    rb2_boff     "cb3-12"      "cb4-12"      "cb8-12"      
+</Controllable>
+<Observable>
+"cb12-5"      "cb5-12"      "wp12-5"      "wp5-12"      rb2_bm+    "cb12-3"      
+"cb12-4"      "cb12-8"      rb2_bm-    rb2_boff     rb2_wpar_x    "cb12wplv3"   
+pm1_wpar_b   cb3_wpar_a   cb5_wpar_a   "cb3-12"      "cb4-12"      "cb8-12"      
+"wp12-3"      "wp12-4"      "wp12-8"      "wp3-12"      "wp4-12"      "wp8-12"      
+</Observable>
+
+

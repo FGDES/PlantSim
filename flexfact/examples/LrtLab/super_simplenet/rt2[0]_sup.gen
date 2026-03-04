@@ -1,0 +1,51 @@
+
+<Generator>
+"SupConNB((rt2[0]),(rt2[0]||rt2[0]_spec))" 
+<Alphabet>
+rb2_sccw      rb2_scw      "rt2f"        "rt2lvx"      "rt2lvy"      rb2_rccw      
+rb2_rcw      rb2_roff      "rt2x"        "rt2xy"       "rt2y"        "rt2yx"       
+"t_rt2-cb12\rt2" 
+</Alphabet>
+ <States>   <Consecutive>    1   
+18            
+ </Consecutive>    </States>  
+<TransRel>
+1             "rt2yx"       2             
+2             rb2_rccw      3             
+3             "t_rt2-cb12\rt2" 4             
+4             "rt2lvy"      5             
+5             "t_rt2-cb12\rt2" 6             
+6             rb2_sccw      7             
+7             rb2_roff      8             
+8             "t_rt2-cb12\rt2" 9             
+9             "rt2x"        10            
+10            "rt2xy"       11            
+11            rb2_rcw      12            
+12            "t_rt2-cb12\rt2" 13            
+13            "rt2lvx"      14            
+14            "t_rt2-cb12\rt2" 15            
+15            rb2_scw      16            
+16            rb2_roff      17            
+17            "t_rt2-cb12\rt2" 18            
+18            "rt2y"        1             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+rb2_rccw      rb2_rcw      rb2_roff      "rt2xy"       "rt2yx"       "t_rt2-cb12\rt2" 
+</Controllable>
+<Observable>
+rb2_sccw      rb2_scw      "rt2f"        "rt2lvx"      "rt2lvy"      rb2_rccw      
+rb2_rcw      rb2_roff      "rt2x"        "rt2xy"       "rt2y"        "rt2yx"       
+"t_rt2-cb12\rt2" 
+</Observable>
+
+

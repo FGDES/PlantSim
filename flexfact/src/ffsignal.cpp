@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -163,7 +163,7 @@ void FfProcessImage::Insert(FfSignal* sig) {
 void FfProcessImage::Compile(void) {
   FF_DQM("FfProcessImage::CompileImage() 1");
   // sort
-  qStableSort(mSignals.begin(), mSignals.end(),SignalPtrLessThan);
+  std::stable_sort(mSignals.begin(), mSignals.end(),SignalPtrLessThan);
   // stage 1: record order an connect
   for(int i=0; i<mSignals.size(); i++) {
     mSignals[i]->mAbsAddress=i;
@@ -719,6 +719,7 @@ Implementation: FfModbusDevice
 
 // construct 
 FfModbusDevice::FfModbusDevice(QObject* parent) : QTcpServer(parent) {
+  FF_DQNN("FfModbusDevice(): constructed");
   mState=FfProcessImage::DDown;
   mCount=0;
 }
@@ -742,10 +743,12 @@ FfProcessImage::DState FfModbusDevice::Status(void) {
 void FfModbusDevice::Start(void) {
   mMutex.lock();
   if(mState == FfProcessImage::DDown) {
+    FF_DQN("FfModbusDevice()::Start(): down");
     if(!listen(QHostAddress::Any,1502)) {
       FF_DQN("FfModbusDevice::Start():cannot open port");
       close();
     } else {
+      FF_DQN("FfModbusDevice()::Start(): starting up");
       mState=FfProcessImage::DStartUp;
     }
   }
@@ -758,12 +761,13 @@ void FfModbusDevice::Stop(void) {
   if(mState != FfProcessImage::DDown) {
     close();
     mState=FfProcessImage::DShutDown;
+    FF_DQN("FfModbusDevice()::Start(): shut down");
   }
   mMutex.unlock();
 }
 
 // reimplement tcpserver to start my thread
-void FfModbusDevice::incomingConnection(int socket) {
+void FfModbusDevice::incomingConnection(qintptr socket) {
   FF_DQN("FfModbusDevice::incomingConnection()");
   FfModbusThread *mth = new FfModbusThread(socket, this);
   connect(mth, SIGNAL(finished()), mth, SLOT(deleteLater()));
@@ -782,7 +786,7 @@ void FfModbusDevice::Synchronize(FfProcessImage* img) {
 }
 
 // construct
-FfModbusThread::FfModbusThread(int socket, FfModbusDevice *device) : QThread(device) {
+FfModbusThread::FfModbusThread(qintptr socket, FfModbusDevice *device) : QThread(device) {
   mDevice=device;
   mSocket=socket;
 }
@@ -797,7 +801,7 @@ FfModbusThread::FfModbusThread(int socket, FfModbusDevice *device) : QThread(dev
 
 // reimplement thread
 void FfModbusThread::run() {
-  FF_DQN("FfModbusThread::run(): start master thread on socket " << mSocket);
+  FF_DQN("FfModbusThread::run(): start slave thread on socket " << mSocket);
   // setup qt socket
   QTcpSocket qsocket;
   if(!qsocket.setSocketDescriptor(mSocket)) {

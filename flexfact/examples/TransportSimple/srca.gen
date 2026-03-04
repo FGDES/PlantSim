@@ -1,0 +1,32 @@
+
+% Plant component interaction, source left of a
+
+<Generator>
+"srca"
+
+<Alphabet>
+"cba_wpar"   "cba_wplv"   
+"cbb_wpar"   "cbb_wplv"   
+</Alphabet>
+
+<States>
+"I" "F1" "F2" "F3"
+</States>
+
+<TransRel>
+"I"  "cba_wpar" "F1"
+"F1" "cba_wplv" "F2"
+"F2" "cbb_wpar" "F3"
+"F3" "cbb_wplv" "I"
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I"  
+</MarkedStates>
+
+</Generator>

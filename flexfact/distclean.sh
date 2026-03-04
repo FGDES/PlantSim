@@ -16,9 +16,9 @@ echo "distclean.sh: deleting non-source files"
 
 # libFAUDES
 rm -f obj/*
-rm -f libfaudes/obj/*
-rm -f libfaudes/libfaudes.*
-rm -f libfaudes/bin/*
+rm -f libFAUDES_for_FlexFact/obj/*
+rm -f libFAUDES_for_FlexFact/libfaudes.*
+rm -f libFAUDES_for_FlexFact/bin/*
 
 # qt related
 rm -rf build

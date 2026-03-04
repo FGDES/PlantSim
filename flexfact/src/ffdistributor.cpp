@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -505,9 +505,9 @@ FfDistributorEditor::FfDistributorEditor(FfComponent* comp) :
   QLabel* nlabel = new QLabel("Pushers");
   mLengthEdit = new QLineEdit();
   connect(mLengthEdit,SIGNAL(editingFinished(void)),this,SLOT(UpdateFromEditor(void)));
-  QRegExpValidator* lvalid = new QRegExpValidator(
-    QRegExp("[1-9][0-9]*"),0);
-  mLengthEdit->setValidator(lvalid);
+  QRegularExpression max99("[1-9][0-9]*");
+  QValidator *validator = new QRegularExpressionValidator(max99, this);
+  mLengthEdit->setValidator(validator);
   // fill in my values
   DoUpdateFromComponent(comp);
   // add to layout

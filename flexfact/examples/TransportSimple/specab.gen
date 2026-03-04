@@ -1,0 +1,37 @@
+% Specifiaction, conveyor belts a and b
+
+<Generator>
+"specab"
+
+<Alphabet>
+"tua_start" +C+ "tua_stop"  +C+  "tua_cont"  +C+ 
+"tua_ack" +C+
+"tub_start" +C+  "tub_cont"  +C+ %% "tub_stop"  +C+   
+"tub_ack" +C+
+"tuc_ack" +C+
+</Alphabet>
+
+<States>
+"I" "L1" "L2" "L3" "L4" "B1" 
+</States>
+
+<TransRel>
+"I"   "tua_ack"    "L1"
+"L1"  "tua_start"  "L2"
+"L2"  "tub_start"  "L3"
+"L3"  "tub_ack"    "L4"
+"L4"  "tua_stop"   "B1"
+"B1"  "tuc_ack"    "I"
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I"
+</MarkedStates>
+
+</Generator>

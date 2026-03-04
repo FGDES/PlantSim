@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef FAUDES_ELEMENTS_H
 #define FAUDES_ELEMENTS_H
 
-#include <QtGui>
+#include <QtWidgets>
 #include "ffstyle.h"
 
 

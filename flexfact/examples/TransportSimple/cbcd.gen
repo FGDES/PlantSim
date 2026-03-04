@@ -1,0 +1,128 @@
+% Plant component interaction, conveyor belts c and d
+
+<Generator>
+"cbcd"
+				   
+<Alphabet>
+"cbc_stop" +C+ "cbc_left" +C+  "cbc_right" +C+
+"cbd_stop" +C+ "cbd_left" +C+  "cbd_right" +C+
+"cbc_wpar"   "cbc_wplv"   
+"cbd_wpar"   "cbd_wplv"   
+</Alphabet>
+
+<States>
+"II" "IL" "IR"
+"RI" "RL" "RR"
+"LI" "LL" "LR"
+"RRf" "LLf" "Err"
+</States>
+
+<TransRel>
+% idle/idle 
+"II" "cbc_right" "RI"
+"II" "cbc_left"  "LI"
+"II" "cbd_right" "IR"
+"II" "cbd_left"  "IL"
+
+% right/idle 
+"RI" "cbc_stop"  "II"
+"RI" "cbc_left"  "LI"
+"RI" "cbd_right" "RR"
+"RI" "cbd_left"  "RL"
+
+% left/idle 
+"LI" "cbc_stop"  "II"
+"LI" "cbc_right" "RI"
+"LI" "cbd_right" "LR"
+"LI" "cbd_left"  "LL"
+
+% idle/right 
+"IR" "cbc_right" "RR"
+"IR" "cbc_left"  "LR"
+"IR" "cbd_stop"  "II"
+"IR" "cbd_left"  "IL"
+
+% right/right 
+"RR" "cbc_stop"  "IR"
+"RR" "cbc_left"  "LR"
+"RR" "cbd_stop"  "RI"
+"RR" "cbd_left"  "RL"
+
+% left/right 
+"LR" "cbc_stop"  "IR"
+"LR" "cbc_right" "RR"
+"LR" "cbd_stop"  "LI"
+"LR" "cbd_left"  "LL"
+
+
+% idle/left 
+"IL" "cbc_right" "RL"
+"IL" "cbc_left"  "LL"
+"IL" "cbd_stop"  "II"
+"IL" "cbd_right" "IR"
+
+% right/left 
+"RL" "cbc_stop"  "IL"
+"RL" "cbc_left"  "LL"
+"RL" "cbd_stop"  "RI"
+"RL" "cbd_right" "RR"
+
+% left/left 
+"LL" "cbc_stop"  "IL"
+"LL" "cbc_right" "RL"
+"LL" "cbd_stop"  "LI"
+"LL" "cbd_right" "LR"
+
+% right transport
+"RR"  "cbc_wplv" "RRf"
+"RRf" "cbd_wpar" "RR"
+"RRf" "cbc_wplv" "Err"
+"RI"  "cbc_wplv" "Err"
+
+% left transport
+"LL"  "cbd_wplv" "LLf"
+"LLf" "cbc_wpar" "LL"
+"LLf" "cbd_wplv" "Err"
+
+% right arival
+"IL"  "cbd_wpar" "IL"
+"RL"  "cbd_wpar" "RL"
+"LL"  "cbd_wpar" "LL"
+"LLf" "cbd_wpar" "LLf"
+
+% right disposal
+"IR"  "cbd_wplv" "IR"
+"RR"  "cbd_wplv" "RR"
+"LR"  "cbd_wplv" "LR"
+"RRf" "cbd_wplv" "RRf"
+
+% right disposal (special sink case)
+"II"  "cbd_wplv" "II"
+"RI"  "cbd_wplv" "RI"
+"LI"  "cbd_wplv" "LI"
+
+
+% left arival
+"RI"  "cbc_wpar" "RI"
+"RR"  "cbc_wpar" "RR"
+"RL"  "cbc_wpar" "RL"
+"RRf" "cbc_wpar" "RRf"
+
+% left disposal
+"LI"  "cbc_wplv" "LI"
+"LR"  "cbc_wplv" "LR"
+"LL"  "cbc_wplv" "LL"
+"LLf" "cbc_wplv" "LLf"
+
+</TransRel>
+
+
+<InitStates>
+"II"
+</InitStates>
+
+<MarkedStates>
+"II"  
+</MarkedStates>
+
+</Generator>

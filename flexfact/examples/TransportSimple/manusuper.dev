@@ -1,0 +1,67 @@
+<SimplenetDevice>
+
+"ManufacturingSupervisor"  % node id
+1000                       % ms/ftu 
+"localhost:40001"          % server tcp port of this node
+"ManufacturingLoop"        % network id
+
+% set of all nodes
+
+<Network>           
+"ManufacturingPlant"
+"ManufacturingSupervisor"
+</Network>
+
+
+<EventConfiguration>
+
+%%% Motor, conveyor belt a
+"cba_stop"   <Output></Output>
+"cba_left"   <Output></Output>
+"cba_right"   <Output></Output>
+
+%%% Motor, conveyor belt b
+"cbb_stop"   <Output></Output>
+"cbb_left"   <Output></Output>
+"cbb_right"   <Output></Output>
+
+%%% Motor, conveyor belt c
+"cbc_stop"   <Output></Output>
+"cbc_left"   <Output></Output>
+"cbc_right"   <Output></Output>
+
+%%% Motor, conveyor belt d
+"cbd_stop"   <Output></Output>
+"cbd_left"   <Output></Output>
+"cbd_right"   <Output></Output>
+
+%%% Workpiece sensor: conveyor belt a
+"cba_wpar"   <Input></Input>
+"cba_wplv"   <Input></Input>
+
+%%% Workpiece sensor: conveyor belt b
+"cbb_wpar"   <Input></Input>
+"cbb_wplv"   <Input></Input>
+
+%%% Workpiece sensor: conveyor belt c
+"cbc_wpar"   <Input></Input>
+"cbc_wplv"   <Input></Input>
+
+%%% Workpiece sensor: conveyor belt d
+"cbd_wpar"   <Input></Input>
+"cbd_wplv"   <Input></Input>
+
+%%% Process, on/off
+"pr_start"   <Output></Output>
+"pr_stop"   <Output></Output>
+
+%%% Test unit, start/results
+"tu_start"   <Output></Output>
+"tu_fail"   <Input></Input>
+"tu_pass"   <Input></Input>
+"tu_stop"   <Output></Output>
+
+</EventConfiguration>
+
+</SimplenetDevice>
+

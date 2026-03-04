@@ -1,0 +1,43 @@
+
+<Generator>
+"SupConNB((Det(Pro(SupConNB((cb1b[0]),(cb1b[0]_spec)))) [minstate]||Det(Pro(SupConNB((pu1[0]),(pu1[0]||pu1[0]_spec)))) [minstate]),(cb1bpu1[0]_spec))" 
+<Alphabet>
+ds_boff      "cb1-3"       ds_p1wpar    ds_bm-       "cb1-dep"     "pu1rdy"      
+ds_p1wplv    
+</Alphabet>
+ <States>   <Consecutive>    1   
+9             
+ </Consecutive>    </States>  
+<TransRel>
+1             ds_bm-       2             
+2             ds_boff      1             
+2             ds_p1wpar    3             
+3             ds_boff      4             
+4             "cb1-3"       5             
+4             "cb1-dep"     6             
+5             "pu1rdy"      8             
+5             ds_p1wplv    9             
+6             ds_bm-       7             
+7             ds_p1wplv    2             
+8             ds_p1wplv    1             
+9             "pu1rdy"      1             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+ds_boff      "cb1-3"       ds_bm-       "cb1-dep"     "pu1rdy"      
+</Controllable>
+<Observable>
+ds_boff      "cb1-3"       ds_p1wpar    ds_bm-       "cb1-dep"     "pu1rdy"      
+ds_p1wplv    
+</Observable>
+
+

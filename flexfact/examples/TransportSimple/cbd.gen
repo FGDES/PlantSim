@@ -1,0 +1,65 @@
+% Plant component, conveyor belt d
+
+<Generator>
+"cbd"
+
+<Alphabet>
+"cbd_stop" +C+ "cbd_left" +C+  "cbd_right" +C+
+"cbd_tau" +C+
+"cbd_wpar"   "cbd_wplv"   
+</Alphabet>
+
+<States>
+"IE" "IF" "RE" "REt" "RF" "RFt" "LE" "LEt" "LF" "LFt" 
+</States>
+
+<TransRel>
+% idle 
+"IE" "cbd_right" "RE"
+"IE" "cbd_left"  "LE"
+"IF" "cbd_right" "RF"
+"IF" "cbd_left"  "LF"
+"IF" "cbd_wplv"  "IE"
+
+% to the right
+"REt"  "cbd_stop" "IE"
+"REt"  "cbd_left" "LE"
+"REt"  "cbd_tau"  "RE"
+
+"RE"  "cbd_stop" "IE"
+"RE"  "cbd_left" "LE"
+"RE"  "cbd_wpar" "RFt"
+
+"RFt"  "cbd_stop" "IF"
+"RFt"  "cbd_left" "LF"
+"RFt"  "cbd_tau"  "RF"
+
+"RF"  "cbd_wplv" "REt"
+
+% to the left
+"LEt"  "cbd_stop"  "IE"
+"LEt"  "cbd_right" "RE"
+"LEt"  "cbd_tau"   "LE"
+
+"LE"  "cbd_stop"  "IE"
+"LE"  "cbd_right" "RE"
+"LE"  "cbd_wpar"  "LF"
+
+"LFt" "cbd_tau"    "LF"
+"LFt"  "cbd_stop"  "IF"
+"LFt"  "cbd_right" "RF"
+
+"LF"  "cbd_wplv" "LE"
+
+</TransRel>
+
+
+<InitStates>
+"IE"
+</InitStates>
+
+<MarkedStates>
+"IE" "IF" 
+</MarkedStates>
+
+</Generator>

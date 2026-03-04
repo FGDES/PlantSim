@@ -1,0 +1,51 @@
+
+<Generator>
+"Det(Pro(SupConNB((cb15[0]),(cb15[0]_spec)))) [minstate]" 
+<Alphabet>
+rs_b1m-      "cb15-7"      "cb15-8"      "cb15-9"      "cb15-rc1"    rs_b1m+      
+"cb15f"       rs_b1off     rs_b1wpar    cb4_wpar_b   cb5_wpar_b   cb6_wpar_b   
+xs2_wpar "cb7-15"      "cb8-15"      "cb9-15"      "wp15-7"      "wp15-8"      
+"wp15-9"      "wp15-rc1"    "wp7-15"      "wp8-15"      "wp9-15"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+14            
+ </Consecutive>    </States>  
+<TransRel>
+2             rs_b1m-      7             
+1             "cb7-15"      4             
+3             "cb15-9"      2             
+3             "cb15-rc1"    12            
+4             rs_b1m+      6             
+5             rs_b1off     9             
+6             rs_b1wpar    5             
+7             cb6_wpar_b   14            
+8             xs2_wpar 13            
+9             "wp7-15"      3             
+10            "wp15-9"      1             
+11            "wp15-rc1"    1             
+12            rs_b1m-      8             
+13            rs_b1off     11            
+14            rs_b1off     10            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+rs_b1m-      "cb15-7"      "cb15-8"      "cb15-9"      "cb15-rc1"    rs_b1m+      
+rs_b1off     "cb7-15"      "cb8-15"      "cb9-15"      
+</Controllable>
+<Observable>
+rs_b1m-      "cb15-7"      "cb15-8"      "cb15-9"      "cb15-rc1"    rs_b1m+      
+"cb15f"       rs_b1off     rs_b1wpar    cb4_wpar_b   cb5_wpar_b   cb6_wpar_b   
+xs2_wpar "cb7-15"      "cb8-15"      "cb9-15"      "wp15-7"      "wp15-8"      
+"wp15-9"      "wp15-rc1"    "wp7-15"      "wp8-15"      "wp9-15"      
+</Observable>
+
+

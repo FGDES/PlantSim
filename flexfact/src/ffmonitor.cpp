@@ -2,7 +2,8 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2014 Thomas Moor
+
+Copyright (C) 2014, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -66,7 +67,7 @@ Implementation: FfMonitorPanel
 FfMonitorPanel::FfMonitorPanel(QWidget* parent) : QWidget(parent) {
   // have a layout
   mGbox = new QGridLayout(this);
-  mGbox->setMargin(0);
+  mGbox->setContentsMargins(0,0,0,0);
   mGbox->setSpacing(5);
   mGbox->setHorizontalSpacing(5);
   // my style sheet
@@ -125,7 +126,7 @@ bool FaultPtrLessThan(const FfFault* a, const FfFault* b) {
 void FfMonitorPanel::Compile(void) {
   FF_DQM("FfMonitorPanel::Compile()");
   // sort
-  qStableSort(mFaults.begin(), mFaults.end(),FaultPtrLessThan);
+  std::stable_sort(mFaults.begin(), mFaults.end(),FaultPtrLessThan);
   // instantiate buttons on demand
   FF_DQM("FfMonitorPanel::Compile(): instantiate");
   int isup = ( ((mFaults.size()+3) /4) * 4 );

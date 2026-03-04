@@ -1,0 +1,44 @@
+% Specifiaction, conveyor belt d
+
+<Generator>
+"specc"
+
+<Alphabet>
+"cbd_stop"  +C+ "cbd_left" +C+  "cbd_right" +C+ 
+"cbd_wpar"   "cbd_wplv" 
+"tud_start" +C+ "tud_stop"  +C+  "tud_cont"  +C+ 
+"tud_ack" +C+ "tud_free" +C+
+</Alphabet>
+
+<States>
+"I" "T1" "T2" "T3" "T4" "S0" "S1" "S2"
+</States>
+
+<TransRel>
+% idle 
+"I"   "tud_start" "T1"
+"T1"  "cbd_right" "T2"
+"T2"  "cbd_wpar"  "T3"
+"T3"  "tud_ack"   "T4"
+
+% sink
+"T4"  "tud_stop"  "S0"
+"S0"  "cbd_stop"  "S1"
+"S1"  "cbd_wplv"  "S2"
+"S2"  "tud_free"  "I"
+
+
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I" 
+</MarkedStates>
+
+</Generator>
+

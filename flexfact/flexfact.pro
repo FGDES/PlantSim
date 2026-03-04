@@ -14,11 +14,11 @@ CONFIG += fullscreen                   # have osx-lion full screen mode
 CONFIG += winconsole                   # have -d switch for windows console debugging
 
 # effectively no shared common
-COMMON = ./
+COMMON = .
 
 # load generic configuration
 ! include( $${COMMON}/faudes.pri ) {
-    error("### error: faudes application configuration file not found")
+    error("==== error: faudes application configuration file not found")
 }
 
 

@@ -1,0 +1,38 @@
+% Spezification, cb-xs
+<Generator>
+"e_cbX_xs"
+
+<Alphabet>
+cbX_wplv xs_wpar xs_wplv cbX_bm+ cbX_boff
+</Alphabet>
+
+<States>
+IW DW IF
+</States>
+
+<TransRel>
+IW   cbX_bm+       IW
+IW   cbX_boff      IW
+
+IW   cbX_wplv      DW
+
+%DW   cbX_xs_pass   IF 
+DW   xs_wpar   IF 
+
+IF   xs_wplv       IW
+IF   cbX_bm+       IF
+IF   cbX_boff      IF
+
+
+</TransRel>
+
+
+<InitStates>
+IW 
+</InitStates>
+
+<MarkedStates>
+IW IF
+</MarkedStates>
+
+</Generator>

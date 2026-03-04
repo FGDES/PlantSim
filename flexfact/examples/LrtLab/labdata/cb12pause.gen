@@ -1,0 +1,101 @@
+%% this automaton is broken
+
+<TimedaGenerator>
+
+<Generator>
+"Generator"   
+<Alphabet>
+"cb12+x-y"    "cb12wpar"    "cb12stp"           
+</Alphabet>
+
+<States>   
+"St1"         "St2"         "St3"         
+</States>  
+
+<TransRel>
+"St1"         "cb12+x-y"    "St2"         
+"St2"         "cb12wpar"    "St3"         
+"St3"         "cb12stp"     "St1"         
+</TransRel>
+<InitStates>
+"St1"         
+</InitStates>
+<MarkedStates>
+
+</MarkedStates>
+
+</Generator>
+
+
+<EventAttributes>
+
+</EventAttributes>
+<StateAttributes>
+
+</StateAttributes>
+<Timing>
+
+<Clocks>
+
+</Clocks>
+<TimedTransRel>
+<TimedTransition>
+"St1"         "cb12+x-y"    "St2"         
+
+<Guard>
+
+</Guard>
+
+
+<Invariant>
+
+</Invariant>
+
+<Reset>
+
+</Reset>
+
+</TimedTransition>
+
+<TimedTransition>
+"St2"         "cb12wpar"    "St3"         
+
+<Guard>
+
+</Guard>
+
+
+<Invariant>
+
+</Invariant>
+
+<Reset>
+
+</Reset>
+
+</TimedTransition>
+
+<TimedTransition>
+"St3"         "cb12stp"           "St1"         
+
+<Guard>
+
+</Guard>
+
+
+<Invariant>
+
+</Invariant>
+
+<Reset>
+
+</Reset>
+
+</TimedTransition>
+
+
+</TimedTransRel>
+
+</Timing>
+
+</TimedaGenerator>

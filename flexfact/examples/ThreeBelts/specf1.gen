@@ -1,0 +1,43 @@
+% Specifiaction, stack feeder and conveyor belts 1
+
+<Generator>
+"specf1"
+
+<Alphabet>
+"src_avail" +C+ "src_take" +C+ 
+"tu1_start" +C+  "tu1_cont"  +C+   
+"tu1_ack" +C+
+"tu2_ack" +C+
+</Alphabet>
+
+<States>
+"I" "L1" "L2" "L3" "B1"  "L3b" "B1b" 
+</States>
+
+<TransRel>
+% nominal transport cycle
+"I"   "src_avail"   "L1"
+"L1"  "tu1_start"  "L2"
+"L2"  "src_take"    "L3"
+"L3"  "tu1_ack"    "B1"
+"B1"  "tu2_ack"    "I"
+
+% workpiece avail during feed
+"L3"  "src_avail"    "L3b"
+"B1"  "src_avail"    "B1b"
+
+"L3b"  "tu1_ack"    "B1b"
+"B1b"  "tu2_ack"    "L1"
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I"
+</MarkedStates>
+
+</Generator>

@@ -1,0 +1,59 @@
+% Plant component interaction, conveyor belt 3 and exit
+
+<Generator>
+"cb3x"
+				   
+<Alphabet>
+"cb3_boff" +C+ "cb3_bm-" +C+  "cb3_bm+" +C+
+"cb3_wpar"   "cb3_wplv"   
+"xs_wpar"    "xs_wplv"   
+</Alphabet>
+
+<States>
+"I"  "L"  "R"
+"Rf" "Lf" "Err"
+</States>
+
+<TransRel>
+% idle
+"I" "cb3_bm+" "R"
+"I" "cb3_bm-" "L"
+
+% right
+"R" "cb3_boff"  "I"
+"R" "cb3_bm-"   "L"
+
+% left
+"L" "cb3_boff"  "I"
+"L" "cb3_bm+"   "R"
+
+% right transport
+"R"  "cb3_wplv" "Rf"
+"Rf" "xs_wpar"  "R"
+"Rf" "cb3_wplv" "Err"
+
+% right disposal
+"I"  "xs_wplv" "I"
+"R"  "xs_wplv" "R"
+"L"  "xs_wplv" "L"
+"Rf" "xs_wplv" "Rf"
+
+% left arival
+"R"  "cb3_wpar" "R"
+"Rf" "cb3_wpar" "Rf"
+
+% left disposal
+"L"  "cb3_wplv" "L"
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I"  
+</MarkedStates>
+
+</Generator>

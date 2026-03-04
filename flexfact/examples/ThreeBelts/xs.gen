@@ -1,0 +1,30 @@
+% Plant component interaction, sink right of 4
+
+<Generator>
+"snk"
+
+<Alphabet>
+"xs_wpar"   "xs_wplv"   
+"xs_tau" +C+
+</Alphabet>
+
+<States>
+"I" "Ft" "F"  
+</States>
+
+<TransRel>
+"I"  "xs_wpar" "Ft"
+"Ft"  "xs_tau" "F"
+"F"  "xs_wplv" "I"
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I"  
+</MarkedStates>
+
+</Generator>

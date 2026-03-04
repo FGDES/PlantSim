@@ -32,3 +32,4 @@ faudes_*
 # local archives
 local/*
 libFAUDES_for_PlantSim
+flexfact/libFAUDES_for_FlexFact

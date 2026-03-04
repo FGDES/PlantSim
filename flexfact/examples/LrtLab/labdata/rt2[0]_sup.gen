@@ -1,0 +1,51 @@
+<cGenerator>
+<Generator>
+"SupConNB((rt2[0]),(rt2[0]||rt2[0]_spec))" 
+<Alphabet>
+"rt2arx"      "rt2ary"      "rt2f"        "rt2lvx"      "rt2lvy"      "rt2mvx"      
+"rt2mvy"      "rt2stp"      "rt2x"        "rt2xy"       "rt2y"        "rt2yx"       
+"t_rt2-cb12\rt2" 
+</Alphabet>
+ <States>   <Consecutive>    1   
+18            
+ </Consecutive>    </States>  
+<TransRel>
+1             "rt2yx"       2             
+2             "rt2mvx"      3             
+3             "t_rt2-cb12\rt2" 4             
+4             "rt2lvy"      5             
+5             "t_rt2-cb12\rt2" 6             
+6             "rt2arx"      7             
+7             "rt2stp"      8             
+8             "t_rt2-cb12\rt2" 9             
+9             "rt2x"        10            
+10            "rt2xy"       11            
+11            "rt2mvy"      12            
+12            "t_rt2-cb12\rt2" 13            
+13            "rt2lvx"      14            
+14            "t_rt2-cb12\rt2" 15            
+15            "rt2ary"      16            
+16            "rt2stp"      17            
+17            "t_rt2-cb12\rt2" 18            
+18            "rt2y"        1             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"rt2mvx"      "rt2mvy"      "rt2stp"      "rt2xy"       "rt2yx"       "t_rt2-cb12\rt2" 
+</Controllable>
+<Observable>
+"rt2arx"      "rt2ary"      "rt2f"        "rt2lvx"      "rt2lvy"      "rt2mvx"      
+"rt2mvy"      "rt2stp"      "rt2x"        "rt2xy"       "rt2y"        "rt2yx"       
+"t_rt2-cb12\rt2" 
+</Observable>
+
+</cGenerator>

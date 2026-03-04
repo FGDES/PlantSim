@@ -1,0 +1,51 @@
+<cGenerator>
+<Generator>
+"Det(Pro(SupConNB((cb15[0]),(cb15[0]_spec)))) [minstate]" 
+<Alphabet>
+"cb15+y"      "cb15-7"      "cb15-8"      "cb15-9"      "cb15-rc1"    "cb15-y"      
+"cb15f"       "cb15stp"     "cb15wpar"    "cb15wplv7"   "cb15wplv8"   "cb15wplv9"   
+"cb15wplvrc1" "cb7-15"      "cb8-15"      "cb9-15"      "wp15-7"      "wp15-8"      
+"wp15-9"      "wp15-rc1"    "wp7-15"      "wp8-15"      "wp9-15"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+14            
+ </Consecutive>    </States>  
+<TransRel>
+2             "cb15+y"      7             
+1             "cb7-15"      4             
+3             "cb15-9"      2             
+3             "cb15-rc1"    12            
+4             "cb15-y"      6             
+5             "cb15stp"     9             
+6             "cb15wpar"    5             
+7             "cb15wplv9"   14            
+8             "cb15wplvrc1" 13            
+9             "wp7-15"      3             
+10            "wp15-9"      1             
+11            "wp15-rc1"    1             
+12            "cb15+y"      8             
+13            "cb15stp"     11            
+14            "cb15stp"     10            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb15+y"      "cb15-7"      "cb15-8"      "cb15-9"      "cb15-rc1"    "cb15-y"      
+"cb15stp"     "cb7-15"      "cb8-15"      "cb9-15"      
+</Controllable>
+<Observable>
+"cb15+y"      "cb15-7"      "cb15-8"      "cb15-9"      "cb15-rc1"    "cb15-y"      
+"cb15f"       "cb15stp"     "cb15wpar"    "cb15wplv7"   "cb15wplv8"   "cb15wplv9"   
+"cb15wplvrc1" "cb7-15"      "cb8-15"      "cb9-15"      "wp15-7"      "wp15-8"      
+"wp15-9"      "wp15-rc1"    "wp7-15"      "wp8-15"      "wp9-15"      
+</Observable>
+
+</cGenerator>

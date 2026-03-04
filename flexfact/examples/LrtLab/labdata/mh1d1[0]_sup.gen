@@ -1,0 +1,51 @@
+<Generator>
+"Det(Pro(SupConNB((mh1d1[0]),(mh1d1[0]||mh1d1[0]_spec)))) [minstate]" 
+
+<Alphabet>
+"d1run"       "d1stp"       "mh1ar+z"     "mh1ar-z"     "mh1end"      "mh1f"        
+"mh1lv+z"     "mh1lv-z"     "mh1mv+z"     "mh1mv-z"     "mh1start"    "mh1stp"      
+"pm1_mack"
+</Alphabet>
+
+<States>   
+1 2 3 4 5 6 7 8 9 10 11 12
+100
+</States>  
+
+<TransRel>
+% state 1: "initial state"; wait for event "mh1start" start the machine
+1             "mh1start"    9             
+
+% stage A: "lower tool"
+9             "mh1mv-z"     6             
+6             "mh1lv+z"     5             
+5             "mh1ar-z"     10            
+10            "mh1stp"      2             
+
+% stage B: "operate tool" until process complete
+2             "d1run"       100
+100           "pm1_mack"    3
+3             "d1stp"       8 
+            
+% stage C: "move tool back to initial position
+8             "mh1mv+z"     7             
+7             "mh1lv-z"     4             
+4             "mh1ar+z"     12            
+12            "mh1stp"      11            
+11            "mh1end"      1             
+</TransRel>
+
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+<Clocks>
+"c1"
+</Clocks>
+
+</Generator>
+
+

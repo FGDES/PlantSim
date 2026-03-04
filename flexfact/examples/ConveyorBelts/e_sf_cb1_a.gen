@@ -1,0 +1,35 @@
+% Spezification, sf-cb1
+<Generator>
+"e_sf_cb1"
+
+<Alphabet>
+cb1_bm+ sf_fdon sf_fdoff sf_fdhome cb1_boff
+</Alphabet>
+
+<States>
+I W F H0 S0 H1 S1
+</States>
+
+<TransRel>
+
+I  cb1_bm+    W
+W  cb1_boff   I
+W  sf_fdon    F
+
+F  sf_exit    H
+H  sf_fdoff   W
+
+
+
+</TransRel>
+
+
+<InitStates>
+I
+</InitStates>
+
+<MarkedStates>
+I W 
+</MarkedStates>
+
+</Generator>

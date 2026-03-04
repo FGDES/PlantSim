@@ -1,0 +1,96 @@
+% Configuration for supervisor
+<Executor>
+
+
+<Generators>
+"supervisor.gen"
+</Generators>
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% 2. Specify simulation event attributes
+
+<SimEvents>
+
+% Prefer high-level events
+
+"tua_start"
+<Priority> 10 </Priority>
+"tua_ack"
+<Priority> 10 </Priority>
+"tua_stop"
+<Priority> 10 </Priority>
+"tua_cont"
+<Priority> 10 </Priority>
+
+"tub_start"
+<Priority> 10 </Priority>
+"tub_ack"
+<Priority> 10 </Priority>
+"tub_stop"
+<Priority> 10 </Priority>
+"tub_cont"
+<Priority> 10 </Priority>
+
+"tuc_start"
+<Priority> 10 </Priority>
+"tuc_ack"
+<Priority> 10 </Priority>
+"tuc_stop"
+<Priority> 10 </Priority>
+"tuc_cont"
+<Priority> 10 </Priority>
+
+"tud_start"
+<Priority> 10 </Priority>
+"tud_ack"
+<Priority> 10 </Priority>
+"tud_stop"
+<Priority> 10 </Priority>
+"tud_cont"
+<Priority> 10 </Priority>
+
+
+% Stop from left to right only if neccessary
+"cba_stop"
+<Priority> 5 </Priority>
+"cbb_stop"
+<Priority> 4 </Priority>
+"cbc_stop"
+<Priority> 3 </Priority>
+"cbd_stop"
+<Priority> 2 </Priority>
+"cba_right"
+<Priority> 7 </Priority>
+"cbb_right"
+<Priority> 7 </Priority>
+"cbc_right"
+<Priority> 7 </Priority>
+"cbd_right"
+<Priority> 7 </Priority>
+"cba_left"
+<Priority> 7 </Priority>
+"cbb_left"
+<Priority> 7 </Priority>
+"cbc_left"
+<Priority> 7 </Priority>
+"cbd_left"
+<Priority> 7 </Priority>
+
+% Let time pass when possible
+"cba_tau"
+<Priority> 50 </Priority>
+"cbb_tau"
+<Priority> 50 </Priority>
+"cbc_tau"
+<Priority> 50 </Priority>
+"cbd_tau"
+<Priority> 50 </Priority>
+
+
+
+</SimEvents>
+
+% End of Executor section
+</Executor>

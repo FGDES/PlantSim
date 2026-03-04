@@ -1,0 +1,132 @@
+%% add on to supervisor: reset and stop on depwp* events
+<Generator>
+"emergency reset"
+
+<Alphabet>
+xs1_wpar  % sensor legft of cb 1
+xs1_wplv  % sensor legft of cb 1
+"reset"    % actuator to stop all motors
+
+% all other actuators
+sf_fdon        sf_fdoff       ds_p1m+     ds_p1m-     ds_p1off      ds_p2m+     
+ds_p2m-     ds_p2off      ds_bm+       ds_bm-       ds_boff      cb2_bm+       
+cb2_boff      cb1_bm+       cb1_boff      pm1_bm+       pm1_bm-       pm1_boff      
+cb3_bm+       cb3_bm-       cb3_boff      pm2_bm+       pm2_bm-       pm2_boff      
+cb4_bm-       cb4_bm+       cb4_boff      cb5_bm-       cb5_bm+       cb5_boff      
+cb6_bm-       cb6_bm+       cb6_boff      cb7_bm-      cb7_bm+      cb7_boff     
+rb1_bm-    rb1_bm+    rb1_boff     rb2_bm+    rb2_bm-    rb2_boff     
+rb3_bm+    rb3_bm-    rb3_boff     rb4_bm+    rb4_bm-    rb4_boff     
+rs_b1m-      rs_b1m+      rs_b1off     rs_b2m-      rs_b2m+      rs_b2off     
+rb1_rccw      rb1_rcw      rb1_roff      rb2_rcw      rb2_rccw      rb2_roff      
+rb3_rcw      rb3_rccw      rb3_roff      rb4_rcw      rb4_rccw      rb4_roff      
+rs_c1m+      rs_c1m-      rs_c1off     rs_c2m+      rs_c2m-      rs_c2off     
+pm1_pm-     pm1_pm+     pm1_poff      pm2_pm-     pm2_pm+     pm2_poff      
+pm1_mon       pm1_moff       pm2_mon       pm2_moff              
+</Alphabet>
+
+<States>
+"Init"
+"HaltA"
+"HaltB"
+</States>
+
+<TransRel>
+"Init" xs1_wpar "HaltA"
+"Init" xs1_wplv "HaltA"
+"HaltA" "reset" "HaltB"
+
+%% selfloop all other actuators
+"Init" sf_fdon        "Init" 
+"Init" sf_fdoff       "Init" 
+"Init" ds_p1m+     "Init" 
+"Init" ds_p1m-     "Init" 
+"Init" ds_p1off      "Init" 
+"Init" ds_p2m+     "Init" 
+"Init" ds_p2m-     "Init" 
+"Init" ds_p2off      "Init" 
+%"Init" ds_bm+       "Init" 
+"Init" ds_bm-       "Init" 
+"Init" ds_boff      "Init" 
+"Init" cb2_bm+       "Init" 
+"Init" cb2_boff      "Init" 
+"Init" cb1_bm+       "Init" 
+"Init" cb1_boff      "Init" 
+"Init" pm1_bm+       "Init" 
+"Init" pm1_bm-       "Init" 
+"Init" pm1_boff      "Init" 
+"Init" cb3_bm+       "Init" 
+"Init" cb3_bm-       "Init" 
+"Init" cb3_boff      "Init" 
+"Init" pm2_bm+       "Init" 
+"Init" pm2_bm-       "Init" 
+"Init" pm2_boff      "Init" 
+"Init" cb4_bm-       "Init" 
+"Init" cb4_bm+       "Init" 
+"Init" cb4_boff      "Init" 
+%"Init" cb5_bm-       "Init" 
+%"Init" cb5_bm+       "Init" 
+%"Init" cb5_boff      "Init" 
+"Init" cb6_bm-       "Init" 
+"Init" cb6_bm+       "Init" 
+"Init" cb6_boff      "Init" 
+"Init" cb7_bm-      "Init" 
+"Init" cb7_bm+      "Init" 
+"Init" cb7_boff     "Init" 
+"Init" rb1_bm-    "Init" 
+"Init" rb1_bm+    "Init" 
+"Init" rb1_boff     "Init" 
+"Init" rb2_bm+    "Init" 
+"Init" rb2_bm-    "Init" 
+"Init" rb2_boff     "Init" 
+"Init" rb3_bm+    "Init" 
+"Init" rb3_bm-    "Init" 
+"Init" rb3_boff     "Init" 
+"Init" rb4_bm+    "Init" 
+"Init" rb4_bm-    "Init" 
+"Init" rb4_boff     "Init" 
+"Init" rs_b1m-      "Init" 
+"Init" rs_b1m+      "Init" 
+"Init" rs_b1off     "Init" 
+"Init" rs_b2m-      "Init" 
+"Init" rs_b2m+      "Init" 
+"Init" rs_b2off     "Init" 
+"Init" rb1_rccw      "Init" 
+"Init" rb1_rcw      "Init" 
+"Init" rb1_roff      "Init" 
+"Init" rb2_rcw      "Init" 
+"Init" rb2_rccw      "Init" 
+"Init" rb2_roff      "Init" 
+"Init" rb3_rcw      "Init" 
+"Init" rb3_rccw      "Init" 
+"Init" rb3_roff      "Init" 
+"Init" rb4_rcw      "Init" 
+"Init" rb4_rccw      "Init" 
+"Init" rb4_roff      "Init" 
+"Init" rs_c1m+      "Init" 
+"Init" rs_c1m-      "Init" 
+"Init" rs_c1off     "Init" 
+"Init" rs_c2m+      "Init" 
+"Init" rs_c2m-      "Init" 
+"Init" rs_c2off     "Init" 
+"Init" pm1_pm-     "Init" 
+"Init" pm1_pm+     "Init" 
+"Init" pm1_poff      "Init" 
+"Init" pm2_pm-     "Init" 
+"Init" pm2_pm+     "Init" 
+"Init" pm2_poff      "Init" 
+"Init" pm1_mon       "Init" 
+"Init" pm1_moff       "Init" 
+"Init" pm2_mon       "Init" 
+"Init" pm2_moff       "Init"       
+
+</TransRel>
+
+<InitStates>
+"Init"
+</InitStates>
+
+<MarkedStates>
+</MarkedStates>
+
+
+</Generator>

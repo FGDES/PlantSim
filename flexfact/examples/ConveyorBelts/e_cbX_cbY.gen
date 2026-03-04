@@ -1,0 +1,44 @@
+% Spezification, cb1-cby
+<Generator>
+"e_cbX_cbY"
+
+<Alphabet>
+cbX_bm+ cbX_boff cbY_bm+  cbY_boff cbX_wplv cbY_wplv cbY_wpar
+</Alphabet>
+
+<States>
+II IW DW ID IP
+</States>
+
+<TransRel>
+
+II   cbX_bm+    II
+II   cbX_boff   II 
+II   cbY_bm+    IW
+
+IW   cbX_bm+    IW
+IW   cbX_boff   IW 
+IW   cbY_boff   II 
+
+IW   cbX_wplv    DW
+%DW   cbX_cbY_pass ID
+DW   cbY_wpar ID
+
+ID   cbX_bm+    ID
+ID   cbX_boff   ID
+ID   cbY_bm+    ID
+ID   cbY_boff   ID
+ID   cbY_wplv   IW
+
+</TransRel>
+
+
+<InitStates>
+II
+</InitStates>
+
+<MarkedStates>
+II IP 
+</MarkedStates>
+
+</Generator>

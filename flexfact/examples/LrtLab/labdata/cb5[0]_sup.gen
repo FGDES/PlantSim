@@ -1,0 +1,54 @@
+<cGenerator>
+<Generator>
+"Det(Pro(SupConNB((cb5[0]),(cb5[0]_spec)))) [minstate]" 
+<Alphabet>
+"cb12-5"      "cb13-5"      "cb5+x"       "cb5-12"      "cb5-13"      "cb5-x"       
+"cb5stp"      "cb5wpar"     "cb5wplv12"   "cb5wplv13"   "wp12-5"      "wp13-5"      
+"wp5-12"      "wp5-13"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+18            
+ </Consecutive>    </States>  
+<TransRel>
+2             "cb5+x"       6             
+1             "cb12-5"      2             
+1             "cb13-5"      4             
+3             "cb5-12"      14            
+3             "cb5-13"      13            
+4             "cb5-x"       16            
+5             "cb5stp"      9             
+6             "cb5wpar"     5             
+7             "cb5wplv12"   18            
+8             "cb5wplv13"   17            
+9             "wp12-5"      3             
+10            "wp13-5"      3             
+11            "wp5-12"      1             
+12            "wp5-13"      1             
+13            "cb5+x"       8             
+14            "cb5-x"       7             
+15            "cb5stp"      10            
+16            "cb5wpar"     15            
+17            "cb5stp"      12            
+18            "cb5stp"      11            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb12-5"      "cb13-5"      "cb5+x"       "cb5-12"      "cb5-13"      "cb5-x"       
+"cb5stp"      
+</Controllable>
+<Observable>
+"cb12-5"      "cb13-5"      "cb5+x"       "cb5-12"      "cb5-13"      "cb5-x"       
+"cb5stp"      "cb5wpar"     "cb5wplv12"   "cb5wplv13"   "wp12-5"      "wp13-5"      
+"wp5-12"      "wp5-13"      
+</Observable>
+
+</cGenerator>

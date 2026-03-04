@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -643,8 +643,8 @@ FfMultimachEditor::FfMultimachEditor(FfComponent* comp) :
   connect(mProcAEdit,SIGNAL(editingFinished(void)),this,SLOT(UpdateFromEditor(void)));
   connect(mProcBEdit,SIGNAL(editingFinished(void)),this,SLOT(UpdateFromEditor(void)));
   connect(mProcCEdit,SIGNAL(editingFinished(void)),this,SLOT(UpdateFromEditor(void)));
-  QRegExpValidator* lvalid = new QRegExpValidator(
-    QRegExp("[A-Z]"),0);
+  QRegularExpression atoz("[A-Z]");
+  QValidator *lvalid = new QRegularExpressionValidator(atoz, this);
   mProcAEdit->setValidator(lvalid);
   mProcBEdit->setValidator(lvalid);
   mProcCEdit->setValidator(lvalid);
@@ -655,7 +655,7 @@ FfMultimachEditor::FfMultimachEditor(FfComponent* comp) :
   wline->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed));
   QHBoxLayout* sline = new QHBoxLayout(wline);
   sline->setSpacing(2);
-  sline->setMargin(0);
+  sline->setContentsMargins(0,0,0,0);
   mProcAEdit->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed));
   mProcAEdit->setFixedWidth(12*5);
   mProcBEdit->setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed));

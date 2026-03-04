@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026  Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -401,7 +401,7 @@ FfSimControlsItem::FfSimControlsItem(QGraphicsItem* parent) : QGraphicsItem(pare
   FF_DQ("FfSimControlsItem::FfSimControlsItem()");
   setZValue(20);
   setPos(0,0);
-  setAcceptsHoverEvents(true);
+  setAcceptHoverEvents(true);
   mVisible=true;
 }
 
@@ -539,7 +539,7 @@ FfButtonItem::FfButtonItem(QGraphicsItem* parent) : QGraphicsItem(parent) {
   FF_DQ("FfButtonItem::FfButtonItem()");
   setZValue(22);
   setPos(0,0);
-  setAcceptsHoverEvents(true);
+  setAcceptHoverEvents(true);
   mUnderMouse=false;
   SetColorGreen();
 }
@@ -1076,7 +1076,7 @@ FfErrIndicatorItem::FfErrIndicatorItem(QGraphicsItem* parent) : QGraphicsItem(pa
   FF_DQ("FfErrIndicatorItem::FfErrIndicatorItem()");
   setZValue(30);
   setPos(0,0);
-  setAcceptsHoverEvents(true);
+  setAcceptHoverEvents(true);
 }
 
 

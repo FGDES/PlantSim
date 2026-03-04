@@ -1,0 +1,41 @@
+% Specifiaction, conveyor belt b
+
+<Generator>
+"specb"
+
+<Alphabet>
+"cbb_stop"  +C+ "cbb_left" +C+  "cbb_right" +C+ 
+"cbb_wpar"   "cbb_wplv" 
+"tub_start" +C+ "tub_stop"  +C+  "tub_cont"  +C+ 
+"tub_ack" +C+
+</Alphabet>
+
+<States>
+"I" "T1" "T2" "T3"  "T4" "T5" "S1" "P1"
+</States>
+
+<TransRel>
+% idle 
+"I"   "tub_start" "T1"
+"T1"  "cbb_right" "T2"
+"T2"  "cbb_wpar"  "T3"
+"T3"  "tub_ack"   "T4"
+"T4"  "cbb_stop"  "P1"
+"T4"  "cbb_wplv"  "T5"
+"T5"  "tub_cont"  "T2"
+"T5"  "tub_stop"  "S1"
+
+"S1"  "cbb_stop"  "I"
+"P1"  "cbb_right" "T4"
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I" 
+</MarkedStates>
+
+</Generator>

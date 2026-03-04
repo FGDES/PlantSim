@@ -1,0 +1,41 @@
+% Specifiaction, conveyor belt 2
+
+<Generator>
+"spec2"
+
+<Alphabet>
+"cb2_boff"  +C+ "cb2_bm-" +C+  "cb2_bm+" +C+ 
+"cb2_wpar"   "cb2_wplv" 
+"tu2_start" +C+ "tu2_stop"  +C+  "tu2_cont"  +C+ 
+"tu2_ack" +C+
+</Alphabet>
+
+<States>
+"I" "T1" "T2" "T3"  "T4" "T5" "S1" "P1"
+</States>
+
+<TransRel>
+% idle 
+"I"   "tu2_start" "T1"
+"T1"  "cb2_bm+"   "T2"
+"T2"  "cb2_wpar"  "T3"
+"T3"  "tu2_ack"   "T4"
+"T4"  "cb2_boff"  "P1"
+"T4"  "cb2_wplv"  "T5"
+"T5"  "tu2_cont"  "T2"
+"T5"  "tu2_stop"  "S1"
+
+"S1"  "cb2_boff"  "I"
+"P1"  "cb2_bm+" "T4"
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I" 
+</MarkedStates>
+
+</Generator>

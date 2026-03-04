@@ -1,0 +1,37 @@
+% Spezification, lazy sf
+
+<Generator>
+"e_sf_lazy"
+
+<Alphabet>
+sf_fdon sf_fdoff sf_fdhome sf_wpar 
+</Alphabet>
+
+<States>
+E F Fr Fa Rr Ra
+</States>
+
+<TransRel>
+E   sf_wpar   F
+F   sf_fdon   Fr
+
+Fr  sf_fdhome Fa
+Fa  sf_fdoff  E
+
+Fr  sf_wpar   Rr
+Rr  sf_fdhome Ra
+Ra  sf_fdoff  F
+
+
+</TransRel>
+
+
+<InitStates>
+E
+</InitStates>
+
+<MarkedStates>
+E F 
+</MarkedStates>
+
+</Generator>

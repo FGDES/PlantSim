@@ -1,0 +1,43 @@
+<cGenerator>
+<Generator>
+"SupConNB((Det(Pro(SupConNB((cb1b[0]),(cb1b[0]_spec)))) [minstate]||Det(Pro(SupConNB((pu1[0]),(pu1[0]||pu1[0]_spec)))) [minstate]),(cb1bpu1[0]_spec))" 
+<Alphabet>
+"cb1stp"      "cb1-3"       "cb1bwpar"    "cb1-x"       "cb1-dep"     "pu1rdy"      
+"cb1bwplv"    
+</Alphabet>
+ <States>   <Consecutive>    1   
+9             
+ </Consecutive>    </States>  
+<TransRel>
+1             "cb1-x"       2             
+2             "cb1stp"      1             
+2             "cb1bwpar"    3             
+3             "cb1stp"      4             
+4             "cb1-3"       5             
+4             "cb1-dep"     6             
+5             "pu1rdy"      8             
+5             "cb1bwplv"    9             
+6             "cb1-x"       7             
+7             "cb1bwplv"    2             
+8             "cb1bwplv"    1             
+9             "pu1rdy"      1             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb1stp"      "cb1-3"       "cb1-x"       "cb1-dep"     "pu1rdy"      
+</Controllable>
+<Observable>
+"cb1stp"      "cb1-3"       "cb1bwpar"    "cb1-x"       "cb1-dep"     "pu1rdy"      
+"cb1bwplv"    
+</Observable>
+
+</cGenerator>

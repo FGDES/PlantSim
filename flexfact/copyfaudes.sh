@@ -5,9 +5,9 @@
 # this script is not functional with Windows.
 #
 
-# assume libfaudes to be located next to "flexfact" in directory "common"
-FAUDES_SRC=../common/libfaudes
-FAUDES_DST=./libfaudes
+# assume libFAUDES to be located two folders up
+FAUDES_SRC=../../libFAUDES
+FAUDES_DST=./libFAUDES_for_FlexFact
 
 
 # test for flexfact sources
@@ -16,16 +16,16 @@ if [ ! -f flexfact.pro ]; then
   return
 fi
 
-echo ==================== copy libfaudes
+echo ==================== copy libFAUDES
 rm -rf $FAUDES_DST
 cp -R $FAUDES_SRC $FAUDES_DST 
 
-echo ==================== configure libfaudes
+echo ==================== configure libFAUDES
 
 # clean
 make -C $FAUDES_DST dist-clean
 
-# configure minimal libfaudes
+# configure minimal libFAUDES
 export OSTYPE
 export FAUDES_PLUGINS="timed iodevice simulator"
 export FAUDES_DEBUG="core_checked core_exceptions sim_sync core_progress iop_threads"

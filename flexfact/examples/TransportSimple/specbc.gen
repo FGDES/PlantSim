@@ -1,0 +1,47 @@
+% Specifiaction, conveyor belts b and c
+
+<Generator>
+"specbc"
+
+<Alphabet>
+"tub_start" +C+ "tub_stop"  +C+  "tub_cont"  +C+ 
+"tub_ack" +C+
+"tuc_start" +C+  "tuc_cont"  +C+ %% "tuc_stop"  +C+  
+"tuc_ack" +C+
+"tud_ack" +C+
+</Alphabet>
+
+<States>
+"I" "L2" "L3" "L4" "L5" "B1" "B2" "B3" "B4" 
+</States>
+
+<TransRel>
+% nominal cycle
+"I"    "tub_start" "L2"
+"I"    "tub_cont"  "L2"
+"L2"   "tub_ack"   "L3"
+"L3"   "tuc_start" "L4"
+"L4"   "tuc_ack"   "L5"
+"L5"   "tub_stop"  "B1"
+"B1"   "tud_ack"    "I"
+
+% block on right neighbour 
+"B1"   "tub_start" "B2"
+"B2"   "tub_ack"   "B3"
+"B3"   "tud_ack"   "B4"
+"B4"   "tuc_start" "L4"
+
+"B2"   "tud_ack"   "L3"
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I" 
+</MarkedStates>
+
+</Generator>

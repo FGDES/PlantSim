@@ -1,0 +1,128 @@
+% Plant component interaction, conveyor belts a and b
+
+<Generator>
+"cbab"
+
+<Alphabet>
+"cba_stop" +C+ "cba_left" +C+  "cba_right" +C+
+"cbb_stop" +C+ "cbb_left" +C+  "cbb_right" +C+
+"cba_wpar"   "cba_wplv"   
+"cbb_wpar"   "cbb_wplv"   
+</Alphabet>
+
+<States>
+"II" "IL" "IR"
+"RI" "RL" "RR"
+"LI" "LL" "LR"
+"RRf" "LLf" "Err"
+</States>
+
+<TransRel>
+% idle/idle 
+"II" "cba_right" "RI"
+"II" "cba_left"  "LI"
+"II" "cbb_right" "IR"
+"II" "cbb_left"  "IL"
+
+% right/idle 
+"RI" "cba_stop"  "II"
+"RI" "cba_left"  "LI"
+"RI" "cbb_right" "RR"
+"RI" "cbb_left"  "RL"
+
+% left/idle 
+"LI" "cba_stop"  "II"
+"LI" "cba_right" "RI"
+"LI" "cbb_right" "LR"
+"LI" "cbb_left"  "LL"
+
+% idle/right 
+"IR" "cba_right" "RR"
+"IR" "cba_left"  "LR"
+"IR" "cbb_stop"  "II"
+"IR" "cbb_left"  "IL"
+
+% right/right 
+"RR" "cba_stop"  "IR"
+"RR" "cba_left"  "LR"
+"RR" "cbb_stop"  "RI"
+"RR" "cbb_left"  "RL"
+
+% left/right 
+"LR" "cba_stop"  "IR"
+"LR" "cba_right" "RR"
+"LR" "cbb_stop"  "LI"
+"LR" "cbb_left"  "LL"
+
+
+% idle/left 
+"IL" "cba_right" "RL"
+"IL" "cba_left"  "LL"
+"IL" "cbb_stop"  "II"
+"IL" "cbb_right" "IR"
+
+% right/left 
+"RL" "cba_stop"  "IL"
+"RL" "cba_left"  "LL"
+"RL" "cbb_stop"  "RI"
+"RL" "cbb_right" "RR"
+
+% left/left 
+"LL" "cba_stop"  "IL"
+"LL" "cba_right" "RL"
+"LL" "cbb_stop"  "LI"
+"LL" "cbb_right"  "LR"
+
+% right transport
+"RR" "cba_wplv" "RRf"
+"RRf" "cbb_wpar" "RR"
+"RRf" "cba_wplv" "Err"
+"RI"  "cba_wplv" "Err"
+
+% left transport
+"LL" "cbb_wplv" "LLf"
+"LLf" "cba_wpar" "LL"
+"LLf" "cbb_wplv" "Err"
+
+% right arival
+"IL"  "cbb_wpar" "IL"
+"RL"  "cbb_wpar" "RL"
+"LL"  "cbb_wpar" "LL"
+"LLf" "cbb_wpar" "LLf"
+
+% right disposal
+"IR"  "cbb_wplv" "IR"
+"RR"  "cbb_wplv" "RR"
+"LR"  "cbb_wplv" "LR"
+"RRf" "cbb_wplv" "RRf"
+
+
+% left arival
+"RI"  "cba_wpar" "RI"
+"RR"  "cba_wpar" "RR"
+"RL"  "cba_wpar" "RL"
+"RRf" "cba_wpar" "RRf"
+
+% left arival (src case)
+"II"  "cba_wpar" "II"
+"IR"  "cba_wpar" "IR"
+"IL"  "cba_wpar" "IL"
+
+% left disposal
+"LI"  "cba_wplv" "LI"
+"LR"  "cba_wplv" "LR"
+"LL"  "cba_wplv" "LL"
+"LLf" "cba_wplv" "LLf"
+
+</TransRel>
+
+
+<InitStates>
+"II"
+</InitStates>
+
+<MarkedStates>
+"II"  
+</MarkedStates>
+
+</Generator>

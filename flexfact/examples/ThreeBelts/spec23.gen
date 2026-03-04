@@ -1,0 +1,47 @@
+% Specifiaction, conveyor belts 2 and 3
+
+<Generator>
+"specbc"
+
+<Alphabet>
+"tu2_start" +C+ "tu2_stop"  +C+  "tu2_cont"  +C+ 
+"tu2_ack" +C+
+"tu3_start" +C+  "tu3_cont"  +C+ 
+"tu3_ack" +C+
+"snk_ack" +C+
+</Alphabet>
+
+<States>
+"I" "L2" "L3" "L4" "L5" "B1" "B2" "B3" "B4" 
+</States>
+
+<TransRel>
+% nominal cycle
+"I"    "tu2_start" "L2"
+"I"    "tu2_cont"  "L2"
+"L2"   "tu2_ack"   "L3"
+"L3"   "tu3_start" "L4"
+"L4"   "tu3_ack"   "L5"
+"L5"   "tu2_stop"  "B1"
+"B1"   "snk_ack"    "I"
+
+% block on right neighbour 
+%"B1"   "tu2_start" "B2"
+%"B2"   "tu2_ack"   "B3"
+%"B3"   "snk_ack"   "B4"
+%"B4"   "tu3_start" "L4"
+
+%"B2"   "snk_ack"   "L3"
+
+</TransRel>
+
+
+<InitStates>
+"I"
+</InitStates>
+
+<MarkedStates>
+"I" 
+</MarkedStates>
+
+</Generator>

@@ -1,0 +1,61 @@
+
+<Generator>
+"Det(Pro(SupConNB((cb13[0]),(cb13[0]_spec)))) [minstate]" 
+<Alphabet>
+"cb13-5"      "cb5-13"      "wp13-5"      "wp5-13"      "cb13-9"      "cb9-13"      
+"wp13-9"      "wp9-13"      rb3_bm+    "cb13-2"      "cb13-6"      rb3_bm-    
+rb3_boff     rb3_wpar_x    "cb13wplv3"   cb3_wpar_b   pm2_wpar_a   cb6_wpar_a   
+"cb2-13"      "cb6-13"      "wp13-2"      "wp13-6"      "wp2-13"      "wp6-13"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+23            
+ </Consecutive>    </States>  
+<TransRel>
+2             "cb13-5"      6             
+1             "cb9-13"      4             
+1             "cb2-13"      18            
+1             "cb6-13"      23            
+3             "wp9-13"      5             
+4             rb3_bm-    8             
+5             "cb13-6"      17            
+6             rb3_bm-    9             
+7             rb3_boff     3             
+8             rb3_wpar_x    7             
+9             cb3_wpar_b   21            
+10            pm2_wpar_a   20            
+11            "wp2-13"      5             
+12            "wp6-13"      2             
+13            "wp13-5"      1             
+14            "wp13-6"      1             
+15            rb3_boff     11            
+16            rb3_wpar_x    15            
+17            rb3_bm+    10            
+18            rb3_bm+    16            
+19            rb3_boff     12            
+20            rb3_boff     14            
+21            rb3_boff     13            
+22            rb3_wpar_x    19            
+23            rb3_bm-    22            
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb13-5"      "cb5-13"      "cb13-9"      "cb9-13"      rb3_bm+    "cb13-2"      
+"cb13-6"      rb3_bm-    rb3_boff     "cb2-13"      "cb6-13"      
+</Controllable>
+<Observable>
+"cb13-5"      "cb5-13"      "wp13-5"      "wp5-13"      "cb13-9"      "cb9-13"      
+"wp13-9"      "wp9-13"      rb3_bm+    "cb13-2"      "cb13-6"      rb3_bm-    
+rb3_boff     rb3_wpar_x    "cb13wplv3"   cb3_wpar_b   pm2_wpar_a   cb6_wpar_a   
+"cb2-13"      "cb6-13"      "wp13-2"      "wp13-6"      "wp2-13"      "wp6-13"      
+</Observable>
+
+

@@ -1,0 +1,48 @@
+
+<Generator>
+"SupConNB((Det(Pro(SupConNB((rt3[0]),(rt3[0]||rt3[0]_spec)))) [minstate]||Det(Pro(SupConNB((cb13[0]),(cb13[0]_spec)))) [minstate]),(rt3cb13[1]_spec))" 
+<Alphabet>
+"rt3x"        "rt3xy"       "rt3y"        "rt3yx"       "cb13-5"      "cb13-6"      
+"cb2-13"      "cb6-13"      "cb9-13"      "wp13-5"      "wp13-6"      "wp2-13"      
+"wp6-13"      "wp9-13"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+12            
+ </Consecutive>    </States>  
+<TransRel>
+1             "cb2-13"      2             
+1             "cb9-13"      3             
+2             "wp2-13"      4             
+3             "wp9-13"      4             
+4             "rt3yx"       5             
+5             "rt3x"        6             
+6             "cb13-6"      7             
+7             "wp13-6"      8             
+8             "rt3xy"       9             
+8             "cb6-13"      10            
+9             "rt3y"        1             
+10            "wp6-13"      11            
+11            "cb13-5"      12            
+12            "wp13-5"      8             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"rt3xy"       "rt3yx"       "cb13-5"      "cb13-6"      "cb2-13"      "cb6-13"      
+"cb9-13"      
+</Controllable>
+<Observable>
+"rt3x"        "rt3xy"       "rt3y"        "rt3yx"       "cb13-5"      "cb13-6"      
+"cb2-13"      "cb6-13"      "cb9-13"      "wp13-5"      "wp13-6"      "wp2-13"      
+"wp6-13"      "wp9-13"      
+</Observable>
+
+

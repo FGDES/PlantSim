@@ -1,0 +1,46 @@
+
+<Generator>
+"Det(Pro(SupConNB((cb9[0]),(cb9[0]_spec)))) [minstate]" 
+<Alphabet>
+"cb13-9"      "cb15-9"      "cb16-9"      cb6_bm-       "cb9-13"      "cb9-15"      
+"cb9-16"      cb6_bm+       cb6_boff      cb6_wpar_x     rb3_wpar_a   rs_b1wpar_c   
+rs_b2wpar_a   "wp13-9"      "wp15-9"      "wp16-9"      "wp9-13"      "wp9-15"      
+"wp9-16"      
+</Alphabet>
+ <States>   <Consecutive>    1   
+10            
+ </Consecutive>    </States>  
+<TransRel>
+2             cb6_bm-       5             
+1             "cb15-9"      2             
+3             "cb9-13"      9             
+4             cb6_boff      8             
+5             cb6_wpar_x     10            
+6             rb3_wpar_a   4             
+7             "wp15-9"      3             
+8             "wp9-13"      1             
+9             cb6_bm-       6             
+10            cb6_boff      7             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"cb13-9"      "cb15-9"      "cb16-9"      cb6_bm-       "cb9-13"      "cb9-15"      
+"cb9-16"      cb6_bm+       cb6_boff      
+</Controllable>
+<Observable>
+"cb13-9"      "cb15-9"      "cb16-9"      cb6_bm-       "cb9-13"      "cb9-15"      
+"cb9-16"      cb6_bm+       cb6_boff      cb6_wpar_x     rb3_wpar_a   rs_b1wpar_c   
+rs_b2wpar_a   "wp13-9"      "wp15-9"      "wp16-9"      "wp9-13"      "wp9-15"      
+"wp9-16"      
+</Observable>
+
+

@@ -1,0 +1,470 @@
+<Executor>
+
+<Generators>
+% list of orginal supervisor components
+% (events should be renamed, timing removed)
+
+"cb10[0]_sup.gen"
+"cb11[0]_sup.gen"
+"cb12[0]_sup.gen"
+"cb13[0]_sup.gen"
+"cb14[0]_sup.gen"
+"cb15[0]_sup.gen"
+"cb16[0]_sup.gen"
+"cb1apu2[1]_sup.gen"
+"cb1a[0]_sup.gen"
+"cb1bpu1[1]_sup.gen"
+"cb1b[0]_sup.gen"
+"cb1[2]_sup.gen"
+"cb2[0]_sup.gen"
+"cb3[0]_sup.gen"
+"cb4mh1d1[1]_sup.gen"
+"cb4[0]_sup.gen"
+"cb5[0]_sup.gen"
+"cb6mh2d2[1]_sup.gen"
+"cb6[0]_sup.gen"
+"cb7[0]_sup.gen"
+"cb9[0]_sup.gen"
+"dist[3]_sup.gen"
+"exit1[2]_sup.gen"
+"exit2[2]_sup.gen"
+"ics[2]_sup.gen"
+"mh1d1[0]_sup.gen"
+"mh2d2[0]_sup.gen"
+"ms[4]_sup.gen"
+"pc1exit1ics[3]_sup.gen"
+"pc1[2]_sup.gen"
+"pc2exit2[3]_sup.gen"
+"pc2[2]_sup.gen"
+"pu1[0]_sup.gen"
+"pu2[0]_sup.gen"
+"rc1[0]_sup.gen"
+"rc2[0]_sup.gen"
+"rt1cb11[1]_sup.gen"
+"rt1[0]_sup.gen"
+"rt2cb12[1]_sup.gen"
+"rt2[0]_sup.gen"
+"rt3cb13[1]_sup.gen"
+"rt3[0]_sup.gen"
+"rt4cb14[1]_sup.gen"
+"rt4[0]_sup.gen"
+"rts1cb15[1]_sup.gen"
+"rts1[0]_sup.gen"
+"rts2cb16[1]_sup.gen"
+"rts2[0]_sup.gen"
+"sf[0]_sup.gen"
+
+% mimique semantics of "borrowed" events
+
+<Generator>
+"sync rb1_wpar"
+<Alphabet> rb1_wpar_a rb1_wpar_b rb1_wpar_q rb1_wpar_x rb1_wpar </Alphabet> 
+<States> I X1 X2 X3 </States>
+<TransRel>
+I  rb1_wpar   X1
+X1 rb1_wpar_x X2
+X2 rb1_wpar_a X3
+X2 rb1_wpar_q X3
+X3 rb1_wpar_b I
+X3 rb1_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rb2_wpar"
+<Alphabet> rb2_wpar_a rb2_wpar_b rb2_wpar_c rb2_wpar_d rb2_wpar_q rb2_wpar_x rb2_wpar </Alphabet> 
+<States> I X1 X2 X3 X4 X5</States>
+<TransRel>
+I  rb2_wpar   X1
+X1 rb2_wpar_x X2
+X2 rb2_wpar_a X3
+X2 rb2_wpar_q X3
+X3 rb2_wpar_b X4
+X3 rb2_wpar_q X4
+X4 rb2_wpar_c X5
+X4 rb2_wpar_q X5
+X5 rb2_wpar_d I
+X5 rb2_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rb3_wpar"
+<Alphabet> rb3_wpar_a rb3_wpar_b rb3_wpar_c rb3_wpar_d rb3_wpar_q rb3_wpar_x rb3_wpar </Alphabet> 
+<States> I X1 X2 X3 X4 X5</States>
+<TransRel>
+I  rb3_wpar   X1
+X1 rb3_wpar_x X2
+X2 rb3_wpar_a X3
+X2 rb3_wpar_q X3
+X3 rb3_wpar_b X4
+X3 rb3_wpar_q X4
+X4 rb3_wpar_c X5
+X4 rb3_wpar_q X5
+X5 rb3_wpar_d I
+X5 rb3_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rb4_wpar"
+<Alphabet> rb4_wpar_a rb4_wpar_b rb4_wpar_x rb4_wpar_q rb4_wpar </Alphabet> 
+<States> I X1 X2 X3 </States>
+<TransRel>
+I  rb4_wpar   X1
+X1 rb4_wpar_x X2
+X2 rb4_wpar_a X3
+X2 rb4_wpar_q X3
+X3 rb4_wpar_b I
+X3 rb4_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+
+<Generator>
+"sync pm1_wpar"
+<Alphabet> pm1_wpar_a pm1_wpar_b pm1_wpar_x pm1_wpar_q pm1_wpar </Alphabet> 
+<States> I X1 X2 X3 </States>
+<TransRel>
+I  pm1_wpar   X1
+X1 pm1_wpar_x X2
+X2 pm1_wpar_a X3
+X2 pm1_wpar_q X3
+X3 pm1_wpar_b I
+X3 pm1_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync pm2_wpar"
+<Alphabet> pm2_wpar_a pm2_wpar_b pm2_wpar_x pm2_wpar_q pm2_wpar </Alphabet> 
+<States> I X1 X2 X3 </States>
+<TransRel>
+I  pm2_wpar   X1
+X1 pm2_wpar_x X2
+X2 pm2_wpar_a X3
+X2 pm2_wpar_q X3
+X3 pm2_wpar_b I
+X3 pm2_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync cb3_wpar"
+<Alphabet> cb3_wpar_a cb3_wpar_b cb3_wpar_x cb3_wpar_q cb3_wpar </Alphabet> 
+<States> I X1 X2 X3 </States>
+<TransRel>
+I  cb3_wpar   X1
+X1 cb3_wpar_x X2
+X2 cb3_wpar_a X3
+X2 cb3_wpar_q X3
+X3 cb3_wpar_b I
+X3 cb3_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync cb4_wpar"
+<Alphabet> cb4_wpar_a cb4_wpar_b cb4_wpar_x cb4_wpar_q cb4_wpar </Alphabet> 
+<States> I X1 X2 X3 </States>
+<TransRel>
+I  cb4_wpar   X1
+X1 cb4_wpar_x X2
+X2 cb4_wpar_a X3
+X2 cb4_wpar_q X3
+X3 cb4_wpar_b I
+X3 cb4_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync cb5_wpar"
+<Alphabet> cb5_wpar_a cb5_wpar_b cb5_wpar_c cb5_wpar_x cb5_wpar_q cb5_wpar </Alphabet> 
+<States> I X1 X2 </States>
+<TransRel>
+I  cb5_wpar   X1
+X1 cb5_wpar_x X2
+X2 cb5_wpar_q I
+X2 cb5_wpar_a I
+X2 cb5_wpar_b I
+X2 cb5_wpar_c I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+
+<Generator>
+"sync cb6_wpar"
+<Alphabet> cb6_wpar_a cb6_wpar_b cb6_wpar_c cb6_wpar_x cb6_wpar_q cb6_wpar </Alphabet> 
+<States> I X1 X2 X3 X4</States>
+<TransRel>
+I  cb6_wpar   X1
+X1 cb6_wpar_x X2
+X2 cb6_wpar_a X3
+X2 cb6_wpar_q X3
+X3 cb6_wpar_b X4
+X3 cb6_wpar_q X4
+X4 cb6_wpar_c I
+X4 cb6_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+
+<Generator>
+"sync cb7_wpar"
+<Alphabet> cb7_wpar_a cb7_wpar_b cb7_wpar_c cb7_wpar_x cb7_wpar_q cb7_wpar </Alphabet> 
+<States> I X1 X2 X3 X4</States>
+<TransRel>
+I  cb7_wpar   X1
+X1 cb7_wpar_x X2
+X2 cb7_wpar_a X3
+X2 cb7_wpar_q X3
+X3 cb7_wpar_b X4
+X3 cb7_wpar_q X4
+X4 cb7_wpar_c I
+X4 cb7_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rs_b1wpar"
+<Alphabet> rs_b1wpar_a rs_b1wpar_b rs_b1wpar_c rs_b1wpar_x rs_b1wpar_q rs_b1wpar </Alphabet> 
+<States> I X1 X2 X3 X4</States>
+<TransRel>
+I  rs_b1wpar   X1
+X1 rs_b1wpar_x X2
+X2 rs_b1wpar_a X3
+X2 rs_b1wpar_q X3
+X3 rs_b1wpar_b X4
+X3 rs_b1wpar_q X4
+X4 rs_b1wpar_c I
+X4 rs_b1wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rs_b2wpar"
+<Alphabet> rs_b2wpar_a rs_b2wpar_b rs_b2wpar_x rs_b2wpar_q rs_b2wpar </Alphabet> 
+<States> I X1 X2 X3 </States>
+<TransRel>
+I  rs_b2wpar   X1
+X1 rs_b2wpar_x X2
+X2 rs_b2wpar_a X3
+X2 rs_b2wpar_q X3
+X3 rs_b2wpar_b I
+X3 rs_b2wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rs_p1car"
+<Alphabet> rs_p1car_a rs_p1car_b rs_p1car_q rs_p1car </Alphabet> 
+<States> I X2 X3 </States>
+<TransRel>
+I  rs_p1car   X2
+X2 rs_p1car_a X3
+X2 rs_p1car_q X3
+X3 rs_p1car_b I
+X3 rs_p1car_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rs_p2car"
+<Alphabet> rs_p2car_a rs_p2car_b rs_p2car_q rs_p2car </Alphabet> 
+<States> I X2 X3 </States>
+<TransRel>
+I  rs_p2car   X2
+X2 rs_p2car_a X3
+X2 rs_p2car_q X3
+X3 rs_p2car_b I
+X3 rs_p2car_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rs_p4car"
+<Alphabet> rs_p4car_a rs_p4car_b rs_p4car_q rs_p4car </Alphabet> 
+<States> I X2 X3 </States>
+<TransRel>
+I  rs_p4car   X2
+X2 rs_p4car_a X3
+X2 rs_p4car_q X3
+X3 rs_p4car_b I
+X3 rs_p4car_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rs_p6car"
+<Alphabet> rs_p6car_a rs_p6car_b rs_p6car_q rs_p6car </Alphabet> 
+<States> I X2 X3 </States>
+<TransRel>
+I  rs_p6car   X2
+X2 rs_p6car_a X3
+X2 rs_p6car_q X3
+X3 rs_p6car_b I
+X3 rs_p6car_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rs_p8car"
+<Alphabet> rs_p8car_a rs_p8car_b rs_p8car_q rs_p8car </Alphabet> 
+<States> I X2 X3 </States>
+<TransRel>
+I  rs_p8car   X2
+X2 rs_p8car_a X3
+X2 rs_p8car_q X3
+X3 rs_p8car_b I
+X3 rs_p8car_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+<Generator>
+"sync rs_p9car"
+<Alphabet> rs_p9car_a rs_p9car_b rs_p9car_q rs_p9car </Alphabet> 
+<States> I X2 X3 </States>
+<TransRel>
+I  rs_p9car   X2
+X2 rs_p9car_a X3
+X2 rs_p9car_q X3
+X3 rs_p9car_b I
+X3 rs_p9car_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+
+
+<Generator>
+"sync rb1_wpar"
+<Alphabet> rb1_wpar_a rb1_wpar_b rb1_wpar_q rb1_wpar_x rb1_wpar </Alphabet> 
+<States> I X1 X2 X3 </States>
+<TransRel>
+I  rb1_wpar   X1
+X1 rb1_wpar_x X2
+X2 rb1_wpar_a X3
+X2 rb1_wpar_q X3
+X3 rb1_wpar_b I
+X3 rb1_wpar_q I
+</TransRel>
+<InitStates> I </InitStates>
+<MarkedStates> I </MarkedStates>
+</Generator>
+
+"reset.gen"
+
+</Generators>
+
+<SimEvents>
+%% duplicate events get higher priority
+rb1_wpar_x <Priority> 50 </Priority>
+rb1_wpar_a <Priority> 40 </Priority>
+rb1_wpar_b <Priority> 40 </Priority>
+rb2_wpar_x <Priority> 50 </Priority>
+rb2_wpar_a <Priority> 40 </Priority>
+rb2_wpar_b <Priority> 40 </Priority>
+rb2_wpar_c <Priority> 40 </Priority>
+rb2_wpar_d <Priority> 40 </Priority>
+rb3_wpar_x <Priority> 50 </Priority>
+rb3_wpar_a <Priority> 40 </Priority>
+rb3_wpar_b <Priority> 40 </Priority>
+rb3_wpar_c <Priority> 40 </Priority>
+rb3_wpar_d <Priority> 40 </Priority>
+rb4_wpar_x <Priority> 50 </Priority>
+rb4_wpar_a <Priority> 40 </Priority>
+rb4_wpar_b <Priority> 40 </Priority>
+
+pm1_wpar_x <Priority> 50 </Priority>
+pm1_wpar_a <Priority> 40 </Priority>
+pm1_wpar_b <Priority> 40 </Priority>
+pm2_wpar_x <Priority> 50 </Priority>
+pm2_wpar_a <Priority> 40 </Priority>
+pm2_wpar_b <Priority> 40 </Priority>
+
+cb3_wpar_x <Priority> 50 </Priority>
+cb3_wpar_a <Priority> 40 </Priority>  
+cb3_wpar_b <Priority> 40 </Priority>  
+cb4_wpar_x <Priority> 50 </Priority>
+cb4_wpar_a <Priority> 40 </Priority>  
+cb4_wpar_b <Priority> 40 </Priority>
+cb5_wpar_x <Priority> 50 </Priority>
+cb5_wpar_a <Priority> 40 </Priority>
+cb5_wpar_b <Priority> 40 </Priority>
+cb5_wpar_c <Priority> 40 </Priority>
+cb6_wpar_x <Priority> 50 </Priority>
+cb6_wpar_a <Priority> 40 </Priority>
+cb6_wpar_b <Priority> 40 </Priority>
+cb6_wpar_c <Priority> 40 </Priority>
+cb7_wpar_x <Priority> 50 </Priority>
+cb7_wpar_a <Priority> 40 </Priority> 
+cb7_wpar_b <Priority> 40 </Priority>
+cb7_wpar_c <Priority> 40 </Priority>
+
+xs2_wpar_x <Priority> 50 </Priority>
+xs2_wpar_a <Priority> 40 </Priority>
+
+rs_b1wpar_x <Priority> 50 </Priority>
+rs_b1wpar_a <Priority> 40 </Priority>
+rs_b1wpar_b <Priority> 40 </Priority>
+rs_b1wpar_c <Priority> 40 </Priority>
+
+rs_b2wpar_x <Priority> 50 </Priority>
+rs_b2wpar_a <Priority> 40 </Priority>
+rs_b2wpar_b <Priority> 40 </Priority>
+
+rs_p1car_a <Priority> 40 </Priority>  
+rs_p1car_b <Priority> 40 </Priority>
+rs_p2car_a <Priority> 40 </Priority>
+rs_p2car_b <Priority> 40 </Priority>
+rs_p4car_a <Priority> 40 </Priority>
+rs_p4car_b <Priority> 40 </Priority>
+rs_p6car_a <Priority> 40 </Priority>
+rs_p6car_b <Priority> 40 </Priority>
+rs_p8car_a <Priority> 40 </Priority>
+rs_p8car_b <Priority> 40 </Priority>
+rs_p9car_a <Priority> 40 </Priority>
+rs_p9car_b <Priority> 40 </Priority>
+
+
+
+</SimEvents>
+
+</Executor>

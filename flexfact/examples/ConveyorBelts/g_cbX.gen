@@ -1,0 +1,67 @@
+% Conveyorbelt, template
+
+<Generator>
+"cb_template"
+
+<Alphabet>
+cbX_boff +CF+  cbX_bm+  +C+ 
+cbX_wpar  cbX_wplv
+cbX_enter +o+ cbX_exit  +o+
+</Alphabet>
+
+<States>
+E Er R Rr L Lr S Sr  B Br 
+</States>
+
+<TransRel>
+% empty 
+E  cbX_bm+  Er
+E  cbX_boff E
+Er cbX_bm+  Er
+Er cbX_boff E
+
+% wp left of sns
+L  cbX_bm+  Lr
+L  cbX_boff L
+Lr cbX_bm+  Lr
+Lr cbX_boff L
+
+% wp on of sns
+S  cbX_bm+  Sr
+S  cbX_boff S
+Sr cbX_bm+  Sr
+Sr cbX_boff S
+
+
+% wp right of sns
+R  cbX_bm+  Rr
+R  cbX_boff R
+Rr cbX_bm+  Rr
+Rr cbX_boff R
+
+% wp left and right of sns
+B  cbX_bm+  Br
+B  cbX_boff B
+Br cbX_bm+  Br
+Br cbX_boff B
+
+% transitions
+Er cbX_enter Lr
+Lr cbX_wpar  Sr
+Sr cbX_wplv  Rr
+Rr cbX_exit  Er
+Rr cbX_enter Br
+Br cbX_exit  Lr
+
+</TransRel>
+
+
+<InitStates>
+E
+</InitStates>
+
+<MarkedStates>
+E R S L B
+</MarkedStates>
+
+</Generator>

@@ -1,0 +1,44 @@
+
+<Generator>
+"SupConNB((cb1a[0]),(cb1a[0]_spec))" 
+<Alphabet>
+ds_p2wpar    ds_p2wplv    "sf-2"        ds_bm-       ds_boff      "sf-3"        
+"sf-cb1"      "sf-dep"            
+</Alphabet>
+ <States>   <Consecutive>    1   
+9            
+ </Consecutive>    </States>  
+<TransRel>
+1             ds_bm-       2             
+1             "sf-cb1"      3             
+2             ds_boff      1             
+2             "sf-cb1"      4             
+3             ds_bm-       4             
+4             ds_p2wpar    5             
+4             ds_boff      3             
+5             ds_boff      6             
+6             "sf-2"        7             
+6             "sf-3"        8             
+7             ds_p2wplv    1             
+8             ds_bm-       9             
+9            ds_p2wplv    2             
+</TransRel>
+<InitStates>
+1             
+</InitStates>
+<MarkedStates>
+1             
+</MarkedStates>
+
+</Generator>
+
+
+<Controllable>
+"sf-2"        ds_bm-       ds_boff      "sf-3"        "sf-cb1"      "sf-dep"           
+</Controllable>
+<Observable>
+ds_p2wpar    ds_p2wplv    "sf-2"        ds_bm-       ds_boff      "sf-3"        
+"sf-cb1"      "sf-dep"      
+</Observable>
+
+

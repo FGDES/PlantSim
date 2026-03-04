@@ -1,0 +1,39 @@
+% Spezification lazy cbX-xs
+
+
+<Generator>
+"e_cbX_lazy"
+
+<Alphabet>
+cbX_wpar cbX_boff cbX_bm+ xs_wpar op_ack
+</Alphabet>
+
+<States>
+E W D A
+</States>
+
+<TransRel>
+E  cbX_wpar    E
+E  xs_wpar    E
+E  op_ack      E
+E  cbX_bm+     W
+
+W  cbX_wpar    D
+W  xs_wpar    D
+D  cbX_wpar    D
+D  xs_wpar    D
+
+D  cbX_boff    A
+A  op_ack      E
+</TransRel>
+
+
+<InitStates>
+E
+</InitStates>
+
+<MarkedStates>
+E 
+</MarkedStates>
+
+</Generator>

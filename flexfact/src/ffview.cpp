@@ -2,7 +2,7 @@
 
 /*
 FlexFact --- a configurable factory simulator
-Copyright (C) 2011 Thomas Moor
+Copyright (C) 2011, 2026 Thomas Moor
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,23 +30,25 @@ FfView::FfView(QWidget* parent) :  QGraphicsView(parent) {
   setCacheMode(QGraphicsView::CacheBackground); // need to resilve issues with backgound
   setDragMode(RubberBandDrag);
   setMouseTracking(true);
+  mScale=1;
   FF_DQ("FfView::FfView(): done");
 }
 
 // Scale
 void FfView::Scale(qreal sc) {  
-  setMatrix(QMatrix(sc,0,0,sc,0,0));
+  setTransform(QTransform(sc,0,0,sc,0,0));
+  mScale=sc;
 }
 
 // Scale
 qreal FfView::Scale(void) {  
-  return matrix().m11();
+  return mScale;
 }
 
 
 // Reset Matrix
 void FfView::Reset(void) {
-  setMatrix(QMatrix());
+  setTransform(QTransform());
 }
 
 // fit scene
@@ -92,15 +94,36 @@ void FfView::ZoomOut(qreal sf) {
   ZoomIn(sf);
 }
 
+// all events to handle gestures
+bool FfView::event(QEvent *event) {
+  if(event->type() == QEvent::Gesture)
+    return gestureEvent(static_cast<QGestureEvent*>(event));
+  return QGraphicsView::event(event);
+}
+
 
 // wheel event
 void FfView::wheelEvent(QWheelEvent *event) {
   FF_DQ("FfView::wheelEvent(..) at (" << event->pos().x() << ", " << event->pos().y()
 	<< ") with value " << event->delta());
-  // accept the event at any rate
-  event->accept();
+#if QT_VERSION > QT_VERSION_CHECK(6, 2, 0)  
+  bool handle=false;
+  if(event->deviceType()==QInputDevice::DeviceType::Mouse) {
+    FF_DQ("FfView::wheeleEvent(..): its a mouse wheel: do zoom")
+    handle=true;
+  }
+  if(event->deviceType()==QInputDevice::DeviceType::TouchPad) {
+    FF_DQ("FfView::wheeleEvent(..): its a touchpad: pass on for scroll")
+    handle=false;
+  }
+  if(!handle) {
+    FF_DQ("FfView::wheeleEvent(..): pass on to base");
+    QGraphicsView::wheelEvent(event);
+    return;
+  }
+#endif  
   // scale factor
-  qreal degree= ((qreal) event->delta()) / 8.0; 
+  qreal degree= ((qreal) event->angleDelta().y()) / 8.0; 
   if(degree < -30) degree = -30.0;
   if(degree >  30) degree = 30.0;
   qreal sc = 1.0 + ( 5.0 * degree / 3000.0 ); // 5% steps per 30 degree
@@ -108,7 +131,7 @@ void FfView::wheelEvent(QWheelEvent *event) {
   if(sc * Scale() >MAXSC) return;
   if(sc * Scale() <MINSC) return;
   // where we are before scalung
-  QPointF opos=mapToScene(event->pos());
+  QPointF opos=mapToScene(QCursor::pos());
   FF_DQ("FfView::wheelEvent(..) at scenepos (" << opos.x() << ", " << opos.y() << ")");
   // do the scale
   setResizeAnchor(AnchorUnderMouse);
@@ -116,14 +139,31 @@ void FfView::wheelEvent(QWheelEvent *event) {
   scale(sc,sc);
   setTransformationAnchor(NoAnchor);
   // translate
-  QPointF npos=mapToScene(event->pos());
+  QPointF npos=mapToScene(QCursor::pos());
   QPointF diff=npos-opos;
   QPointF vdiff=mapFromScene(diff);
   translate(diff.x(),diff.y());
+  // done
+  event->accept();
   // notify
   emit NotifyZoom(Scale());
 };
 
+
+// get pinch for zoom: event
+bool FfView::gestureEvent(QGestureEvent *gevent) {
+  QPinchGesture* pinch=static_cast<QPinchGesture*>(gevent->gesture(Qt::PinchGesture));
+  if(!pinch) return false;
+  FF_DQ("FfView::gestureEvent(..) pinch at (" << pinch->hotSpot().x()<< ", " << pinch->hotSpot().y() << ") sf " << pinch->totalScaleFactor())
+  // do the scale
+  qreal sc=pinch->scaleFactor();
+  setResizeAnchor(AnchorUnderMouse);
+  setTransformationAnchor(AnchorUnderMouse);
+  scale(sc,sc);
+  setTransformationAnchor(NoAnchor);
+  // notify
+  emit NotifyZoom(Scale());  return true;
+}
 
 // handle my events: mouse press
 // note: when rubber band drag ends, press void deselects but is not passed to scene

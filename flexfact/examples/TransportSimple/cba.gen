@@ -1,0 +1,66 @@
+% Plant component, conveyor belt a
+
+<Generator>
+"cba"
+
+<Alphabet>
+"cba_stop" +C+ "cba_left" +C+  "cba_right" +C+
+"cba_tau" +C+
+"cba_wpar"   "cba_wplv"   
+</Alphabet>
+
+<States>
+"IE" "IF" "RE" "REt" "RF" "RFt" "LE" "LEt" "LF" "LFt" 
+</States>
+
+<TransRel>
+% idle 
+"IE" "cba_right" "RE"
+"IE" "cba_left"  "LE"
+"IF" "cba_right" "RF"
+"IF" "cba_left"  "LF"
+
+% source case
+"IE" "cba_wpar"  "IF"
+
+% to the right
+"REt"  "cba_stop" "IE"
+"REt"  "cba_left" "LE"
+"REt"  "cba_tau"  "RE"
+
+"RE"  "cba_stop" "IE"  
+"RE"  "cba_left" "LE"  
+"RE"  "cba_wpar" "RFt"
+
+"RFt"  "cba_stop" "IF"
+"RFt"  "cba_left" "LF"
+"RFt"  "cba_tau"  "RF"
+
+"RF"   "cba_wplv" "REt"
+
+
+% to the left
+"LEt" "cba_stop"  "IE"
+"LEt" "cba_right" "RE"
+"LEt" "cba_tau"   "LE"
+
+"LE"  "cba_wpar" "LFt"
+
+"LFt"  "cba_stop" "IF"
+"LFt"  "cba_right" "RF"
+"LFt"  "cba_tau"  "LF"
+
+"LF"  "cba_wplv" "LEt"
+
+</TransRel>
+
+
+<InitStates>
+"IE"
+</InitStates>
+
+<MarkedStates>
+"IE" "IF" 
+</MarkedStates>
+
+</Generator>

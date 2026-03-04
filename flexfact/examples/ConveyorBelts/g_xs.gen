@@ -1,0 +1,32 @@
+% Exit slide
+
+<Generator>
+"xs"
+
+<Alphabet>
+xs_wpar xs_wplv
+xs_enter +o+
+</Alphabet>
+
+<States>
+E W B
+</States>
+
+<TransRel>
+
+E  xs_enter W
+W  xs_wpar  B
+B  xs_wplv  E 
+
+</TransRel>
+
+
+<InitStates>
+E
+</InitStates>
+
+<MarkedStates>
+E B 
+</MarkedStates>
+
+</Generator>

@@ -1,0 +1,30 @@
+% Spezification, serialize op
+
+<Generator>
+"e_op_lazy"
+
+<Alphabet>
+op_put op_get op_ack 
+</Alphabet>
+
+<States>
+I B
+</States>
+
+<TransRel>
+
+I op_put B
+I op_get B
+B op_ack I
+</TransRel>
+
+
+<InitStates>
+I
+</InitStates>
+
+<MarkedStates>
+I 
+</MarkedStates>
+
+</Generator>
