@@ -18,4 +18,4 @@ Contributions are highly wellcome.
 
 
 
-(c) Thomas Moor 2011-2013
+(c) Thomas Moor 2011-2026

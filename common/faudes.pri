@@ -16,7 +16,7 @@ OA# ##########################################
 # - faudes       compile with libFAUDES
 #
 #
-# tmoor 2024
+# tmoor 2026
 # ##########################################
 
 
@@ -69,6 +69,8 @@ RC_FILE = $${COMMON}/icons/icon_win.rc
 
 # mac deploymant
 macx: QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.15
+macx: QMAKE_LIBS_OPENGL = -framework OpenGL
+
 
 # helper
 APPNAME_LC = $$lower( $${APPNAME} )

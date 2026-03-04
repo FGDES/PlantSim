@@ -5,7 +5,7 @@
 
 # application name
 unix:APPNAME = eleplant
-macx:APPNAME = ElePlant
+macx:APPNAME = eleplant
 win32:APPNAME = ElePlant
 
 # device file

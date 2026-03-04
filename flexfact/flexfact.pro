@@ -18,7 +18,7 @@ COMMON = ./
 
 # load generic configuration
 ! include( $${COMMON}/faudes.pri ) {
-    error("### error: faudes application configuration file not found" )
+    error("### error: faudes application configuration file not found")
 }
 
 
